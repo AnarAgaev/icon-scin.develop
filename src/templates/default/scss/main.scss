@@ -1,0 +1,11 @@
+// Include vendor styles
+@import "normalize.min";
+@import "bootstrap-4.4.1-grid.min";
+
+// Include style components
+@import "fonts";
+@import "variables";
+@import "default";
+
+@import '../header/header';
+@import '../footer/footer';

@@ -1,0 +1,20 @@
+//- Include used template for this page
+extends ../../templates/default/template
+
+//- Variables for include this in used template
+block variables
+    - let title       = 'Webpack template'
+    - let description = 'Write description for this page here'
+    - let keywords    = 'Write keywords for this page here'
+    - let pageClass   = 'write_here_page_id'
+
+block content
+    include first-screen/first-screen
+    include progress-bar/progress-bar
+    include question-one/question-one
+    include question-two/question-two
+    include question-three/question-three
+    include question-four/question-four
+    include question-five/question-five
+    include get-contact/get-contact
+    include results/results

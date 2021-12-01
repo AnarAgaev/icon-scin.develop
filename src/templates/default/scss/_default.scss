@@ -1,0 +1,180 @@
+@import "variables";
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    outline: none !important;
+}
+
+html {
+    -webkit-text-size-adjust: none;
+    touch-action: manipulation;
+}
+
+// Удаление иконки очистки поля в IE
+input[type="text"]::-ms-clear {
+    display: none;
+}
+
+// Удаление иконки отображения пароля в IE
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+body, html {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: $color-font-primary;
+
+    &.modal-open {
+        overflow: hidden;
+    }
+}
+
+#header,
+#footer {
+    flex: none;
+}
+
+#main {
+    flex: 1 0 auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    z-index: -1;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    width: 100%;
+    text-align: left;
+    color: $color-font-primary;
+    outline: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.valid {
+
+    }
+
+    &::-webkit-input-placeholder {
+        color: #828282;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &::-moz-placeholder {
+        color: #828282;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &:-moz-placeholder {
+        color: #828282;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &:-ms-input-placeholder {
+        color: #828282;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus::-webkit-input-placeholder {
+        color: #828282;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus::-moz-placeholder {
+        color: #828282;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus:-moz-placeholder {
+        color: #828282;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus:-ms-input-placeholder {
+        color: #828282;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+}
+
+// Переход к следующему шагу -- START
+.step {
+    height: auto;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .5s linear;
+
+    &.collapsed {
+        opacity: 0 !important;
+        max-height: 0 !important;
+        transition: all .5s linear !important;
+
+        .animation-element {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    }
+
+    &.visible {
+        opacity: 1;
+
+        .animation-element {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animation-element {
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all .3s linear;
+    }
+
+    @for $i from 0 through 5 {
+        .animation-element:nth-child(#{$i}) {
+            transition-delay: $i * 0.2s;
+        }
+    }
+}
+// Переход к следующему шагу -- FINISH

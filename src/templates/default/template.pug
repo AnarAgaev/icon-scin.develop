@@ -1,0 +1,30 @@
+//- Variables from pages
+block variables
+
+doctype html
+html(lang="ru")
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+        meta(name="robots" content="index, follow")
+
+        link(href="img/favicon.ico" rel="shortcut icon" type="image/x-icon")
+        link(rel="stylesheet" href="css/main.css" type="text/css")
+
+        meta(name="description" content=description)
+        meta(name="keywords" content=keywords)
+        title #{title}
+
+    body(class=pageClass)
+
+        header.header#header
+            include header/header
+
+        main.main#main
+            block content
+
+        footer.footer#footer
+            include footer/footer
+
+        script(src="js/script.js")

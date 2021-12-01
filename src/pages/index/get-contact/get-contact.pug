@@ -1,0 +1,33 @@
+section#getContact.step.hidden(
+    data-this-step-id="getContact"
+    data-next-step-id="results"
+    data-prev-step-id="questionFive")
+    .step__wrap
+        .container.animation-element
+            .row
+                .col-12
+                    .loading-bar
+
+        .container.animation-element
+            .row
+                .col-12
+                    h3.section__title Заголовок блока зазвата контактов
+
+        .container.animation-element
+            .row
+                .col-12
+                    form#getContactForm.get-contact-form(action="/" method="get")
+                        .get-contact-form__contact-type
+                            label
+                                input.invisible(type="radio" name="contact-type" value="whatsapp")
+                            label
+                                input.invisible(type="radio" name="contact-type" value="telegram")
+                            label
+                                input.invisible(type="radio" name="contact-type" value="phone")
+
+                        .get-contact-form__phone
+                            label
+                                input(type="tel" name="phone" value="" placeholder="Ваш номер телефона")
+
+                        .get-contact-form__submit
+                            button.btn_next-step(type="submit") Получить результат
