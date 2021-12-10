@@ -1,0 +1,36 @@
+#fastConsultationModal.modal.modal_consultation
+    .modal__dialog
+        .modal__content
+            button.modal__close(type='button') ×
+
+            .modal__header
+                h5.modal__title Получите быструю профессиональную консультацию прямо сейчас
+
+            .modal__body.px-2
+                ul
+                    li Вы узнаете:
+                    li Как правильно подобрать уход для вашей кожи;
+                    li На какие ингредиенты средств ухода надо обратить особое внимание;
+                    li О преимуществах и отличиях средств космецевтики от косметических средств.
+
+            .modal__footer
+                form.form(action="" method="POST")
+                    .form__group
+                        label
+                            input.form__control.controller(type='tel'
+                                placeholder='Введите номер телефона')
+                    .form__group
+                        label
+                            input.form__control.controller(type='text'
+                                placeholder='Укажите удобное время для звонка')
+                    button.btn(type='submit' disabled) Получить консультацию
+
+    .modal__dialog.modal__dialog_hide.hidden
+        .modal__content
+            button.modal__close(type='button') ×
+
+            .modal__header
+                h5.modal__title СПАСИБО!
+
+            .modal__body
+                p.modal__subtitle В течении 30 минут наш дизайнер вам перезвонит

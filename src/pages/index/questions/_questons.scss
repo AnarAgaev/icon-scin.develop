@@ -1,0 +1,201 @@
+@import "../../../templates/default/scss/variables";
+
+.form {
+
+    &-question {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        padding-bottom: 10px;
+
+        &__label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 115px;
+            height: auto;
+            margin: 0 7px 20px;
+            cursor: pointer;
+        }
+
+        &__pic {
+            display: block;
+            position: relative;
+            width: 105px;
+            height: 110px;
+            border: 2px solid $color-back-primary;
+            box-shadow: 0 10px 10px -10px rgba(48, 48, 48, 0.5);
+            border-radius: 10px;
+            background: $color-back-primary center no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            transition: box-shadow .2s linear;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                box-shadow: inset 0px -20px 35px -10px #C95192;
+                opacity: 0;
+                transition: opacity .2s linear;
+            }
+        }
+
+        &__val {
+            display: block;
+            width: 100%;
+            height: auto;
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #9d9d9d;
+            padding-top: 10px;
+            transition: color .3s linear;
+        }
+
+        input:checked {
+            & ~ .form-question__pic {
+                box-shadow: 0 13px 10px -10px #C95192;
+
+                &::before { opacity: 1; }
+            }
+
+            & ~ .form-question__val {
+                color: $color-font-primary;
+            }
+        }
+    }
+}
+
+.state {
+    max-width: 300px;
+    margin: 0 auto;
+
+    &__sidebar {
+        width: 90px;
+        float: left;
+        margin-bottom: 20px;
+    }
+
+    &__progress {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 20px;
+    }
+
+    &__step {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-font-secondary;
+        padding-bottom: 25px;
+    }
+
+    &__title {
+        float: right;
+        width: calc(100% - 90px - 25px);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 122.6%;
+        color: $color-accent-primary;
+        margin-left: 25px;
+    }
+
+    &__protocol {
+        position: relative;
+        float: right;
+        width: calc(100% - 90px - 40px);
+        margin-left: 40px;
+
+        img {
+            display: block;
+            position: absolute;
+            max-width: none;
+            top: 0;
+            left: 0;
+            width: 200px;
+        }
+    }
+}
+
+// Переход к следующему шагу -- START
+.step {
+    height: auto;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .5s linear;
+    background: #fff url('../img/background.jpg') center top no-repeat;
+    background-size: 100%;
+
+    &.collapsed {
+        opacity: 0 !important;
+        max-height: 0 !important;
+        transition: opacity .3s linear 0s, max-height .3s ease-out .15s !important;
+
+        .animation-element {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    }
+
+    &.visible {
+        opacity: 1;
+
+        .animation-element {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animation-element {
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all .3s linear;
+    }
+
+    @for $i from 0 through 5 {
+        .animation-element:nth-child(#{$i}) {
+            transition-delay: $i * 0.3s;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: $color-font-secondary;
+        padding: 20px 0;
+        margin: 0;
+
+        span {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+            color: #9D9D9D;
+        }
+    }
+
+    &__caption {
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        padding-top: 20px;
+        letter-spacing: 0.3px;
+        margin: 0;
+        color: $color-accent-secondary;
+    }
+}
+// Переход к следующему шагу -- FINISH

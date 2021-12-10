@@ -1,0 +1,64 @@
+//- visible hidden
+section.step#questionFifthTwo.hidden
+    .step__wrap
+        .container.animation-element
+            .row
+                .col-12
+                    h3.step__title
+                        | Бывают ли зуд и/или покраснения
+                        br
+                        | как реакция на ветер, холод,
+                        br
+                        | косметические средства?
+
+        .container.animation-element
+            .row
+                .col-12
+                    form.form-question(action="")
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionFifthTwo"
+                                data-question="Бывают ли зуд и/или покраснения как реакция на ветер, холод, косметические средства?"
+                                data-answer="Да."
+                                data-next-step-id="#questionSixth")
+                            span.form-question__pic(style="background-image: url('img/questions/fifth-two/1.jpg')")
+                            span.form-question__val Да
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionFifthTwo"
+                                data-question="Бывают ли зуд и/или покраснения как реакция на ветер, холод, косметические средства?"
+                                data-answer="Ничего такого у меня нет."
+                                data-next-step-id="#questionSixth")
+                            span.form-question__pic(style="background-image: url('img/questions/fifth-two/2.jpg')")
+                            span.form-question__val
+                                | Ничего такого
+                                br
+                                | у меня нет
+
+        .container.animation-element
+            .row
+                .col-12
+                    .state
+                        .state__sidebar
+                            .state__progress
+                                //- Передаём в Миксин процент прохождения
+                                +progress(49, 58)
+
+                            .state__step
+                                span Вопрос
+                                | !{" "}
+                                span.accent 5
+                                | !{" "}
+                                span из 7
+
+                            .state__btn-wrap
+                                button.btn.btn_back.btn_prev-step(type="button") Назад
+
+                        .state__title Система формирует ваш протокол ухода
+
+                        .state__protocol
+                            img(src="img/protocols/fifth.png" alt="")

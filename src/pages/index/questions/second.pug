@@ -1,0 +1,81 @@
+//- Including progress bar mixin
+include ../progress/progress
+
+//- visible hidden
+section.step#questionSecond.hidden
+    .step__wrap
+        .container.animation-element
+            .row
+                .col-12
+                    h3.step__title Какие у вас ощущения после умывания?
+
+        .container.animation-element
+            .row
+                .col-12
+                    form.form-question(action="")
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionSecond"
+                                data-question="Какие у вас ощущения после умывания?"
+                                data-answer="Ощущение стянутости."
+                                data-next-step-id="#questionThird")
+                            span.form-question__pic(style="background-image: url('img/questions/second/1.jpg')")
+                            span.form-question__val Ощущение стянутости
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionSecond"
+                                data-question="Какие у вас ощущения после умывания?"
+                                data-answer="Кожа кажется жирной и липкой."
+                                data-next-step-id="#questionThird")
+                            span.form-question__pic(style="background-image: url('img/questions/second/2.jpg')")
+                            span.form-question__val Кожа кажется жирной и липкой
+
+                        .clearfix
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionSecond"
+                                data-question="Какие у вас ощущения после умывания?"
+                                data-answer="Комфорт и свежесть."
+                                data-next-step-id="#questionThird")
+                            span.form-question__pic(style="background-image: url('img/questions/second/3.jpg')")
+                            span.form-question__val Комфорт и свежесть
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionSecond"
+                                data-question="Какие у вас ощущения после умывания?"
+                                data-answer="По-разному в разных зонах."
+                                data-next-step-id="#questionThird")
+                            span.form-question__pic(style="background-image: url('img/questions/second/4.jpg')")
+                            span.form-question__val По-разному в разных зонах
+
+        .container.animation-element
+            .row
+                .col-12
+                    .state
+                        .state__sidebar
+                            .state__progress
+                                //- Передаём в Миксин процент прохождения
+                                +progress(12, 27)
+
+                            .state__step
+                                span Вопрос
+                                | !{" "}
+                                span.accent 2
+                                | !{" "}
+                                span из 7
+
+                            .state__btn-wrap
+                                button.btn.btn_back.btn_prev-step(type="button") Назад
+
+                        .state__title Система формирует ваш протокол ухода
+
+                        .state__protocol
+                            img(src="img/protocols/second.png" alt="")

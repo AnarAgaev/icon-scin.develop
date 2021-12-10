@@ -1,0 +1,76 @@
+//- visible hidden
+section.step#questionRestrictions.hidden
+    ////- Для нулевого вопроса добавляем скрытый
+    ////- прогресс, для корректной работы сткриптов
+    //.progress(data-progress-value-from="0" data-progress-value-to="0")
+    //    span.val 0
+
+    .step__wrap
+        .container.animation-element
+            .row
+                .col-12
+                    h3.step__title
+                        | Есть ли у вас ограничения
+                        br
+                        | по использованию
+                        br
+                        | косметических средств?
+
+        .container.animation-element
+            .row
+                .col-12
+                    form.form-question(action="")
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="restrictions"
+                                data-question="Есть ли у вас ограничения по использованию косметических средств?"
+                                data-answer="Прохожу курс ретиноидов."
+                                data-next-step-id="")
+                            span.form-question__pic(style="background-image: url('img/questions/restrictions/1.jpg')")
+                            span.form-question__val Прохожу курс ретиноидов
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="restrictions"
+                                data-question="Есть ли у вас ограничения по использованию косметических средств?"
+                                data-answer="Гнойные воспаления на лице, более 15 шт."
+                                data-next-step-id="")
+                            span.form-question__pic(style="background-image: url('img/questions/restrictions/2.jpg')")
+                            span.form-question__val
+                                | Гнойные
+                                br
+                                | воспаления
+                                br
+                                | на лице,
+                                br
+                                | более 15 шт.
+
+                        .clearfix
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="restrictions"
+                                data-question="Есть ли у вас ограничения по использованию косметических средств?"
+                                data-answer="У меня склонность к аллергическим реакциям."
+                                data-next-step-id="")
+                            span.form-question__pic(style="background-image: url('img/questions/restrictions/3.jpg')")
+                            span.form-question__val У меня склонность к аллергическим реакциям
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="restrictions"
+                                data-question="Есть ли у вас ограничения по использованию косметических средств?"
+                                data-answer="Ничего такого у меня нет."
+                                data-next-step-id="#questionFirst")
+                            span.form-question__pic(style="background-image: url('img/questions/restrictions/4.jpg')")
+                            span.form-question__val
+                                | Ничего
+                                br
+                                | такого у меня
+                                br
+                                | нет

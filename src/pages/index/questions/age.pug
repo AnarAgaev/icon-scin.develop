@@ -1,0 +1,32 @@
+//- visible hidden
+section.step#questionAge.visible
+    .step__wrap
+        .container
+            .row
+                .col-12
+                    h3.step__title Вам уже есть 18?
+
+        .container
+            .row
+                .col-12
+                    form.form-question(action="")
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="age"
+                                data-question="Вам уже есть 18?"
+                                data-answer="Да."
+                                data-next-step-id="#questionRestrictions")
+                            span.form-question__pic(style="background-image: url('img/questions/age/18-yes.jpg')")
+                            span.form-question__val Да
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="age"
+                                data-question="Вам уже есть 18?"
+                                data-answer="Нет."
+                                data-next-step-id="")
+                            span.form-question__pic(style="background-image: url('img/questions/age/18-no.jpg')")
+                            span.form-question__val Нет

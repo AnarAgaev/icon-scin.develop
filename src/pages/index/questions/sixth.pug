@@ -1,0 +1,62 @@
+//- visible hidden
+section.step#questionSixth.hidden
+    .step__wrap
+        .container.animation-element
+            .row
+                .col-12
+                    h3.step__title
+                        | Остаются ли у вас следы
+                        br
+                        | после акне (рубцы/пятна)?
+
+        .container.animation-element
+            .row
+                .col-12
+                    form.form-question(action="")
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionSixth"
+                                data-question="Остаются ли у вас следы после акне (рубцы/пятна)?"
+                                data-answer="Да, часто."
+                                data-next-step-id="#questionSeventh")
+                            span.form-question__pic(style="background-image: url('img/questions/sixth/1.jpg')")
+                            span.form-question__val Да, часто
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionSixth"
+                                data-question="Остаются ли у вас следы после акне (рубцы/пятна)?"
+                                data-answer="Ничего такого у меня нет."
+                                data-next-step-id="#questionSeventh")
+                            span.form-question__pic(style="background-image: url('img/questions/sixth/2.jpg')")
+                            span.form-question__val
+                                | Ничего такого
+                                br
+                                | у меня нет
+
+        .container.animation-element
+            .row
+                .col-12
+                    .state
+                        .state__sidebar
+                            .state__progress
+                                //- Передаём в Миксин процент прохождения
+                                +progress(58, 73)
+
+                            .state__step
+                                span Вопрос
+                                | !{" "}
+                                span.accent 6
+                                | !{" "}
+                                span из 7
+
+                            .state__btn-wrap
+                                button.btn.btn_back.btn_prev-step(type="button") Назад
+
+                        .state__title Система формирует ваш протокол ухода
+
+                        .state__protocol
+                            img(src="img/protocols/fifth.png" alt="")

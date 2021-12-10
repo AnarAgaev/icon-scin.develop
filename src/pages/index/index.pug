@@ -3,18 +3,24 @@ extends ../../templates/default/template
 
 //- Variables for include this in used template
 block variables
-    - let title       = 'Webpack template'
+    - let title       = 'Icon skin Quiz'
     - let description = 'Write description for this page here'
     - let keywords    = 'Write keywords for this page here'
-    - let pageClass   = 'write_here_page_id'
+    - let pageClass   = 'page-index'
 
 block content
     include first-screen/first-screen
-    include progress-bar/progress-bar
-    include question-one/question-one
-    include question-two/question-two
-    include question-three/question-three
-    include question-four/question-four
-    include question-five/question-five
-    include get-contact/get-contact
-    include results/results
+    section#activeQuestionPlace
+    include questions/age
+    include questions/restrictions
+    include questions/first
+    include questions/second
+    include questions/third
+    include questions/fourth
+    include questions/fifth-one
+    include questions/fifth-two
+    include questions/sixth
+    include questions/seventh
+
+
+    //- include results/results

@@ -12,6 +12,7 @@ const imagemin                              = require('gulp-imagemin');
 const browserSync                           = require('browser-sync').create();
 const concat                                = require('gulp-concat');
 const sourcemaps                            = require('gulp-sourcemaps');
+const log                                   = require('fancy-log');
 
 // Tasks
 function clean() {
@@ -47,7 +48,7 @@ function buildStyles() {
 }
 
 function buildHtml() {
-    return src(['src/pages/**/*.pug', '!src/pages/**/_*.pug'])
+    return src(['src/pages/**/index.pug'])
         .pipe(plumber({
             errorHandler: notify.onError( function(err){
                 return {
@@ -59,8 +60,9 @@ function buildHtml() {
         .pipe(pug({
             pretty: true
         }))
-        .pipe(rename({
-            dirname: '',
+        .pipe(rename(fileObj => {
+            fileObj.basename = fileObj.dirname;
+            fileObj.dirname = '';
         }))
         .pipe(dest('build'))
         .pipe(plumber.stop())
@@ -70,10 +72,12 @@ function buildHtml() {
 function buildJs() {
     return src([
         'src/templates/default/js/jquery-3.6.0.min.js',
+        'src/templates/default/js/imask.min.js',
+        'src/templates/default/js/cocoen.js',
         'src/templates/default/js/main.js',
-        'src/templates/default/js/toggle-steps.js',
         'src/templates/default/header/header.js',
         'src/templates/default/footer/footer.js',
+        'src/templates/default/modals/modals.js',
         'src/pages/**/*.js'
     ])
         .pipe(sourcemaps.init())
@@ -93,8 +97,14 @@ function buildFonts() {
 }
 
 function buildImages() {
-    return src('src/images/**/*')
-        .pipe(dest('build/images'))
+    return src('src/img/**/*')
+        .pipe(dest('build/img'))
+        .pipe(browserSync.stream())
+}
+
+function buildVideo() {
+    return src('src/video/**/*')
+        .pipe(dest('build/video'))
         .pipe(browserSync.stream())
 }
 
@@ -111,7 +121,8 @@ watch('src/**/*.scss', buildStyles);
 watch('src/**/*.pug', buildHtml);
 watch('src/**/*.js', buildJs);
 watch('src/fonts/**/*', buildFonts);
-watch('src/images/**/*', buildImages);
+watch('src/img/**/*', buildImages);
+watch('src/video/**/*', buildVideo);
 
 // Build project
 exports.default = series(
@@ -122,6 +133,7 @@ exports.default = series(
         buildJs,
         buildFonts,
         buildImages,
+        buildVideo
     ),
     server
 );

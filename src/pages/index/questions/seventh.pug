@@ -1,0 +1,62 @@
+//- visible hidden
+section.step#questionSeventh.hidden
+    .step__wrap
+        .container.animation-element
+            .row
+                .col-12
+                    h3.step__title
+                        | Бывают ли у вас воспаления
+                        br
+                        | (угревая сыпь/прыщики) на спине?
+
+        .container.animation-element
+            .row
+                .col-12
+                    form.form-question(action="")
+
+                        label.form-question__label
+                            input.controller.controller_btn-next.invisible(
+                                type="radio"
+                                name="questionSeventh"
+                                data-question="Бывают ли у вас воспаления (угревая сыпь/прыщики) на спине?"
+                                data-answer="Да, часто.")
+                            span.form-question__pic(style="background-image: url('img/questions/seventh/1.jpg')")
+                            span.form-question__val Да, часто
+
+                        label.form-question__label
+                            input.controller.controller_btn-next.invisible(
+                                type="radio"
+                                name="questionSeventh"
+                                data-question="Бывают ли у вас воспаления (угревая сыпь/прыщики) на спине?"
+                                data-answer="Ничего такого у меня нет.")
+                            span.form-question__pic(style="background-image: url('img/questions/seventh/2.jpg')")
+                            span.form-question__val
+                                | Ничего такого
+                                br
+                                | у меня нет
+
+        .container.animation-element
+            .row
+                .col-12
+                    .state
+                        .state__sidebar
+                            .state__progress
+                                //- Передаём в Миксин процент прохождения
+                                +progress(73, 100)
+
+                            .state__step
+                                span Вопрос
+                                | !{" "}
+                                span.accent 7
+                                | !{" "}
+                                span из 7
+
+                            .state__btn-wrap
+                                .btn-next-step__wrap
+                                    button.btn.btn_next.btn_next-step(type="button" data-next-step-id="#results") К результату
+                                button.btn.btn_back.btn_prev-step(type="button") Назад
+
+                        .state__title Система формирует ваш протокол ухода
+
+                        .state__protocol
+                            img(src="img/protocols/seventh.png" alt="")

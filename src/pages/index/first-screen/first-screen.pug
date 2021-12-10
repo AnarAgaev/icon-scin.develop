@@ -1,7 +1,100 @@
-section#firstScreen
+section#firstScreen.first-screen
     .container
         .row
             .col-12
-                h1.h1 Заголовок для квиза
-                h2.h2 Подзаголовок для квиза
-                button Скролл к прогресс бару
+                .first-screen__caption
+                    h1
+                        span хотите избавиться
+                        span от акне?
+                    p
+                        span
+                            | Бесплатная
+                            br.d-md-none
+                            | онлайн-диагностика
+                            br
+                            | проблемной кожи
+                        span
+                            | Ответьте на
+                            | !{" "}
+                            span.accent 7 вопросов
+                            br
+                            | и получите индивидуальный
+                            br.d-md-none
+                            | протокол ухода за кожей
+                    span.first-screen__comparison
+                        span.first-screen__comparison-wrap
+                            #comparison
+                                img.first-screen__comparison-pic(src="img/comparison-before.jpg" alt="")
+                                img.first-screen__comparison-pic(src="img/comparison-after.jpg" alt="")
+                button.btn.first-screen__btn.go-to-quiz(type="button") пройти тест
+
+            .col-12
+                .first-screen__presentation
+                    .first-screen__brend
+                        .first-screen__pic(style="background-image: url('img/products.png')")
+                        .first-screen__content
+                            .first-screen__content-caption.d-flex.align-items-center
+                                img(src="img/silhouette.svg" alt="")
+                                span
+                                    | разработано
+                                    br
+                                    | косметологами
+
+                            .first-screen__content-txt
+                                | бренда профессиональной
+                                br
+                                | космецевтики icon skin
+                                br
+                                | (франция)
+
+                    .first-screen__video.d-flex.justify-content-end.align-items-center
+                        span.first-screen__video-desc Получи персональную консультацию косметолога
+                        .modal-video
+                            .modal-video__container
+                                h5.d-flex.justify-content-center.align-items-center диагностика кожи он-лайн
+                                video#videoBackground(
+                                    autoplay="autoplay"
+                                    controlslist="nodownload"
+                                    disablepictureinpicture=""
+                                    loop="loop"
+                                    muted="muted"
+                                    playsinline=""
+                                    preload="auto"
+                                    src="video/promotion.mp4"
+                                    data-toggle="modal"
+                                    data-target="#videoPresentationModal")
+                                    source(src="video/promotion.mp4" type="video/mp4")
+
+                                a.btn-whatsapp.d-flex.justify-content-center.align-items-center(target="_blank"
+                                    href="https://api.whatsapp.com/send?phone=79300000000&amp;text=Сообщение в WhatsApp")
+                                    span начать чат в
+                                    img(src="img/i-whatsapp.svg" alt="Начать чат в WhatsApp")
+
+            .col-12
+                .first-screen__action.d-flex.flex-column.align-items-center
+                    .first-screen__action-title
+                        | Узнайте секрет
+                        br
+                        | здоровой и сияющей кожи!
+                    .first-screen__action-btn-wrap
+                        button.btn.first-screen__btn.go-to-quiz.d-flex.flex-column.align-items-center.justify-content-center(type="button")
+                            span пройти тест и получить
+                            span протокол ухода
+                    ul.first-screen__action-list.d-flex.justify-content-center
+                        li.d-flex.flex-column.align-items-center
+                            span.pic.d-flex.justify-content-center.align-items-center
+                                img(src="img/icon-time.svg" alt="")
+                            span.txt всего за 1 минуту
+                        li.d-flex.flex-column.align-items-center
+                            span.pic.d-flex.justify-content-center.align-items-center
+                                img(src="img/icon-present.svg" alt="")
+                            span.txt бесплатно
+                        li.d-flex.flex-column.align-items-center
+                            span.pic.d-flex.justify-content-center.align-items-center
+                                img(src="img/icon-reg.svg" alt="")
+                            span.txt не требует регистрации
+
+            .col-12
+                .first-screen__footer.d-flex.justify-content-center.align-items-center
+                    span Давайте узнаем о вашей коже больше!
+

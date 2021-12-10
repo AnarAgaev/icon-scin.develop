@@ -4,8 +4,14 @@
 
 // Include style components
 @import "fonts";
+@import "../../../fonts/Gilroy/stylesheet";
+@import "../../../fonts/Lobster/stylesheet";
 @import "variables";
 @import "default";
 
 @import '../header/header';
 @import '../footer/footer';
+@import '../../../pages/index/progress/progress';
+@import "../modals/modals";
+@import "../../../pages/index/questions/questons";
+@import "../../../pages/index/first-screen/first-screen";

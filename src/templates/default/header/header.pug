@@ -1,4 +1,21 @@
 .container
+    .row.align-items-center
+        .col-6
+            img.logo(src="img/logo.svg")
+        .col-6.d-flex.justify-content-end
+            p.header__title Бесплатная онлайн-диагностика проблемной кожи
+
+.container
     .row
-        .col-12
-            p Header
+        .col
+            .header__line
+
+.container
+    .row.align-items-center
+        .col-6
+            button.header__link.btn-fast-consultation(
+                type="button"
+                data-toggle="modal"
+                data-target="#fastConsultationModal") Быстрая консультация
+        .col-6.d-flex.justify-content-end
+            a.header__phone(href="tel:+79857407515") +7 985 740-75-15

@@ -1,5 +1,70 @@
 @import "../scss/variables";
 
 .header {
-    background: $color-back-primary;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: transform .3s;
+
+    &.hide {
+        transform: translateY(-100%);
+    }
+
+    .logo {
+        width: 127px;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #303030;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__line {
+        margin-top: 12px;
+        margin-bottom: 15px;
+        width: 100%;
+        height: 1px;
+        background-color: $color-accent-primary;
+    }
+
+    &__link {
+        font-size: 12px;
+        line-height: 14px;
+        text-decoration-line: underline;
+        color: $color-font-primary;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__phone {
+        position: relative;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: right;
+        color: $color-font-primary;
+        text-decoration: none;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 4px;
+            left: -12px;
+            width: 7px;
+            height: 7px;
+            background: #2DE64C;
+            border-radius: 50%;
+        }
+    }
 }

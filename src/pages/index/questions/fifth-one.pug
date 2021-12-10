@@ -1,0 +1,86 @@
+//- visible hidden
+section.step#questionFifthOne.hidden
+    .step__wrap
+        .container.animation-element
+            .row
+                .col-12
+                    h3.step__title
+                        | Сколько воспалений
+                        br
+                        | на сегодняшний день?
+
+        .container.animation-element
+            .row
+                .col-12
+                    form.form-question(action="")
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionFifthOne"
+                                data-question="Сколько воспалений на сегодняшний день?"
+                                data-answer="Меньше 5 очагов воспаления."
+                                data-next-step-id="#questionSixth")
+                            span.form-question__pic(style="background-image: url('img/questions/fifth-one/1.jpg')")
+                            span.form-question__val
+                                | Меньше 5
+                                br
+                                | очагов
+                                br
+                                | воспаления
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionFifthOne"
+                                data-question="Сколько воспалений на сегодняшний день?"
+                                data-answer="От 5 до 10 очагов воспаления."
+                                data-next-step-id="#questionSixth")
+                            span.form-question__pic(style="background-image: url('img/questions/fifth-one/2.jpg')")
+                            span.form-question__val
+                                | От 5 до 10
+                                br
+                                | очагов
+                                br
+                                | воспаления
+
+                        .clearfix
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionFifthOne"
+                                data-question="Сколько воспалений на сегодняшний день?"
+                                data-answer="Больше 10 очагов воспаления."
+                                data-next-step-id="#questionSixth")
+                            span.form-question__pic(style="background-image: url('img/questions/fifth-one/3.jpg')")
+                            span.form-question__val
+                                | Больше 10
+                                br
+                                | очагов
+                                br
+                                | воспаления
+
+        .container.animation-element
+            .row
+                .col-12
+                    .state
+                        .state__sidebar
+                            .state__progress
+                                //- Передаём в Миксин процент прохождения
+                                +progress(49, 58)
+
+                            .state__step
+                                span Вопрос
+                                | !{" "}
+                                span.accent 5
+                                | !{" "}
+                                span из 7
+
+                            .state__btn-wrap
+                                button.btn.btn_back.btn_prev-step(type="button") Назад
+
+                        .state__title Система формирует ваш протокол ухода
+
+                        .state__protocol
+                            img(src="img/protocols/fifth.png" alt="")

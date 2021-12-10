@@ -1,0 +1,90 @@
+//- Including progress bar mixin
+include ../progress/progress
+
+//- visible hidden
+section.step#questionFirst.hidden
+    .step__wrap
+
+        .container.animation-element
+            .row
+                .col-12
+                    h2.step__caption
+                        | Отлично! Теперь мы можем
+                        br
+                        | приступить к диагностике
+
+        .container.animation-element
+            .row
+                .col-12
+                    h3.step__title Бывает ли, что ваша кожа выглядит жирной и блестит?
+
+        .container.animation-element
+            .row
+                .col-12
+                    form.form-question(action="")
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionFirst"
+                                data-question="Бывает ли, что ваша кожа выглядит жирной и блестит?"
+                                data-answer="Жирный блеск у меня бывает только в Т-зоне."
+                                data-next-step-id="#questionSecond")
+                            span.form-question__pic(style="background-image: url('img/questions/first/1.jpg')")
+                            span.form-question__val Жирный блеск у меня бывает только в Т-зоне
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionFirst"
+                                data-question="Бывает ли, что ваша кожа выглядит жирной и блестит?"
+                                data-answer="Нет, у меня такого не бывает или бывает очень редко."
+                                data-next-step-id="#questionSecond")
+                            span.form-question__pic(style="background-image: url('img/questions/first/2.jpg')")
+                            span.form-question__val Нет, у меня такого не бывает или бывает очень редко
+
+                        .clearfix
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionFirst"
+                                data-question="Бывает ли, что ваша кожа выглядит жирной и блестит?"
+                                data-answer="Кожа блестит и лоснится уже через 2 часа после умывания."
+                                data-next-step-id="#questionSecond")
+                            span.form-question__pic(style="background-image: url('img/questions/first/3.jpg')")
+                            span.form-question__val Кожа блестит и лоснится уже через 2 часа после умывания
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionFirst"
+                                data-question="Бывает ли, что ваша кожа выглядит жирной и блестит?"
+                                data-answer="Кожа кажется недостаточно очищенной, липкой."
+                                data-next-step-id="#questionSecond")
+                            span.form-question__pic(style="background-image: url('img/questions/first/4.jpg')")
+                            span.form-question__val Кожа кажется недостаточно очищенной, липкой
+
+        .container.animation-element
+            .row
+                .col-12
+                    .state
+                        .state__sidebar
+                            .state__progress
+                                //- Передаём в Миксин процент прохождения
+                                +progress(0, 12)
+
+                            .state__step
+                                span Вопрос
+                                | !{" "}
+                                span.accent 1
+                                | !{" "}
+                                span из 7
+
+                            .state__btn-wrap
+                                button.btn.btn_back.btn_prev-step(type="button") Назад
+
+                        .state__title Система формирует ваш протокол ухода
+
+                        .state__protocol
+                            img(src="img/protocols/first.png" alt="")

@@ -1,5 +1,17 @@
 @import "../scss/variables";
 
 .footer {
-    background: $color-back-primary;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: $color-accent-secondary;
+    padding: 16px 0;
+
+    a {
+        color: $color-font-in-accent;
+        text-decoration: none;
+    }
+
+    &__policy {
+        margin-bottom: 12px;
+    }
 }

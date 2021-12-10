@@ -1,0 +1,81 @@
+//- visible hidden
+section.step#questionThird.hidden
+    .step__wrap
+        .container.animation-element
+            .row
+                .col-12
+                    h3.step__title
+                        | Характерны ли для вашей кожи
+                        br
+                        | такие проблемы?
+                        span Можно выбрать несколько вариантов
+
+        .container.animation-element
+            .row
+                .col-12
+                    form.form-question(action="")
+
+                        label.form-question__label
+                            input.controller.controller_btn-next.invisible(
+                                type="checkbox"
+                                name="questionThird"
+                                data-question="Характерны ли для вашей кожи такие проблемы?"
+                                data-answer="Расширенные поры и/или черные точки.")
+                            span.form-question__pic(style="background-image: url('img/questions/third/1.jpg')")
+                            span.form-question__val Расширенные поры и/или черные точки
+
+                        label.form-question__label
+                            input.controller.controller_btn-next.invisible(
+                                type="checkbox"
+                                name="questionThird"
+                                data-question="Характерны ли для вашей кожи такие проблемы?"
+                                data-answer="Шелушение и/или неровности кожи.")
+                            span.form-question__pic(style="background-image: url('img/questions/third/2.jpg')")
+                            span.form-question__val Шелушение и/или неровности кожи
+
+                        .clearfix
+
+                        label.form-question__label
+                            input.controller.controller_btn-next.invisible(
+                                type="checkbox"
+                                name="questionThird"
+                                data-question="Характерны ли для вашей кожи такие проблемы?"
+                                data-answer="Тусклый цвет лица.")
+                            span.form-question__pic(style="background-image: url('img/questions/third/3.jpg')")
+                            span.form-question__val Тусклый цвет лица
+
+                        label.form-question__label
+                            input.controller.btn_next-step.invisible(
+                                type="radio"
+                                name="questionThird"
+                                data-question="Характерны ли для вашей кожи такие проблемы?"
+                                data-answer="Ничего такого у меня нет."
+                                data-next-step-id="#questionFourth")
+                            span.form-question__pic(style="background-image: url('img/questions/third/4.jpg')")
+                            span.form-question__val Ничего такого у меня нет
+
+        .container.animation-element
+            .row
+                .col-12
+                    .state
+                        .state__sidebar
+                            .state__progress
+                                //- Передаём в Миксин процент прохождения
+                                +progress(27, 36)
+
+                            .state__step
+                                span Вопрос
+                                | !{" "}
+                                span.accent 3
+                                | !{" "}
+                                span из 7
+
+                            .state__btn-wrap
+                                .btn-next-step__wrap
+                                    button.btn.btn_next.btn_next-step(type="button" data-next-step-id="#questionFourth") Далее
+                                button.btn.btn_back.btn_prev-step(type="button") Назад
+
+                        .state__title Система формирует ваш протокол ухода
+
+                        .state__protocol
+                            img(src="img/protocols/third.png" alt="")
