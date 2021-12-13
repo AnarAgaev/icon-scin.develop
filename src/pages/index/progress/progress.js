@@ -1,6 +1,8 @@
 $(document).ready(() => {
     window.initialProgressBar = () => {
-        if ($('.visible .progress').length > 0) {
+        if ($('.visible .progress').length > 0
+            && !$('body').hasClass('progress-counter-finished')) {
+
             let scroll = $(window).height() + $(window).scrollTop(),
                 progress = $('.visible .progress'),
                 bar = $(progress).find('.progress__bar'),
@@ -16,6 +18,10 @@ $(document).ready(() => {
             }
         }
     };
+
+    initialProgressBar();
+
+    $(window).scroll(initialProgressBar);
 
     const setProgressBar = () => {
         const PI = 3.14,
@@ -35,7 +41,6 @@ $(document).ready(() => {
         setTimeout(() => {
             if ($('.visible .progress').length === 0) {
                 $('.progress__bar').css('stroke-dasharray', '0, 999');
-                // $('.progress .val').text(0);
             }
         }, 500);
     };
@@ -46,31 +51,14 @@ $(document).ready(() => {
 
     const setProgressValue = () => {
         let progress = $('.visible .progress'),
-            stop = $(progress).data('progressValueTo'),
-            val = parseFloat($(progress).find('.val').text());
+            stop = $(progress).data('progressValueTo');
 
         if (stop) {
-            if (val < stop) {
-                let setValue = setInterval(countProgressUp, 50);
+            let val = window.toggleQuestionDirection
+                ? progress.data('progressValueFrom')
+                : progress.data('progressValueNext');
 
-                function countProgressUp () {
-                    if (val > stop - 1) {
-                        window.clearInterval(setValue);
-                    } else {
-                        $('.progress__value .val').text(++val);
-                    }
-                }
-            } else {
-                let setValue = setInterval(countProgressDown, 50);
-
-                function countProgressDown () {
-                    if (val < stop + 1) {
-                        window.clearInterval(setValue);
-                    } else {
-                        $('.progress__value .val').text(--val);
-                    }
-                }
-            }
+            countProgressValue(val, stop);
         } else {
             setTimeout(() => {
                 if ($('.visible .progress').length === 0) {
@@ -80,6 +68,35 @@ $(document).ready(() => {
         }
     }
 
-    initialProgressBar();
-    $(window).scroll(initialProgressBar);
+    const countProgressValue = (val, stop) => {
+        if (val < stop) {
+            let interval = setInterval(countProgressUp, 50);
+            function countProgressUp () {
+                if (val > stop - 1) {
+                    window.clearInterval(interval);
+                    setProgressValueCounted();
+                } else {
+                    $('.progress__value .val').text(++val);
+                }
+            }
+        } else {
+            let interval = setInterval(countProgressDown, 50);
+            function countProgressDown () {
+                if (val < stop + 1) {
+                    window.clearInterval(interval);
+                    setProgressValueCounted();
+                } else {
+                    $('.progress__value .val').text(--val);
+                }
+            }
+        }
+    }
+
+    const setProgressValueCounted = () => {
+        $('body').addClass('progress-counter-finished');
+    }
+
+    window.removeProgressValueCounted = () => {
+        $('body').removeClass('progress-counter-finished');
+    }
 });

@@ -1,0 +1,67 @@
+@import "../../../templates/default/scss/variables";
+
+.results {
+
+    &__title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        padding: 0;
+        margin: 25px 0 20px;
+
+        .accent {
+            font-weight: 800;
+        }
+
+        .normal {
+            margin-top: 3px;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: $color-font-secondary;
+        padding: 0;
+        margin: 0 auto 20px;
+
+        &_large-txt {
+            width: 75%;
+        }
+    }
+
+    &__title-line {
+        display: block;
+        position: relative;
+        margin: 0 auto 14px;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $color-accent-primary;
+            transition: all .7s linear 3s;
+        }
+    }
+
+    &__title-total {
+        margin: 0 0 20px;
+        padding: 0;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: $color-font-secondary;
+    }
+}
+
+.visible .animation-element .results__title-line::before {
+    width: 50%;
+}

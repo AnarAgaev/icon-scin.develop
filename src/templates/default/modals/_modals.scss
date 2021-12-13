@@ -125,13 +125,33 @@
         height: 40px;
         top: 0;
         right: 0;
-        color: $color-font-secondary;
-        font-size: 25px;
-        transition: color .2s linear;
+
+
+        &::before, &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 14px;
+            height: 3px;
+            background-color: #999;
+            transition: background-color .2s linear;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
 
         @media (min-width: $xl) {
             &:hover {
-                color: $color-accent-primary;
+                &::before, &::after {
+                    background-color: $color-accent-primary;
+                }
             }
         }
     }

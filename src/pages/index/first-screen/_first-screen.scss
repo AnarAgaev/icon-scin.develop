@@ -265,23 +265,6 @@
             position: relative;
             width: 245px;
             height: 65px;
-
-            &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                width: 53px;
-                height: 100%;
-                background: linear-gradient(180deg , rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-                left: 10px;
-                z-index: 1;
-                transform: skew(-30deg);
-                animation-timing-function: ease-in-out;
-                transition: all .1s;
-                animation-name: slideme;
-                animation-duration: 3s;
-                animation-iteration-count: infinite;
-            }
         }
 
         &-btn-wrap {

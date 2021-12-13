@@ -72,7 +72,7 @@ section.step#questionFirst.hidden
                         .state__sidebar
                             .state__progress
                                 //- Передаём в Миксин процент прохождения
-                                +progress(0, 12)
+                                +progress(0, 12, 27)
 
                             .state__step
                                 span Вопрос
@@ -82,7 +82,9 @@ section.step#questionFirst.hidden
                                 span из 7
 
                             .state__btn-wrap
-                                button.btn.btn_back.btn_prev-step(type="button") Назад
+                                button.btn.btn_back.btn_prev-step(type="button")
+                                    include ../../../img/i-btn-back.svg
+                                    span Назад
 
                         .state__title Система формирует ваш протокол ухода
 

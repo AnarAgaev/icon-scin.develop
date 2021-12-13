@@ -1,3 +1,5 @@
+window.toggleQuestionDirection = undefined;
+
 $(document).ready(function () {
 
     let isUnlockedToggleStep = true;
@@ -21,6 +23,11 @@ $(document).ready(function () {
         $(el).click(
             e => {
                 let _this = e.target;
+
+                if (!$(_this).data('nextStepId')) {
+                    _this = $(_this).closest('.btn');
+                }
+
                 setTimeout(e => handlerBtnToggleStep(
                     _this,
                     true
@@ -40,10 +47,14 @@ $(document).ready(function () {
     });
 
     const handlerBtnToggleStep = (btn, direction) => {
-
         if (isUnlockedToggleStep) {
+            window.toggleQuestionDirection = direction;
+
             blockToggleSteps();
             blockHeaderToggle();
+            removeProgressBar();
+            removeProgressValueCounted();
+            setTimeout(initialProgressBar, 300);
 
             const thisStep = $(btn).closest('.step'),
                 nextStep = $( $(btn).data('nextStepId') ),
@@ -57,16 +68,12 @@ $(document).ready(function () {
                 visibleEl(nextStep);
                 replaceEl(nextStep);
                 pushStepToStepsMap(nextStep);
-                removeProgressBar();
-                setTimeout(initialProgressBar, 300);
             } else {
                 showEl(prevStep);
                 visibleEl(prevStep);
                 replaceEl(prevStep);
                 removeLastStepFromStepsMap();
                 resetAllControllers();
-                removeProgressBar();
-                setTimeout(initialProgressBar, 300);
 
                 // Удаляем ТЕКУЩИЕ ответы из STORE на тот случаей
                 // елси ПЕРЕШЛИ НАЗАД ИЗ ВОПРОСА с множественными

@@ -140,14 +140,9 @@ button {
         color: #757575;
         padding: 0;
 
-        &::before {
-            content: '';
+        span {
             display: inline-block;
-            position: relative;
-            width: 22px;
-            height: 8px;
-            background: url("../img/i-btn-back.svg") center no-repeat;
-            margin-right: 5px;
+            margin-left: 5px;
         }
     }
 
@@ -163,14 +158,9 @@ button {
         padding: 0;
         margin-bottom: 15px;
 
-        &::after {
-            content: '';
+        span {
             display: inline-block;
-            position: relative;
-            width: 17px;
-            height: 8px;
-            background: url("../img/i-btn-next.svg") center no-repeat;
-            margin-left: 5px;
+            margin-right: 5px;
         }
     }
 
@@ -238,49 +228,49 @@ input {
     }
 
     &::-webkit-input-placeholder {
-        color: #d3d3d3;
+        color: #aaa;
         opacity: 1;
         transition: opacity 0.2s ease;
     }
 
     &::-moz-placeholder {
-        color: #d3d3d3;
+        color: #aaa;
         opacity: 1;
         transition: opacity 0.2s ease;
     }
 
     &:-moz-placeholder {
-        color: #d3d3d3;
+        color: #aaa;
         opacity: 1;
         transition: opacity 0.2s ease;
     }
 
     &:-ms-input-placeholder {
-        color: #d3d3d3;
+        color: #aaa;
         opacity: 1;
         transition: opacity 0.2s ease;
     }
 
     &:focus::-webkit-input-placeholder {
-        color: #d3d3d3;
+        color: #aaa;
         opacity: 0;
         transition: opacity 0.2s ease;
     }
 
     &:focus::-moz-placeholder {
-        color: #d3d3d3;
+        color: #aaa;
         opacity: 0;
         transition: opacity 0.2s ease;
     }
 
     &:focus:-moz-placeholder {
-        color: #d3d3d3;
+        color: #aaa;
         opacity: 0;
         transition: opacity 0.2s ease;
     }
 
     &:focus:-ms-input-placeholder {
-        color: #d3d3d3;
+        color: #aaa;
         opacity: 0;
         transition: opacity 0.2s ease;
     }
@@ -299,5 +289,27 @@ input {
         content: "";
         display: table;
         clear: both;
+    }
+}
+
+.animation-line {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 53px;
+        height: 100%;
+        background: linear-gradient(180deg , rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+        left: 10px;
+        z-index: 1;
+        transform: skew(-30deg);
+        animation-timing-function: ease-in-out;
+        transition: all .1s;
+        animation-name: slideme;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
     }
 }
