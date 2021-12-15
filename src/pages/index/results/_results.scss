@@ -42,10 +42,9 @@
             content: "";
             display: block;
             position: absolute;
-            width: 0;
+            width: 60%;
             height: 1px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 20%;
             background-color: $color-accent-primary;
             transition: all .7s linear 3s;
         }
@@ -173,8 +172,8 @@
             left: 0;
             border-radius: 10px;
             overflow: hidden;
-            background: url('../img/cosmetologist.jpg') -65px top no-repeat;
-            background-size: 200%;
+            background: url("../../img/cosmetologist.jpg") -97px top no-repeat;
+            background-size: 250%;
             z-index: 0;
         }
 
@@ -536,8 +535,8 @@
 
     &__brand {
         position: relative;
-        padding-top: 25px;
-        padding-bottom: 35px;
+        padding-top: 20px;
+        padding-bottom: 30px;
 
         &::before, &::after {
             content: '';
@@ -894,6 +893,17 @@
     }
 }
 
-.visible .animation-element .results__title-line::before {
-    width: 50%;
+
+#resultTherapy {
+    .results__brand {
+        margin-bottom: 30px;
+    }
+
+    .results__res-slider {
+        margin-top: 25px;
+    }
+
+    .results__cosmetologist {
+        margin-bottom: 30px;
+    }
 }

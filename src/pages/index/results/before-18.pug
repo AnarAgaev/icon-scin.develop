@@ -1,5 +1,5 @@
 //- visible hidden
-section#resultBefore18.step.results.visible
+section#resultBefore18.step.results.hidden
     .step__wrap
 
         .container.animation-element
@@ -49,7 +49,38 @@ section#resultBefore18.step.results.visible
         include ../components/results-slider
         include ../components/socials
         include ../components/important
-        include ../components/brand
+
+        .container.animation-element
+            .row
+                .col-12
+                    .results__brand
+                        .results__brand__logo
+                            include ../../../img/logo.svg
+
+                        h5
+                            | Бренд профессиональной космецевтики, разработанный компанией ESTILAB BEAUTE FRANCE. Высокая эффективность систем ухода подтверждена клиническими исследованиями.
+                            br
+                            br
+                            | Бренд разработан компанией ESTILAB (Франция). Производство локализовано в России.
+                            br
+                            br
+                            | Бренд занял достойное место среди популярных в Европе марок космецевтической продукции. Теперь мы хотим, чтобы продукция  ICONSKIN  стала доступной для российских женщин.
+
+                        .results__brand__image
+                            .pic
+                                .quotes
+                                    include ../../../img/i-quotes.svg
+                                .img
+                            p Мы понимаем, что купить сразу комплекс всех средств для ухода может быть накладно.
+
+                        ul
+                            li.caption К сожалению, профессиональная космецевтика не может стоить дешево. Впечатляющий результат гарантируют:
+                            li инновационные ингредиенты,
+                            li научные исследования,
+                            li клинические испытания.
+
         include ../components/sale
+        +sale("Поэтому мы дарим скидки")
+
         include ../components/subscribe
         include ../components/retest
