@@ -1,0 +1,336 @@
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-ThinItalic.eot');
+//    src: local('GT Eesti Pro Text Thin Italic'), local('GTEestiProText-ThinItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProText-ThinItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-ThinItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-ThinItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-ThinItalic.ttf') format('truetype');
+//    font-weight: 100;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-Medium.eot');
+//    src: local('GT Eesti Pro Text Medium'), local('GTEestiProText-Medium'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Medium.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Medium.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Medium.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Medium.ttf') format('truetype');
+//    font-weight: 500;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-LightItalic.eot');
+//    src: local('GT Eesti Pro Text Light Italic'), local('GTEestiProText-LightItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProText-LightItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-LightItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-LightItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-LightItalic.ttf') format('truetype');
+//    font-weight: 300;
+//    font-style: italic;
+//}
+//
+@font-face {
+    font-family: 'GT Eesti Pro Display';
+    src: url('../fonts/GTEestiPro/GTEestiProDisplay-Bold.eot');
+    src: local('GT Eesti Pro Display Bold'), local('GTEestiProDisplay-Bold'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Bold.woff2') format('woff2'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Bold.woff') format('woff'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-Light.eot');
+//    src: local('GT Eesti Pro Text Light'), local('GTEestiProText-Light'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Light.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Light.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Light.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Light.ttf') format('truetype');
+//    font-weight: 300;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-MediumItalic.eot');
+//    src: local('GT Eesti Pro Display Medium Italic'), local('GTEestiProDisplay-MediumItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-MediumItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-MediumItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-MediumItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-MediumItalic.ttf') format('truetype');
+//    font-weight: 500;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-RegularItalic.eot');
+//    src: local('GT Eesti Pro Text Regular Italic'), local('GTEestiProText-RegularItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProText-RegularItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-RegularItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-RegularItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-RegularItalic.ttf') format('truetype');
+//    font-weight: normal;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text Book';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-Book.eot');
+//    src: local('GT Eesti Pro Text Book'), local('GTEestiProText-Book'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Book.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Book.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Book.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Book.ttf') format('truetype');
+//    font-weight: normal;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-BoldItalic.eot');
+//    src: local('GT Eesti Pro Text Bold Italic'), local('GTEestiProText-BoldItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProText-BoldItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-BoldItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-BoldItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-BoldItalic.ttf') format('truetype');
+//    font-weight: bold;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-UltraLightItalic.eot');
+//    src: local('GT Eesti Pro Text UltraLight Italic'), local('GTEestiProText-UltraLightItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProText-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-UltraLightItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-UltraLightItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-UltraLightItalic.ttf') format('truetype');
+//    font-weight: 200;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-Thin.eot');
+//    src: local('GT Eesti Pro Display Thin'), local('GTEestiProDisplay-Thin'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-Thin.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-Thin.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-Thin.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-Thin.ttf') format('truetype');
+//    font-weight: 100;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-Regular.eot');
+//    src: local('GT Eesti Pro Text Regular'), local('GTEestiProText-Regular'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Regular.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Regular.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Regular.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Regular.ttf') format('truetype');
+//    font-weight: normal;
+//    font-style: normal;
+//}
+//
+@font-face {
+    font-family: 'GT Eesti Pro Display';
+    src: url('../fonts/GTEestiPro/GTEestiProDisplay-Light.eot');
+    src: local('GT Eesti Pro Display Light'), local('GTEestiProDisplay-Light'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Light.woff2') format('woff2'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Light.woff') format('woff'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-UltraBold.eot');
+//    src: local('GT Eesti Pro Display UltraBold'), local('GTEestiProDisplay-UltraBold'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraBold.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraBold.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraBold.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraBold.ttf') format('truetype');
+//    font-weight: 800;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-UltraBoldItalic.eot');
+//    src: local('GT Eesti Pro Display UltraBold Italic'), local('GTEestiProDisplay-UltraBoldItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraBoldItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraBoldItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraBoldItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraBoldItalic.ttf') format('truetype');
+//    font-weight: 800;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-Medium.eot');
+//    src: local('GT Eesti Pro Display Medium'), local('GTEestiProDisplay-Medium'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-Medium.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-Medium.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-Medium.ttf') format('truetype');
+//    font-weight: 500;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-UltraLight.eot');
+//    src: local('GT Eesti Pro Display UltraLight'), local('GTEestiProDisplay-UltraLight'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraLight.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraLight.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraLight.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraLight.ttf') format('truetype');
+//    font-weight: 200;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-RegularItalic.eot');
+//    src: local('GT Eesti Pro Display Regular Italic'), local('GTEestiProDisplay-RegularItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-RegularItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-RegularItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-RegularItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-RegularItalic.ttf') format('truetype');
+//    font-weight: normal;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-LightItalic.eot');
+//    src: local('GT Eesti Pro Display Light Italic'), local('GTEestiProDisplay-LightItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-LightItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-LightItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-LightItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-LightItalic.ttf') format('truetype');
+//    font-weight: 300;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-Bold.eot');
+//    src: local('GT Eesti Pro Text Bold'), local('GTEestiProText-Bold'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Bold.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Bold.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Bold.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Bold.ttf') format('truetype');
+//    font-weight: bold;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-Thin.eot');
+//    src: local('GT Eesti Pro Text Thin'), local('GTEestiProText-Thin'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Thin.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Thin.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Thin.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-Thin.ttf') format('truetype');
+//    font-weight: 100;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-UltraLightItalic.eot');
+//    src: local('GT Eesti Pro Display UltraLight Italic'), local('GTEestiProDisplay-UltraLightItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraLightItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraLightItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-UltraLightItalic.ttf') format('truetype');
+//    font-weight: 200;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-BoldItalic.eot');
+//    src: local('GT Eesti Pro Display Bold Italic'), local('GTEestiProDisplay-BoldItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-BoldItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-BoldItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-BoldItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-BoldItalic.ttf') format('truetype');
+//    font-weight: bold;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-MediumItalic.eot');
+//    src: local('GT Eesti Pro Text Medium Italic'), local('GTEestiProText-MediumItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProText-MediumItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-MediumItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-MediumItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-MediumItalic.ttf') format('truetype');
+//    font-weight: 500;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text Book';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-BookItalic.eot');
+//    src: local('GT Eesti Pro Text Book Italic'), local('GTEestiProText-BookItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProText-BookItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-BookItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-BookItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-BookItalic.ttf') format('truetype');
+//    font-weight: normal;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'GT Eesti Pro Text';
+//    src: url('../fonts/GTEestiPro/GTEestiProText-UltraLight.eot');
+//    src: local('GT Eesti Pro Text UltraLight'), local('GTEestiProText-UltraLight'),
+//        url('../fonts/GTEestiPro/GTEestiProText-UltraLight.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProText-UltraLight.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProText-UltraLight.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProText-UltraLight.ttf') format('truetype');
+//    font-weight: 200;
+//    font-style: normal;
+//}
+//
+@font-face {
+    font-family: 'GT Eesti Pro Display';
+    src: url('../fonts/GTEestiPro/GTEestiProDisplay-Regular.eot');
+    src: local('GT Eesti Pro Display Regular'), local('GTEestiProDisplay-Regular'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Regular.woff2') format('woff2'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Regular.woff') format('woff'),
+        url('../fonts/GTEestiPro/GTEestiProDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//@font-face {
+//    font-family: 'GT Eesti Pro Display';
+//    src: url('../fonts/GTEestiPro/GTEestiProDisplay-ThinItalic.eot');
+//    src: local('GT Eesti Pro Display Thin Italic'), local('GTEestiProDisplay-ThinItalic'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-ThinItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-ThinItalic.woff2') format('woff2'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-ThinItalic.woff') format('woff'),
+//        url('../fonts/GTEestiPro/GTEestiProDisplay-ThinItalic.ttf') format('truetype');
+//    font-weight: 100;
+//    font-style: italic;
+//}
+//

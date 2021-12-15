@@ -1,0 +1,192 @@
+@import "../../../templates/default/scss/variables";
+
+.swiper-slide-active .review {
+    opacity: 1;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "GT Eesti Pro Display", arial, sans-serif;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    box-shadow: 0 10px 10px -10px rgba(48, 48, 48, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px 10px 20px 30px;
+    background-color: white;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+    cursor: grab;
+    margin-bottom: 35px;
+
+    @media (min-width: $md) {
+        padding: 30px 20px 35px 70px;
+    }
+
+    &__raiting {
+        display: flex;
+        justify-content: flex-end;
+        height: 16px;
+        position: absolute;
+        top: 13px;
+        right: 10px;
+
+        @media (min-width: $md) {
+            top: 30px;
+            right: 10px;
+        }
+    }
+
+    &__data {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        top: 2px;
+        color: #5a6c7d;
+        font-size: 10px;
+        margin-right: 5px;
+
+        @media (min-width: $md) {
+            font-size: 14px;
+            margin-right: 10px;
+        }
+    }
+
+    &__stars {
+        width: 53px;
+        height: 100%;
+
+        @media (min-width: $md) {
+            width: 93px;
+        }
+
+        svg {
+            width: 10px;
+            height: 12px;
+
+            @media (min-width: $md) {
+                width: 18px;
+                height: 16px;
+            }
+        }
+    }
+
+    &__name {
+        position: relative;
+        font-size: 10px;
+        line-height: 1.2;
+        font-weight: bold;
+        color: #001a34;
+
+        @media (min-width: $md) {
+            font-size: 16px;
+        }
+
+        .pic {
+            display: inline-flex;
+            justify-content: center;
+            position: absolute;
+            top: -5px;
+            left: -15px;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            align-items: center;
+            color: #fff;
+            font-weight: bold;
+            background-color: #e5efff;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+
+            @media (min-width: $md) {
+                width: 48px;
+                height: 48px;
+                left: -35px;
+                top: -15px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__buy {
+        display: flex;
+        align-items: center;
+        background-color: #eff3f6;
+        border-radius: 999px;
+        padding: 1px 7px;
+        color: #3d5165;
+        font-size: 8px;
+        margin-top: 15px;
+
+        svg {
+            margin-right: 1px;
+            transform: scale(0.7);
+
+        }
+
+        @media (min-width: $md) {
+            margin-top: 30px;
+            font-size: 12px;
+            padding: 3px 10px;
+
+            svg {
+                margin-right: 5px;
+                transform: scale(1);
+            }
+        }
+    }
+
+    &__list {
+        margin-top: 16px;
+
+        @media (min-width: $md) {
+            margin-top: 20px;
+        }
+
+        li {
+            color: #001a34;
+            margin-bottom: 10px;
+            font-size: 8px;
+            line-height: 1.29;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @media (min-width: $md) {
+                font-size: 14px;
+                margin-bottom: 18px;
+            }
+
+            span {
+                display: block;
+            }
+
+            span:first-child {
+                font-weight: bold;
+                margin-bottom: 5px;
+
+                @media (min-width: $md) {
+                    margin-bottom: 12px;
+                }
+            }
+
+            span:last-child {
+                font-weight: 300;
+            }
+        }
+    }
+
+    &__pic {
+        width: 50%;
+        margin-top: 20px;
+        overflow: hidden;
+        border-radius: 4px;
+    }
+}

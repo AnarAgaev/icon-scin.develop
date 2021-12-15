@@ -1,18 +1,21 @@
 // Include vendor styles
 @import "normalize.min";
 @import "bootstrap-4.4.1-grid.min";
+@import "swiper-bundle.min";
 
 // Include style components
 @import "fonts";
 @import "../../../fonts/Gilroy/stylesheet";
 @import "../../../fonts/Lobster/stylesheet";
+@import "../../../fonts/GTEestiPro/stylesheet";
 @import "variables";
 @import "default";
 
+@import "../modals/modals";
 @import '../header/header';
 @import '../footer/footer';
+@import '../../../pages/index/reviews/reviews';
 @import '../../../pages/index/progress/progress';
-@import "../modals/modals";
 @import "../../../pages/index/first-screen/first-screen";
 @import "../../../pages/index/questions/questons";
 @import "../../../pages/index/results/results";

@@ -46,4 +46,15 @@ html(lang="ru")
         include modals/consultation
         include modals/video-presentation
 
+        // Icons gradients
+        svg.invisible(xmlns='http://www.w3.org/2000/svg')
+            defs
+                lineargradient#WhatsAppIconLinearGradient(x1='17.9999' y1='36' x2='17.9999' y2='-3.34558e-05' gradientunits='userSpaceOnUse')
+                    stop(stop-color='#20B038')
+                    stop(offset='1' stop-color='#60D66A')
+            defs
+                lineargradient#TeleIconLinearGradient(x1='160.08' y1='40.08' x2='100.08' y2='180' gradientunits='userSpaceOnUse')
+                    stop(stop-color='#37AEE2')
+                    stop(offset='1' stop-color='#1E96C8')
+
         script(src="js/script.js")

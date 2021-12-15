@@ -1,12 +1,13 @@
 $(document).ready(() => {
-    window.initialProgressBar = () => {
+    window.initialProgressBar = (timeout = 1500) => {
+
         if ($('.visible .progress').length > 0
             && !$('body').hasClass('progress-counter-finished')) {
 
             let scroll = $(window).height() + $(window).scrollTop(),
                 progress = $('.visible .progress'),
                 bar = $(progress).find('.progress__bar'),
-                top = $(progress).offset().top + $(progress).height();
+                top = $(progress).offset().top - 50; // + $(progress).height();
 
             if (scroll > top && !bar.hasClass('progressed')) {
                 $('.progress__bar').addClass('progressed');
@@ -14,14 +15,14 @@ $(document).ready(() => {
                 setTimeout(() => {
                     setProgressBar();
                     setProgressValue();
-                }, 1300);
+                }, timeout);
             }
         }
     };
 
     initialProgressBar();
 
-    $(window).scroll(initialProgressBar);
+    $(window).scroll(() => initialProgressBar(700));
 
     const setProgressBar = () => {
         const PI = 3.14,
@@ -70,7 +71,7 @@ $(document).ready(() => {
 
     const countProgressValue = (val, stop) => {
         if (val < stop) {
-            let interval = setInterval(countProgressUp, 50);
+            let interval = setInterval(countProgressUp, 30);
             function countProgressUp () {
                 if (val > stop - 1) {
                     window.clearInterval(interval);
@@ -80,7 +81,7 @@ $(document).ready(() => {
                 }
             }
         } else {
-            let interval = setInterval(countProgressDown, 50);
+            let interval = setInterval(countProgressDown, 30);
             function countProgressDown () {
                 if (val < stop + 1) {
                     window.clearInterval(interval);

@@ -78,6 +78,11 @@ body {
     color: $color-accent-primary !important;
 }
 
+.accent-secondary {
+    font-weight: bold !important;
+    color: $color-accent-secondary !important;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -88,6 +93,16 @@ ul, li {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
 }
 
 button {
@@ -122,7 +137,7 @@ button {
 
     &:disabled {
         cursor: not-allowed;
-        opacity: 0.5;
+        opacity: 0.7;
     }
 
     &_back {
@@ -199,7 +214,7 @@ button {
     }
 }
 
-input {
+input, .input {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -311,5 +326,75 @@ input {
         animation-name: slideme;
         animation-duration: 3s;
         animation-iteration-count: infinite;
+    }
+}
+
+.second-accent-background {
+    background-color: $color-accent-secondary;
+}
+
+.scroll-help {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+
+
+    &__txt {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 12px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-right: 5px;
+    }
+
+    &__pic {
+        width: 10px;
+        height: 11px;
+        display: flex;
+        align-items: center;
+        top: -1px;
+        position: relative;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+}
+
+%slide-horizontal-animation {
+    animation: shake-horizontal 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+.slide-horizontal-animation {
+    @extend %slide-horizontal-animation;
+}
+
+@keyframes shake-horizontal {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateX(-2px);
+    }
+    20%,
+    40%,
+    60% {
+        transform: translateX(2px);
+    }
+    80% {
+        transform: translateX(1px);
+    }
+    90% {
+        transform: translateX(-1px);
     }
 }

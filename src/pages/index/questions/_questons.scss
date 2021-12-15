@@ -162,7 +162,7 @@
         transition: all .3s linear;
     }
 
-    @for $i from 0 through 5 {
+    @for $i from 0 through 20 {
         .animation-element:nth-child(#{$i}) {
             transition-delay: $i * 0.3s;
         }

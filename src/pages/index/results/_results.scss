@@ -60,6 +60,838 @@
         text-align: center;
         color: $color-font-secondary;
     }
+
+    &__derivation {
+
+        margin-bottom: 30px;
+
+        h4 {
+            margin: 0 0 14px;
+            padding: 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 17px;
+            color: $color-font-secondary;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0 0 25px;
+            padding: 0;
+
+            .title {
+                padding: 0;
+                margin: 0 0 15px;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 15px;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            li {
+                position: relative;
+                list-style: none;
+                padding: 0 0 0 20px;
+                margin: 0 0 17px;
+                font-size: 12px;
+                line-height: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 7px;
+                    left: 7px;
+                    width: 3px;
+                    height: 3px;
+                    background-color: $color-font-primary;
+                    border-radius: 50%;
+                }
+            }
+
+        }
+
+        h5 {
+            padding: 0;
+            margin: 0 0 10px;
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 17px;
+            text-align: center;
+            color: $color-accent-primary;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 17px;
+            text-align: center;
+        }
+    }
+
+    &__cosmetologist {
+        display: flex;
+        margin-bottom: 25px;
+
+        &__pic {
+            position: relative;
+            width: 113px;
+            height: 129px;
+            margin-right: 15px;
+            flex: 1 0 auto;
+        }
+
+        &__quotes {
+            position: absolute;
+            width: 20px;
+            height: 14px;
+            top: -8px;
+            right: 2px;
+            z-index: 1;
+
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            background: url('../img/cosmetologist.jpg') -65px top no-repeat;
+            background-size: 200%;
+            z-index: 0;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+
+            span {
+                display: block;
+                margin-bottom: 8px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__for-you {
+        padding: 15px 20px 20px;
+        color: $color-font-light;
+
+        h4 {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+        }
+
+    }
+
+    &__buy-where {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 35px;
+        margin-bottom: 25px;
+
+        button {
+            width: 270px;
+        }
+    }
+
+    &__rite {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 30px;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background-color: $color-accent-primary;
+        }
+
+        h4 {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: $color-accent-secondary;
+            margin-bottom: 15px;
+        }
+
+        h5 {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: $color-accent-primary;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 16px;
+            text-align: center;
+            padding-bottom: 3px;
+        }
+
+        span {
+            display: block;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__res-slider {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+
+        h4 {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: $color-accent-secondary;
+            margin-bottom: 5px;
+        }
+
+        h5 {
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        &__wrapper {
+            position: relative;
+            padding-top: 10px;
+            margin: 0 auto;
+            width: 290px;
+
+            @media (min-width: $md) {
+                width: 440px;
+            }
+        }
+
+        &__swiper {
+            width: 290px;
+            height: auto;
+
+            @media (min-width: $md) {
+                width: 440px;
+            }
+        }
+
+        &__swiper-slide {
+            position: relative;
+            width: 100%;
+            height: auto;
+            top: 0;
+            left: 0;
+            background: $color-back-primary;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: $color-font-secondary;
+            opacity: 0.7;
+        }
+    }
+
+    &__socials {
+        background: $color-back-primary;
+        border: 1px solid $color-accent-secondary;
+        box-shadow: 0 10px 10px -10px rgba(48, 48, 48, 0.5);
+        border-radius: 10px;
+        padding: 20px 25px;
+        max-width: 450px;
+        margin: 0 auto;
+
+        h5 {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        &__sale {
+            position: relative;
+            margin-top: 10px;
+
+            img {
+                height: 136px;
+                margin-left: -10px;
+                position: relative;
+                left: 50%;
+                transform: translateX(calc(-100% + 30px));
+            }
+
+            &::after {
+                content: '-20%';
+                display: block;
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translateY(-50%);
+                font-size: 55px;
+                font-weight: 800;
+                color: $color-accent-primary;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            margin-top: 7px;
+
+            li {
+                width: 65px;
+
+                &:nth-child(2) {
+                    margin-left: 7px;
+                    margin-right: 7px;
+                }
+            }
+
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 13px;
+                line-height: 13px;
+                text-align: center;
+                text-decoration: none;
+
+                svg, path, defs, linearGradient, stop {
+                    transition: all .2s linear;
+                }
+
+                .icon-background-lite {
+                    opacity: 0;
+                }
+
+                .icon-background-color {
+                    opacity: 1;
+                }
+
+                &.icon_whatsapp .icon-background-color {
+                    fill: url(#WhatsAppIconLinearGradient);
+                }
+
+                &.icon_telegram .icon-background-color {
+                    fill: url(#TeleIconLinearGradient);
+                }
+
+                @media (min-width: $xl) {
+                    .icon-background-lite {
+                        opacity: 1;
+                    }
+
+                    .icon-background-color {
+                        opacity: 0;
+                    }
+
+                    &:hover {
+                        .icon-background-lite {
+                            opacity: 0;
+                        }
+
+                        .icon-background-color {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                span {
+                    display: block;
+                    margin-top: 10px;
+                    color: $color-font-secondary;
+
+                    transition: color .3s linear;
+
+                    @media (max-width: $xl - 1) {
+                        color: $color-font-primary;
+                    }
+                }
+            }
+        }
+
+        p {
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 12px;
+            text-align: center;
+            color: #ababab;
+            margin-top: 20px;
+        }
+    }
+
+    &__important {
+        position: relative;
+        margin-top: 35px;
+        padding: 38px 0 25px;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 20%;
+            width: 60%;
+            height: 1px;
+            background-color: $color-accent-primary;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 150px;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background: url("../../img/background.jpg") center top no-repeat;
+            background-size: 100%;
+            z-index: -1;
+        }
+
+        h5 {
+            position: relative;
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 12px;
+            text-transform: uppercase;
+            padding-left: 34px;
+
+            &::before {
+                content: "!";
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                width: 23px;
+                height: 23px;
+                border-radius: 50%;
+                background-color: $color-accent-primary;
+                color: $color-font-light;
+                text-align: center;
+                left: 1px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 16px;
+
+            span {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__brand {
+        position: relative;
+        padding-top: 25px;
+        padding-bottom: 35px;
+
+        &::before, &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 20%;
+            width: 60%;
+            height: 1px;
+            background-color: $color-accent-primary;
+        }
+
+        &::before { top: 0; }
+        &::after { bottom: 0; }
+
+        &__logo {
+            width: 140px;
+            margin: 0 auto;
+
+            svg {
+                max-width: 100%;
+            }
+        }
+
+        h5 {
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 16px;
+            margin-top: 5px;
+        }
+
+        &__image {
+            display: flex;
+            margin-top: 25px;
+
+            .pic {
+                position: relative;
+                width: 113px;
+                height: 129px;
+                margin-right: 15px;
+                flex: 1 0 auto;
+            }
+
+            .quotes {
+                position: absolute;
+                width: 20px;
+                height: 14px;
+                top: -8px;
+                right: 2px;
+                z-index: 1;
+
+                svg {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                border-radius: 10px;
+                overflow: hidden;
+                background: url('../img/cosmetologist.jpg') -65px top no-repeat;
+                background-size: 200%;
+                z-index: 0;
+            }
+
+            p {
+                padding: 0;
+                margin: 0;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+
+                span {
+                    display: block;
+                    margin-bottom: 8px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        ul {
+            margin-top: 20px;
+
+            .caption {
+                margin-bottom: 7px;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 16px;
+                padding-left: 0;
+                
+                &::before {
+                    display: none;
+                }
+            }
+
+            li {
+                position: relative;
+                padding-left: 20px;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 16px;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    background-color: $color-font-secondary;
+                    top: 50%;
+                    left: 9px;
+                }
+
+            }
+        }
+    }
+
+    &__sale {
+        h4 {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            color: $color-accent-primary;
+            margin-top: 25px;
+        }
+
+        &__wrap {
+            background: $color-back-primary;
+            border: 1px solid $color-accent-secondary;
+            box-sizing: border-box;
+            box-shadow: 0 10px 10px -10px rgba(48, 48, 48, 0.5);
+            border-radius: 10px;
+            padding: 25px 20px;
+            max-width: 480px;
+            margin: 20px auto 0;
+        }
+
+        h5 {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        &__percent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+            span {
+                display: block;
+                width: 50%;
+                padding-right: 5px;
+                text-align: right;
+                font-weight: 700;
+                font-size: 49px;
+                color: $color-accent-primary;
+            }
+
+            p {
+                width: 50%;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                padding-left: 5px;
+            }
+        }
+
+        &__time {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+        }
+
+        &__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+            .btn {
+                width: 245px;
+                height: 48px;
+                text-decoration: none;
+            }
+        }
+
+        &__timeout {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        &__share-txt {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+        }
+
+        &__share-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                display: block;
+                position: absolute;
+                top: 1px;
+                left: -33px;
+
+                @extend %slide-horizontal-animation;
+            }
+
+            span {
+                display: block;
+                position: relative;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                color: $color-accent-primary;
+                cursor: pointer;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    background-color: $color-accent-primary;
+                    opacity: 1;
+                    transition: opacity .2s linear;
+                }
+
+                @media (min-width: $xl) {
+                    &:hover::after {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__subscribe {
+        max-width: 480px;
+        margin: 30px auto 0;
+
+        h5 {
+            display: block;
+            overflow: hidden;
+            margin-bottom: 25px;
+
+            span {
+                display: block;
+                width: 74px;
+                height: 83px;
+                border-radius: 10px;
+                float: left;
+                margin-right: 20px;
+                overflow: hidden;
+                background: url("../../img/cosmetologist.jpg") -65px top no-repeat;
+                background-size: 250%;
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+
+        .form__group {
+            margin-bottom: 20px;
+        }
+
+        input {
+            border: 1px solid #C95192;
+            box-shadow: inset 0 0px 11px rgba(0, 0, 0, 0.25);
+            width: 243px;
+            height: 50px;
+            margin: 0 auto;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        button {
+            width: 243px;
+            height: 50px;
+            margin: 0 auto;
+        }
+    }
+
+    &__retest {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            position: relative;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+            color: $color-font-secondary;
+            margin: 20px 0 30px;
+            padding: 0;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $color-font-secondary;
+                opacity: 1;
+                transition: opacity .3s linear;
+            }
+
+            @media (min-width: $xl) {
+                &:hover::after {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .border-block {
+        width: 100%;
+        background: $color-back-primary;
+        border: 1px solid $color-accent-secondary;
+        box-shadow: 0 10px 10px -10px rgba(48, 48, 48, 0.5);
+        border-radius: 10px;
+        padding: 20px 15px 25px;
+    }
 }
 
 .visible .animation-element .results__title-line::before {
