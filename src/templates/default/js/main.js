@@ -18,6 +18,13 @@ window.validatePhone = (phone = STORE.phone) => {
     return regular.test(phone);
 };
 
+window.validateEmail = (email = STORE.email) => {
+    // Регулярка для email проверяет только
+    // наличие @ и точки
+    let regular = /.+@.+\..+/i;
+    return regular.test(email);
+};
+
 // В суперглобальной переменной храним
 // все дынные, введенные пользователем
 window.STORE = {
@@ -74,6 +81,13 @@ STORE = new Proxy(STORE, {
             updatePhones(val);
         }
 
+        /*
+         * Если в СТОРЕ меняется email, то сразу меняем
+         * email во всех полях ввода email адреса.
+         */
+        if (prop === 'email') {
+            updateEmails(val);
+        }
 
         if (IS_DEBUGGING) {
             setTimeout(() => console.log(target), 100);
@@ -130,6 +144,11 @@ const updatePhones = (phone) => {
     );
 }
 
+// Котроллеры для телефонов - взаимозависимые поля
+const updateEmails = (email) => {
+    $('[type="email"]').val(email);
+}
+
 // Если телефон валидный,
 // разлокируем кнопки отправки формы
 const checkPhones = () => {
@@ -138,6 +157,17 @@ const checkPhones = () => {
         .find('[type="submit"]')
         .prop({
             disabled: !validatePhone(STORE.phone)
+        });
+}
+
+// Если email валидный, разблокируем
+// кнопки отправки формы
+const checkEmail = () => {
+    $('[type="email"]')
+        .closest('form')
+        .find('[type="submit"]')
+        .prop({
+            disabled: !validateEmail(STORE.email)
         });
 }
 
@@ -175,7 +205,7 @@ $(document).ready(() => {
         });
 
         if (!validatePhone()) {
-            STORE.phone = '';
+            STORE.phone = ''; // Нужно для организации взаимозависимых полей
             delete STORE.phone;
         }
     }
@@ -193,6 +223,22 @@ $(document).ready(() => {
         .on('focus', handlerPhoneFocus)
         .on('blur', handlerPhoneBlur)
         .on('input', handlerPhoneInput);
+
+    const handlerEmailInput = e => {
+        STORE['email'] = $(e.target).val();
+        checkEmail();
+    }
+
+    const handlerEmailBlur = e => {
+        if (!validateEmail()) {
+            STORE.email = ''; // Нужно для организации взаимозависимых полей
+            delete STORE.email;
+        }
+    }
+
+    $('[type="email"]')
+        .on('blur', handlerEmailBlur)
+        .on('input', handlerEmailInput);
 
     /* Слушаем изменение каждого input
      * В случае всплытия события,

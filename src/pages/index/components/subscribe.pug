@@ -9,7 +9,10 @@
                 form(action="")
                     p.form__group
                         label
-                            input.form__control.controller(type='email' placeholder='Ваш email')
+                            input.form__control(
+                                type='email'
+                                name="email"
+                                placeholder='Ваш email')
 
                     p
                         button.btn(type='submit' disabled)

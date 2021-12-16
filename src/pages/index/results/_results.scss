@@ -172,7 +172,7 @@
             left: 0;
             border-radius: 10px;
             overflow: hidden;
-            background: url("../../img/cosmetologist.jpg") -97px top no-repeat;
+            background: url("../img/cosmetologist.jpg") -97px top no-repeat;
             background-size: 250%;
             z-index: 0;
         }
@@ -601,8 +601,8 @@
                 left: 0;
                 border-radius: 10px;
                 overflow: hidden;
-                background: url('../img/cosmetologist.jpg') -65px top no-repeat;
-                background-size: 200%;
+                background: url('../img/cosmetologist.jpg') -100px top no-repeat;
+                background-size: 250%;
                 z-index: 0;
             }
 
@@ -664,13 +664,15 @@
 
     &__sale {
         h4 {
+            display: block;
+            max-width: 290px;
             font-weight: bold;
             font-size: 16px;
             line-height: 20px;
             text-align: center;
             text-transform: uppercase;
             color: $color-accent-primary;
-            margin-top: 25px;
+            margin: 25px auto 0;
         }
 
         &__wrap {
@@ -814,7 +816,7 @@
                 float: left;
                 margin-right: 20px;
                 overflow: hidden;
-                background: url("../../img/cosmetologist.jpg") -65px top no-repeat;
+                background: url("../img/cosmetologist.jpg") -65px top no-repeat;
                 background-size: 250%;
             }
 
