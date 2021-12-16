@@ -265,7 +265,6 @@ $(document).ready(() => {
         }
     }
 
-
     // Скролл к первому вопросу
     $('.go-to-quiz').click(() => {
         let top = $('#activeQuestionPlace').offset().top;
@@ -275,6 +274,31 @@ $(document).ready(() => {
             1000
         );
     });
+
+    // Сбрасываем весь квиз
+    const fullReset = () => {
+
+        // Брасываем STORE
+        for (let prop in STORE) {
+            if (prop !== 'connect'
+                && prop !== 'email'
+                && prop !== 'phone') {
+
+                delete STORE[prop];
+            }
+        }
+
+        // Допушиваем в STORE первый вопрос
+        STORE.stepsMap = ['#questionAge'];
+
+        // Сбрасываем контроллеры
+        $('input.controller').prop('checked', false);
+
+        // Скрываем кнопку Далле и Показать результаты
+        $('.btn-next-step__wrap').removeClass('show');
+    }
+
+    $('.__full-reset').click(fullReset);
 
     // Блокируем отправку всех форм.
     // Данные всегда отправляются асинхронно.
