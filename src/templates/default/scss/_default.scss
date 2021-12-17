@@ -333,38 +333,63 @@ input, .input {
     background-color: $color-accent-secondary;
 }
 
-.scroll-help {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(-100%);
+.slider {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
 
-
-    &__txt {
-        font-weight: 600;
-        font-size: 10px;
-        line-height: 12px;
-        text-align: center;
-        text-transform: uppercase;
-        margin-right: 5px;
-    }
-
-    &__pic {
-        width: 10px;
-        height: 11px;
+    mark {
         display: flex;
         align-items: center;
-        top: -1px;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent !important;
+        transform: translateY(-100%);
 
-        svg {
-            width: 100%;
-            height: auto;
+        p {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 12px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-right: 7px;
+            color: $color-font-primary;
+        }
+
+        span {
+            width: 13px;
+            height: 14px;
+            display: flex;
+            align-items: center;
+            top: -1px;
+            position: relative;
+
+            svg {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 
+    .swiper {
+        width: 100%;
+        height: auto;
+    }
+
+    .swiper-slide {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: $color-font-secondary;
+        opacity: 0.7;
+    }
 }
 
 %slide-horizontal-animation {

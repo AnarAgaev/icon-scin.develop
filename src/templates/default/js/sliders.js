@@ -1,6 +1,6 @@
 $(document).ready(() => {
     // Слайдер с результатами
-    const resultsSlider = new Swiper('.results__res-slider__swiper', {
+    const resultsSlider = new Swiper('.swiper', {
         slidesPerView: 1,
         speed: 300,
         preloadImages: true,

@@ -8,23 +8,19 @@
 
                 .results__res-slider__wrapper
 
-                    span.scroll-help
-                        span.scroll-help__txt листайте
-                        span.scroll-help__pic.slide-horizontal-animation
-                            include ../../../img/i-scroll-hand.svg
+                    .slider
+                        mark
+                            p листайте
+                            span.slide-horizontal-animation
+                                include ../../../img/i-scroll-hand.svg
 
-                    //- Slider main container
-                    .swiper.results__res-slider__swiper
-                        //- Additional required wrapper
-                        .swiper-wrapper.results__res-slider__swiper-wrapper
-                            //- Slides
-                            include ../reviews/1
-                            include ../reviews/2
-                            include ../reviews/3
-                            include ../reviews/4
-                            include ../reviews/5
-                            include ../reviews/6
-                            include ../reviews/7
-
-                        //- If we need pagination
-                        .swiper-pagination#resultsSliderPagination
+                        .swiper
+                            .swiper-wrapper
+                                include ../reviews/1
+                                include ../reviews/2
+                                include ../reviews/3
+                                include ../reviews/4
+                                include ../reviews/5
+                                include ../reviews/6
+                                include ../reviews/7
+                            .swiper-pagination
