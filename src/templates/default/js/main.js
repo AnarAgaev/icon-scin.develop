@@ -25,6 +25,13 @@ window.validateEmail = (email = STORE.email) => {
     return regular.test(email);
 };
 
+window.copyURL = () => {
+    $("body").append('<input id="copyURL" type="text" value="" />');
+    $("#copyURL").val(window.location.href).select();
+    document.execCommand("copy");
+    $("#copyURL").remove();
+}
+
 // В суперглобальной переменной храним
 // все дынные, введенные пользователем
 window.STORE = {

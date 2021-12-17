@@ -3,8 +3,8 @@ $(document).ready(() => {
         showModal(e.target);
     });
 
-    const showModal = function (_this) {
-        let modal = $(_this).data('target'),
+    const showModal = function (el) {
+        let modal = $(el).data('target'),
             video = $(modal).find('video')[0];
 
         $(modal).addClass('show');
@@ -17,9 +17,9 @@ $(document).ready(() => {
        }
     });
 
-    const hideModal = function (_this) {
-        let modal = $(_this).closest('.modal'),
-            video = $(modal).find('video')[0];
+    const hideModal = function (el) {
+        let modal = $(el).closest('.modal'),
+            video = $(modal).find('video')[0],
             dialogs = $(modal).find('.modal__dialog');
 
         if (video) {
@@ -44,8 +44,43 @@ $(document).ready(() => {
         }
     }
 
-    const isActionNode = function (_this) {
-        return $(_this).hasClass('modal')
-            || $(_this).hasClass('modal__close');
+    const isActionNode = function (el) {
+        return $(el).hasClass('modal')
+            || $(el).hasClass('modal__close');
     }
+
+    $('.__openModalShare').on(
+        'click',
+        e => {
+            let _this = e.target;
+
+            if (isModal(_this)) {
+                let timeout = 400,
+                    modal = $(_this).closest('.modal'),
+                    thisDialog = $(_this).closest('.modal__dialog'),
+                    resultsDialog = $(modal).find('.modal__dialog_results');
+
+                thisDialog.addClass('modal__dialog_hide');
+
+                setTimeout(e => {
+                    thisDialog.addClass('hidden');
+                    resultsDialog.removeClass('hidden');
+                }, timeout);
+
+                setTimeout(
+                    e => resultsDialog.removeClass('modal__dialog_hide'),
+                    timeout + 100
+                );
+            } else {
+                showModal(_this);
+            }
+        }
+    );
+
+    const isModal = (el) => {
+        return $(el).closest('.modal').length > 0;
+    }
+
+    // Копируем URL в буфер
+    $('.__copyUrl').click(copyURL);
 });

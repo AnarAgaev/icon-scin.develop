@@ -1,0 +1,13 @@
+#whereBuyWithSale.modal
+    .modal__dialog
+        .modal__content
+            button.modal__close(type='button')
+
+            include ../../../pages/index/components/sale
+
+    .modal__dialog.modal__dialog_hide.modal__dialog_results.hidden
+        .modal__content
+            button.modal__close(type='button')
+
+            .modal__body
+                include ../../../pages/index/components/share

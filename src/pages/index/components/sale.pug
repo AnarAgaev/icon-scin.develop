@@ -1,53 +1,44 @@
-mixin sale(title)
-    .container.animation-element
-        .row
-            .col-12
-                .results__sale
-                    h4= title
+h5.sale__title
+    | Всем, кто прошел тест,
+    br
+    | компания ESTILAB&nbsp;
+    span.accent-secondary дарит скидку
+    br
+    | на профессиональную
+    br
+    | космецевтику ICON SKIN
 
-                    .results__sale__wrap
+.sale__percent
+    span 20%
+    p
+        | на подобранный
+        br
+        | системой набор
 
-                        h5
-                            | Всем, кто прошел тест,
-                            br
-                            | компания ESTILAB&nbsp;
-                            span.accent-secondary дарит скидку
-                            br
-                            | на профессиональную
-                            br
-                            | космецевтику ICON SKIN
+.sale__time
+    | Скидка действует в течение&nbsp;
+    span.accent-secondary 3 дней
+    br
+    | после прохождения теста
 
-                        .results__sale__percent
-                            span 20%
-                            p
-                                | на подобранный
-                                br
-                                | системой набор
+.sale__link
+    a.btn.animation-line(href="#")
+        | Перейти в магазин
+        br
+        | за своим набором
 
-                        .results__sale__time
-                            | Скидка действует в течение&nbsp;
-                            span.accent-secondary 3 дней
-                            br
-                            | после прохождения теста
+.sale__timeout Акция ограничена по сроку
 
-                        .results__sale__link
-                            a.btn.animation-line(href="#")
-                                | Перейти в магазин
-                                br
-                                | за своим набором
+.sale__share-txt
+    | Если у вас есть подруги, которым
+    br
+    | это важно — скорее делитесь
+    br
+    | с ними ссылкой на тест.
+    br
+    | Подарите им красоту!
 
-                        .results__sale__timeout Акция ограничена по сроку
-
-                        .results__sale__share-txt
-                            | Если у вас есть подруги, которым
-                            br
-                            | это важно — скорее делитесь
-                            br
-                            | с ними ссылкой на тест.
-                            br
-                            | Подарите им красоту!
-
-                        a.results__sale__share-link
-                            span
-                                include ../../../img/i-share-arr.svg
-                                | Поделиться
+a.sale__share-link
+    span.__openModalShare(data-target="#shareQuizLink")
+        include ../../../img/i-share-arr.svg
+        | Поделиться

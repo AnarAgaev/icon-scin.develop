@@ -48,8 +48,13 @@ section#resultTherapy.step.results.hidden
         include ../components/results-slider
         include ../components/socials
 
-        include ../components/sale
-        +sale("Поделитесь  этой возможностью с подругами")
+        .container.animation-element
+            .row
+                .col-12
+                    .results__sale
+                        h4 Поделитесь  этой возможностью с подругами
+                        .results__sale__wrap
+                            include ../components/sale
 
         include ../components/subscribe
         include ../components/retest

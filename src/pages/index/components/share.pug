@@ -1,0 +1,21 @@
+h5.share__title Поделиться!
+
+ul.share__list
+    li
+        a.icon_whatsapp(href="https://www.whatsapp.com/" target="_blank")
+            include ../../../img/icon-wa.svg
+    li
+        a.icon_instagram(href="https://www.instagram.com/" target="_blank")
+            include ../../../img/icon-instagram.svg
+    li
+        a.icon_vk(href="https://vk.com/" target="_blank")
+            include ../../../img/icon-vk.svg
+    li
+        a.icon_facebook(href="https://www.facebook.com/" target="_blank")
+            include ../../../img/icon-facebook.svg
+
+label.share__link
+    // На бэкенде вставить ссылку текущей страницы
+    input(type="text" value="http://localhost/index.html")
+    button.animation-line.share__copy-btn.__copyUrl(type="button")
+        span Копировать

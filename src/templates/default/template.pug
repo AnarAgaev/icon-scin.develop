@@ -45,6 +45,8 @@ html(lang="ru")
 
         include modals/consultation
         include modals/video-presentation
+        include modals/where-buy-with-sale
+        include modals/share-quiz-link
 
         // Icons gradients
         svg.invisible(xmlns='http://www.w3.org/2000/svg')
@@ -56,5 +58,13 @@ html(lang="ru")
                 lineargradient#TeleIconLinearGradient(x1='160.08' y1='40.08' x2='100.08' y2='180' gradientunits='userSpaceOnUse')
                     stop(stop-color='#37AEE2')
                     stop(offset='1' stop-color='#1E96C8')
+
+            defs
+                radialgradient(id='paint0_radial_289_14' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(5.31424 40.189) scale(52.2166)')
+                    stop(offset='0.09' stop-color='#FA8F21')
+                    stop(offset='0.78' stop-color='#D82D7E')
+                radialgradient(id='paint1_radial_289_14' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(24.2582 41.981) scale(41.1539)')
+                    stop(offset='0.64' stop-color='#8C3AAA' stop-opacity='0')
+                    stop(offset='1' stop-color='#8C3AAA')
 
         script(src="js/script.js")
