@@ -2,7 +2,14 @@ $(document).ready(function () {
     let lastScrollTop;
 
     $(window).scroll(() => {
-        ($(window).scrollTop() > lastScrollTop && 100 <= $(window).scrollTop())
+        let scrollTop = $(window).scrollTop();
+
+
+        (scrollTop > 100)
+            ? $('#header').removeClass('blocked')
+            : $('#header').addClass('blocked');
+
+        (scrollTop > lastScrollTop)
             ? $('#header').addClass('hide')
             : $('#header').removeClass('hide');
 
