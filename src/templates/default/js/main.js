@@ -314,6 +314,17 @@ $(document).ready(() => {
         if (isFirstScreenInvisible) {
             firstScreen.removeClass('first-screen_invisible');
         }
+
+        // Если блок-заголовк вопросов скрыт,
+        // показываем его
+        let questionsCaption = $('#questionsCaption'),
+            isQuestionsCaptionHidden = questionsCaption
+                .hasClass('questions-caption__wrap_invisible');
+
+        if (isQuestionsCaptionHidden) {
+            questionsCaption
+                .removeClass('questions-caption__wrap_invisible');
+        }
     }
 
     $('._fullReset').click(fullReset);

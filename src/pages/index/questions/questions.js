@@ -28,7 +28,7 @@ $(document).ready(function () {
                     _this = $(_this).closest('.btn');
                 }
 
-                setTimeout(e => handlerBtnToggleStep(
+                setTimeout(e => handlerBtnToggleStep (
                     _this,
                     true
                 ), 300);
@@ -56,10 +56,26 @@ $(document).ready(function () {
             removeProgressValueCounted();
             setTimeout(initialProgressBar, 300);
 
-            const thisStep = $(btn).closest('.step'),
-                nextStep = $( $(btn).data('nextStepId') ),
+            let thisStep = $(btn).closest('.step'),
+                nextStepId = $(btn).data('nextStepId'),
+                nextStep = $(nextStepId),
                 prevStepId = STORE.stepsMap[STORE.stepsMap.length - 2],
                 prevStep = $(prevStepId);
+
+
+
+            // Для пооследнего вопроса перезаписываем следующий шаг,
+            // т.к. до прохождения квиза результат не известен.
+            // В последний шаг записываем карточку, рссчитанную
+            // в функции getResultCard
+
+            console.log('nextStepId', nextStepId)
+
+            if (nextStepId === '#showResult') {
+                hideQuestionsCaption();
+
+                nextStep = getResultCard();
+            }
 
             invisibleEl(thisStep);
 
@@ -96,6 +112,9 @@ $(document).ready(function () {
         }
     }
 
+    const hideQuestionsCaption = () => {
+        $('#questionsCaption').addClass('questions-caption__wrap_invisible');
+    }
 
     const toggleFirstScreen = (el) => {
 
@@ -231,5 +250,20 @@ $(document).ready(function () {
     // Скрываем кнопку Далле и Показать результаты
     const hideNextButtonWrapper = () => {
         $('.btn-next-step__wrap').removeClass('show');
+    }
+
+
+
+
+
+
+
+
+
+
+    // Рассчитваем резьльтаты прохождения Квиза
+    // и определяем какую блок результатов показывать
+    const getResultCard = () => {
+        return $('#result-1');
     }
 });
