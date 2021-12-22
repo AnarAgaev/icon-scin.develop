@@ -10,7 +10,7 @@ $(document).ready(function () {
         const isInvisible = $(step).hasClass('hidden');
 
         $(step).removeClass('hidden');
-        $(step).css('maxHeight', $(step).height());
+        $(step).css('maxHeight', $(step).height() + 100);
         if (isInvisible) $(step).addClass('hidden');
     }
 
@@ -64,11 +64,13 @@ $(document).ready(function () {
             invisibleEl(thisStep);
 
             if (direction) {
+                toggleFirstScreen(nextStep);
                 showEl(nextStep);
                 visibleEl(nextStep);
                 replaceEl(nextStep);
                 pushStepToStepsMap(nextStep);
             } else {
+                toggleFirstScreen(prevStep);
                 showEl(prevStep);
                 visibleEl(prevStep);
                 replaceEl(prevStep);
@@ -91,6 +93,25 @@ $(document).ready(function () {
             scrollToActiveQuestion();
             unblockToggleSteps();
             unblockHeaderToggle();
+        }
+    }
+
+
+    const toggleFirstScreen = (el) => {
+
+        let firstScreen = $('#firstScreen'),
+            isFirstQuestion = $(el).attr('id') === 'questionFirst',
+            isQuestionRestrictions = $(el).attr('id') === 'questionRestrictions',
+            isFirstScreenVisible = !firstScreen
+                .hasClass('first-screen_invisible');
+
+        if (isFirstQuestion && isFirstScreenVisible) {
+            firstScreen.addClass('first-screen_invisible');
+            return;
+        }
+
+        if(isQuestionRestrictions && !isFirstScreenVisible) {
+            firstScreen.removeClass('first-screen_invisible');
         }
     }
 
@@ -144,10 +165,10 @@ $(document).ready(function () {
 
     const scrollToActiveQuestion = () => {
         setTimeout(e => {
-            let top = $('#activeQuestionPlace').offset().top;
+            let top = $('#questionsCaption .questions-caption').offset().top;
 
             $('body,html').animate(
-                { scrollTop: top + 2 },
+                { scrollTop: top },
                 1000
             );
         }, 700);

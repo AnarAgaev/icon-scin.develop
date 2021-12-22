@@ -274,10 +274,10 @@ $(document).ready(() => {
 
     // Скролл к первому вопросу
     $('.go-to-quiz').click(() => {
-        let top = $('#activeQuestionPlace').offset().top;
+        let top = $('#questionsCaption .questions-caption').offset().top;
 
         $('body,html').animate(
-            { scrollTop: top + 2 },
+            { scrollTop: top },
             1000
         );
     });
@@ -285,7 +285,7 @@ $(document).ready(() => {
     // Сбрасываем весь квиз
     const fullReset = () => {
 
-        // Брасываем STORE
+        // Сбрасываем STORE
         for (let prop in STORE) {
             if (prop !== 'connect'
                 && prop !== 'email'
@@ -303,9 +303,20 @@ $(document).ready(() => {
 
         // Скрываем кнопку Далле и Показать результаты
         $('.btn-next-step__wrap').removeClass('show');
+
+        // Показываем первый экран, если
+        // был не виден (полсе прохождения
+        // всего квиза)
+        let firstScreen = $('#firstScreen'),
+            isFirstScreenInvisible = firstScreen
+                .hasClass('first-screen_invisible');
+
+        if (isFirstScreenInvisible) {
+            firstScreen.removeClass('first-screen_invisible');
+        }
     }
 
-    $('.__full-reset').click(fullReset);
+    $('._fullReset').click(fullReset);
 
     // Блокируем отправку всех форм.
     // Данные всегда отправляются асинхронно.
