@@ -2,6 +2,34 @@
 
 .results {
 
+    &__header {
+        padding-top: 15px;
+
+        img {
+            width: 140px;
+            height: auto;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-decoration: none;
+            width: 74px;
+            height: 30px;
+            background: #38B2B8;
+            border: 1px solid #99F6FB;
+            box-sizing: border-box;
+            box-shadow: 0 14px 15px -10px rgba(56, 178, 184, 0.7), inset 0px 0px 11px rgba(0, 0, 0, 0.25);
+            border-radius: 50px;
+
+            svg {
+                margin: 0 3px;
+            }
+        }
+    }
+
     &__title {
         font-weight: 600;
         font-size: 16px;
@@ -114,6 +142,14 @@
                     background-color: $color-font-primary;
                     border-radius: 50%;
                 }
+
+                &.single-item {
+                    padding-left: 0;
+                    
+                    &::before {
+                        display: none;
+                    }
+                }
             }
 
         }
@@ -186,7 +222,7 @@
 
             span {
                 display: block;
-                margin-bottom: 8px;
+                margin-bottom: 3px;
 
                 &:last-child {
                     margin-bottom: 0;
@@ -758,7 +794,6 @@
         padding: 20px 15px 25px;
     }
 }
-
 
 #resultTherapy {
     .results__brand {

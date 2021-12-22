@@ -1,0 +1,343 @@
+//- visible hidden
+
+// ---------- Result 3
+section#result-3.step.results.hidden
+    .step__wrap
+
+        include ../components/results-header
+
+        .container.animation-element
+            .row
+                .col-12
+                    p.results__title-total
+                        | У вас жирная кожа,
+                        br
+                        | не осложненная акне
+
+        .container.animation-element
+            .row
+                .col-12
+                    .results__derivation.border-block
+                        h4 Ваша кожа страдает от избыточного салоотделения. Поры часто забиваются излишним кожным салом.
+
+                        ul
+                            li.title Возможные последствия:
+                            li Вас могут беспокоить черные точки, излишний блеск и липкость, расширенные поры.
+                            li В дальнейшем это может привести к воспалительным процессам.
+
+                        h5 Вывод
+
+                        p Проблемы есть, и надо их решать именно сейчас, не допуская развития масштабных воспалений
+
+        include ../components/separate-items
+        include ../components/complex-for-you
+        include ../recommendations/title
+
+        .container.animation-element.card-morning
+            .row
+                .col-12
+                    .card-morning__container
+                        //------------ Morning 1
+                        .card-morning__wrap
+                            .card-morning__header
+                                p
+                                    include ../../../img/morning.svg
+                                    span Утро
+                                h5
+                                    include ../../../img/res-morning-one.svg
+                                    span.small-offset
+                                        | Умываемся
+                                        br
+                                        | энзимной эмульсией
+                                        br
+                                        | PURE SONIC
+
+                            .card-morning__slider
+                                include cards/pure-sonic
+
+                            .card-morning__footer
+                                h5 Как применять
+                                .card-morning__footer-body
+                                    p Небольшое количество средства вспенить с капелькой воды и нанести на влажное лицо. Помассировать круговыми движениями, тщательно смыть водой. Не наносить на кожу вокруг глаз.
+                                    span
+                                        img(src="img/giphy.gif" alt="")
+
+                            .card-morning__underline
+
+                        //------------ Morning 2
+                        .card-morning__wrap
+                            .card-morning__header
+                                h5
+                                    include ../../../img/res-morning-two.svg
+                                    span.large-offset
+                                        | Наносим очищающий
+                                        br
+                                        | тоник-активатор
+                                        br
+                                        | ULTRA SKIN
+
+                            .card-morning__slider
+                                include cards/ultra-skin
+
+                            .card-morning__footer
+                                h5 Как применять
+                                .card-morning__footer-body
+                                    p
+                                        | Наносим с помощью ватного диска массажными движениями до полного впитывания. Не требует смывания. Возможно ощущение легкого покалывания на коже во время использования.
+                                        br
+                                        | Не наносить на кожу вокруг глаз!
+                                    span
+                                        img(src="img/giphy.gif" alt="")
+
+                            .card-morning__underline
+
+                        //------------ Morning 3
+                        .card-morning__wrap
+                            .card-morning__header
+                                h5
+                                    include ../../../img/res-morning-three.svg
+                                    span.large-offset
+                                        | Наносим
+                                        br
+                                        | дневной флюид
+                                        br
+                                        | MATTE & CARE
+
+                            .card-morning__slider
+                                include cards/matte-&-care
+
+                            .card-morning__footer
+                                h5 Как применять
+                                .card-morning__footer-body
+                                    p Наносим равномерно небольшое количество крема на кожу. Удобный дозатор обеспечивает очень экономичный расход всех средств.
+                                    span
+                                        img(src="img/giphy.gif" alt="")
+
+        .container.animation-element.card-night.before-everyday
+            .row
+                .col-12
+                    .card-night__container
+                        //------------ Night
+                        .card-night__wrap
+                            .card-night__header
+                                p
+                                    include ../../../img/night.svg
+                                    span Вечер
+                                h4 Возращаемся домой и обязательно находим 5 минут для своей красоты
+
+                            .card-night__subtitle Повторяем из утреннего комплекса ухода
+
+                        //------------ Night 1
+                        .card-night__wrap
+                            .card-night__header
+                                h5
+                                    include ../../../img/res-night-one.svg
+                                    span.small-offset
+                                        | Умываемся
+                                        br
+                                        | энзимной эмульсией
+                                        br
+                                        | PURE SONIC
+
+                            .card-night__slider
+                                .slider
+                                    .swiper
+                                        .swiper-wrapper
+                                            .swiper-slide
+                                                .card
+                                                    img(src="img/products/pure-sonic.jpg" alt="")
+                                        .swiper-pagination
+
+                            .card-night__underline
+
+                        //------------ Night 2
+                        .card-night__wrap
+                            .card-night__header
+                                h5
+                                    include ../../../img/res-night-two.svg
+                                    span.large-offset
+                                        | Наносим очищающий
+                                        br
+                                        | тоник-активатор
+                                        br
+                                        | ULTRA SKIN
+
+                            .card-night__slider
+                                .slider
+                                    .swiper
+                                        .swiper-wrapper
+                                            .swiper-slide
+                                                .card
+                                                    img(src="img/products/ultra-skin.jpg" alt="")
+                                        .swiper-pagination
+
+
+                        .card-night__divide-txt После этого
+
+                        //------------ Night 3
+                        .card-night__wrap
+                            .card-night__header
+                                h5
+                                    include ../../../img/res-night-three.svg
+                                    span.large-offset
+                                        | Наносим ночную
+                                        br
+                                        | мультикислотную сыворотку
+                                        br
+                                        | NIGHT MIRACLE
+
+                            .card-night__slider
+                                include cards/night-miracle
+
+                            .card-night__footer
+                                h5 Как применять
+                                .card-night__footer-content
+                                    p
+                                        | Наносим несколько капель сыворотки на сухую предварительно очищенную кожу.
+                                        br
+                                        | Не требует дальнейшего нанесения крема.
+                                    span
+                                        img(src="img/giphy.gif" alt="")
+
+                            .card-night__underline
+
+                        //------------ Night 4
+                        .card-night__wrap
+                            .card-night__header
+                                h5
+                                    include ../../../img/res-night-four.svg
+                                    span.large-offset
+                                        | Завершаем вечерний уход
+                                        br
+                                        | себостатической пудрой
+                                        br
+                                        | SEBUM LOCK
+
+                            .card-night__slider
+                                include cards/sebum-lock
+
+                            .card-night__footer
+                                h5 Как применять
+                                .card-night__footer-content
+                                    p Наносим тонким слоем с помощью ватного диска или косметической кисти на ночь, перед сном.
+                                    span
+                                        img(src="img/giphy.gif" alt="")
+
+
+
+
+        .container.animation-element.card-morning.for-everyday
+            .row
+                .col-12
+                    .card-morning__container
+                        //------------ Everyday 1
+                        .card-morning__wrap
+                            .card-morning__preheader
+                                | Еженедельный уход
+                                span для быстрого и надежного результата
+
+                            .card-morning__header
+                                p
+                                    include ../../../img/everyday.svg
+                                    span
+                                        | Каждую
+                                        br
+                                        | неделю
+                                h5
+                                    include ../../../img/res-morning-one.svg
+                                    span.small-offset
+                                        | Проводим процедуру
+                                        br
+                                        | глубокого очищения
+                                        br
+                                        | и эксфолиации энзимной
+                                        br
+                                        | пилинг-пудрой
+
+                                        span 2 раза в неделю вечером
+
+                            .card-morning__slider
+                                include cards/7-herbs
+
+                            .card-morning__footer
+                                h5 Как применять
+                                .card-morning__footer-content
+                                    .card-morning__footer-hidden
+                                        p
+                                            | Насыпаем на влажную ладонь 0,5 чайной ложки пудры, вспениваем ее с водой, наносим на влажное лицо, шею и зону декольте. 1 минуту массируем лицо по массажным линиям. Еще раз вспениваем с водой. Тщательно смываем водой. Для глубокого очищения можно оставить средство на коже на 2-3 минуты.
+                                            br
+                                            br
+                                            | Энзимная пудра применяется после очищения кожи при помощи очищающей пенки IDEAL BALANCE
+                                        button._showAllText(type="button") далее
+                                    span
+                                        img(src="img/giphy.gif" alt="")
+
+                            .card-morning__underline
+
+                        //------------ Everyday 2
+                        .card-morning__wrap
+                            .card-morning__header
+                                h5
+                                    include ../../../img/res-morning-two.svg
+                                    span.large-offset
+                                        | Наносим умный пилинг
+                                        br
+                                        | SMART PEEL SYSTEM 8%
+
+                                        span 1 раз в неделю
+
+                            .card-morning__slider
+                                include cards/smart-peel-system
+
+                            .card-morning__footer
+                                h5 Как применять
+                                .card-morning__footer-content
+                                    .card-morning__footer-hidden
+                                        p
+                                            | Наносим пилинг на сухую, предварительно очищенную кожу лица. Выдержать пилинг на коже 3-10 минут (начинать с 5 минут в первый раз и постепенно с каждой процедурой увеличивать время выдержки; максимальное время - 10 минут). Тщательно смыть пилинг прохладной водой и просушить кожу. После процедуры нанести крем.
+                                            br
+                                            br
+                                            | Эту процедуру лучше проводить в пятницу вечером, чтобы кожа за выходные могла спокойно восстановиться (без тонального крема и пудры).
+                                        button._showAllText(type="button") далее
+                                    span
+                                        img(src="img/giphy.gif" alt="")
+
+        include back-&-acne
+        include ../components/where-buy-button
+        include ../components/ritual
+        include ../components/results-slider
+        include ../components/socials
+        include ../components/important
+
+        .container.animation-element
+            .row
+                .col-12
+                    .results__brand
+                        .results__brand__logo
+                            include ../../../img/logo.svg
+
+                        h5 Бренд профессиональной космецевтики, разработанный компанией ESTILAB BEAUTE FRANCE. Высокая эффективность систем ухода подтверждена клиническими исследованиями.
+
+                        .results__brand__image
+                            .pic
+                                .quotes
+                                    include ../../../img/i-quotes.svg
+                                .img
+                            p Мы понимаем, что купить сразу комплекс всех средств для ухода может быть накладно.
+
+                        ul
+                            li.caption К сожалению, профессиональная космецевтика не может стоить дешево. Впечатляющий результат гарантируют:
+                            li инновационные ингредиенты,
+                            li научные исследования,
+                            li клинические испытания.
+
+        .container.animation-element
+            .row
+                .col-12
+                    .results__sale
+                        h4 Поэтому мы дарим скидки
+                        .results__sale__wrap
+                            include ../components/sale
+
+        include ../components/subscribe
+        include ../components/retest

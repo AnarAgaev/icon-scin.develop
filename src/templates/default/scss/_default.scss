@@ -423,3 +423,11 @@ input, .input {
         transform: translateX(-1px);
     }
 }
+
+.divide {
+    position: relative;
+    width: 60%;
+    height: 1px;
+    left: 20%;
+    background-color: $color-accent-primary;
+}

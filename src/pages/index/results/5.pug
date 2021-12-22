@@ -1,35 +1,37 @@
 //- visible hidden
-section#resultBefore18.step.results.hidden
+
+// ---------- Result 5
+section#result-5.step.results.hidden
     .step__wrap
 
-        .container.animation-element
-            .row
-                .col-12
-                    h2.results__title
-                        span.accent Благодарим за ответ!
+        include ../components/results-header
 
         .container.animation-element
             .row
                 .col-12
-                    h2.results__subtitle.results__subtitle_large-txt Мы не рекомендуем вам проходить этот тест, поскольку все рекомендации подготовлены специалистами для взрослой кожи — для людей старше 18 лет.
+                    p.results__title-total
+                        | У вас проблемная жирная
+                        br
+                        | или комбинированная кожа,
+                        br
+                        | осложненная средней
+                        br
+                        | степенью акне
 
         .container.animation-element
             .row
                 .col-12
                     .results__derivation.border-block
-                        h4 У вас кожа более чувствительна к кислотам, а эпидермис не до конца сформировался. Поэтому продукты для взрослой кожи могут быть излишне агрессивны для вашей.
+                        h4 Ваша кожа в некоторых зонах страдает от избыточного салоотделения. Присутствуют активные воспаления.
 
                         ul
-                            li.title.text-center
-                                | Но у нас есть решение для проблемной жирной или комбинированной кожи,&nbsp;
-                                br.d-md-none
-                                | осложненной подростковым
-                                br.d-md-none
-                                | акне.
+                            li.title Возможные последствия:
+                            li Поры часто забиваются излишним кожным салом, что провоцирует их расширение.
+                            li Мертвые клетки кожи слипаются кожным салом, как цементом. В протоках сальных желез образуется анаэробная среда, что приводит к усиленному размножению бактерий — начинаются воспаления.
 
                         h5 Вывод
 
-                        p Лечить кожу надо именно сейчас, не допуская развития масштабных воспалений.
+                        p Проблемы есть, и надо их решать именно сейчас, не допуская развития масштабных воспалений
 
         include ../components/separate-items
         include ../components/complex-for-you
@@ -39,7 +41,6 @@ section#resultBefore18.step.results.hidden
             .row
                 .col-12
                     .card-morning__container
-
                         //------------ Morning 1
                         .card-morning__wrap
                             .card-morning__header
@@ -51,7 +52,7 @@ section#resultBefore18.step.results.hidden
                                     span.small-offset
                                         | Умываемся
                                         br
-                                        | оэнзимной эмульсией
+                                        | энзимной эмульсией
                                         br
                                         | PURE SONIC
 
@@ -100,34 +101,9 @@ section#resultBefore18.step.results.hidden
                                 h5
                                     include ../../../img/res-morning-three.svg
                                     span.large-offset
-                                        | Завершаем вечерний уход активной
+                                        | Наносим
                                         br
-                                        | корректирующей сывороткой
-                                        br
-                                        | CLEARDERM
-
-                            .card-morning__slider
-                                include cards/clear-derm
-
-                            .card-morning__footer
-                                h5 Как применять
-                                .card-morning__footer-body
-                                    p
-                                        | Наносим несколько капель сыворотки на сухую предварительно очищенную кожу перед нанесением крема или вместо него.
-                                        br
-                                        | Не используем в один день с мультикислотной сывороткой.
-                                    span
-                                        img(src="img/giphy.gif" alt="")
-
-                            .card-morning__underline
-
-                        //------------ Morning 4
-                        .card-morning__wrap
-                            .card-morning__header
-                                h5
-                                    include ../../../img/res-morning-four.svg
-                                    span.large-offset
-                                        | Наносим дневной флюид
+                                        | дневной флюид
                                         br
                                         | MATTE & CARE
 
@@ -145,8 +121,7 @@ section#resultBefore18.step.results.hidden
             .row
                 .col-12
                     .card-night__container
-
-                        //------------ Night 1
+                        //------------ Night
                         .card-night__wrap
                             .card-night__header
                                 p
@@ -154,38 +129,86 @@ section#resultBefore18.step.results.hidden
                                     span Вечер
                                 h4 Возращаемся домой и обязательно находим 5 минут для своей красоты
 
-                            .card-night__subtitle Повторяем утренний комплекс ухода
+                            .card-night__subtitle Повторяем из утреннего комплекса ухода
+
+                        //------------ Night 1
+                        .card-night__wrap
+                            .card-night__header
+                                h5
+                                    include ../../../img/res-night-one.svg
+                                    span.small-offset
+                                        | Умываемся
+                                        br
+                                        | энзимной эмульсией
+                                        br
+                                        | PURE SONIC
 
                             .card-night__slider
                                 .slider
-                                    mark
-                                        p листайте
-                                        span.slide-horizontal-animation
-                                            include ../../../img/i-scroll-hand.svg
                                     .swiper
                                         .swiper-wrapper
                                             .swiper-slide
                                                 .card
                                                     img(src="img/products/pure-sonic.jpg" alt="")
+                                        .swiper-pagination
+
+                            .card-night__underline
+
+                        //------------ Night 2
+                        .card-night__wrap
+                            .card-night__header
+                                h5
+                                    include ../../../img/res-night-two.svg
+                                    span.large-offset
+                                        | Наносим очищающий
+                                        br
+                                        | тоник-активатор
+                                        br
+                                        | ULTRA SKIN
+
+                            .card-night__slider
+                                .slider
+                                    .swiper
+                                        .swiper-wrapper
                                             .swiper-slide
                                                 .card
                                                     img(src="img/products/ultra-skin.jpg" alt="")
-                                            .swiper-slide
-                                                .card
-                                                    img(src="img/products/clear-derm.jpg" alt="")
-                                            .swiper-slide
-                                                .card
-                                                    img(src="img/products/matte-&-care.jpg" alt="")
                                         .swiper-pagination
 
-                            //- .card-night__underline
 
+
+
+                        .card-night__divide-txt После этого
+
+                        //------------ Night 3
+                        .card-night__wrap
+                            .card-night__header
+                                h5
+                                    include ../../../img/res-night-three.svg
+                                    span.large-offset
+                                        | Наносим ночную
+                                        br
+                                        | мультикислотную сыворотку
+                                        br
+                                        | NIGHT MIRACLE
+
+                            .card-night__slider
+                                include cards/night-miracle
+
+                            .card-night__footer
+                                h5 Как применять
+                                .card-night__footer-content
+                                    p
+                                        | Наносим несколько капель сыворотки на сухую предварительно очищенную кожу.
+                                        br
+                                        | Не требует дальнейшего нанесения крема.
+                                    span
+                                        img(src="img/giphy.gif" alt="")
 
         .container.animation-element.card-morning.for-everyday
             .row
                 .col-12
                     .card-morning__container
-
                         //------------ Everyday 1
                         .card-morning__wrap
                             .card-morning__preheader
@@ -200,7 +223,8 @@ section#resultBefore18.step.results.hidden
                                         br
                                         | неделю
                                 h5
-                                    span
+                                    include ../../../img/res-morning-one.svg
+                                    span.small-offset
                                         | Проводим процедуру
                                         br
                                         | глубокого очищения
@@ -219,6 +243,38 @@ section#resultBefore18.step.results.hidden
                                 .card-morning__footer-content
                                     .card-morning__footer-hidden
                                         p
+                                            | Насыпаем на влажную ладонь 0,5 чайной ложки пудры, вспениваем ее с водой, наносим на влажное лицо, шею и зону декольте. 1 минуту массируем лицо по массажным линиям. Еще раз вспениваем с водой. Тщательно смываем водой. Для глубокого очищения можно оставить средство на коже на 2-3 минуты.
+                                            br
+                                            br
+                                            | Энзимная пудра применяется после очищения кожи при помощи очищающей пенки IDEAL BALANCE
+                                        button._showAllText(type="button") далее
+                                    span
+                                        img(src="img/giphy.gif" alt="")
+
+                            .card-morning__underline
+
+                        //------------ Everyday 2
+                        .card-morning__wrap
+                            .card-morning__header
+                                h5.pb-2
+                                    include ../../../img/res-morning-two.svg
+                                    span.large-offset
+                                        | Наносим пилинг
+                                        br
+                                        | для проблемной кожи
+                                        br
+                                        | SMART PEEL SYSTEM 11%
+
+                                        span 1 раз в неделю
+
+                            .card-morning__slider
+                                include cards/smart-peel-system-11
+
+                            .card-morning__footer
+                                h5 Как применять
+                                .card-morning__footer-content
+                                    .card-morning__footer-hidden
+                                        p
                                             | Нанести пилинг на сухую, предварительно очищенную кожу лица. Выдержать пилинг на коже 3-10 минут (начинать с 5 минут в первый раз и постепенно с каждой процедурой увеличивать время выдержки; максимальное время - 10 минут).
                                             br
                                             br
@@ -227,12 +283,34 @@ section#resultBefore18.step.results.hidden
                                     span
                                         img(src="img/giphy.gif" alt="")
 
+        include back-&-acne
         include ../components/where-buy-button
         include ../components/ritual
         include ../components/results-slider
         include ../components/socials
         include ../components/important
-        include ../components/brand
+
+        .container.animation-element
+            .row
+                .col-12
+                    .results__brand
+                        .results__brand__logo
+                            include ../../../img/logo.svg
+
+                        h5 Бренд профессиональной космецевтики, разработанный компанией ESTILAB BEAUTE FRANCE. Высокая эффективность систем ухода подтверждена клиническими исследованиями.
+
+                        .results__brand__image
+                            .pic
+                                .quotes
+                                    include ../../../img/i-quotes.svg
+                                .img
+                            p Мы понимаем, что купить сразу комплекс всех средств для ухода может быть накладно.
+
+                        ul
+                            li.caption К сожалению, профессиональная космецевтика не может стоить дешево. Впечатляющий результат гарантируют:
+                            li инновационные ингредиенты,
+                            li научные исследования,
+                            li клинические испытания.
 
         .container.animation-element
             .row

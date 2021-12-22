@@ -4,6 +4,16 @@
     padding-top: 20px;
     position: relative;
     z-index: 1;
+    opacity: 1;
+    max-height: 1000px;
+    transition: all .5s linear;
+
+    &.first-screen_invisible {
+        overflow: hidden;
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+    }
 
     &__caption {
         h1 {

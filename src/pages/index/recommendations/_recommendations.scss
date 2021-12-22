@@ -29,7 +29,7 @@
         line-height: 20px;
         text-align: center;
         color: $color-accent-secondary;
-        margin-top: 20px;
+        margin-top: 25px;
 
         span {
             display: block;
@@ -44,6 +44,32 @@
 
 .card-morning {
 
+    &.for-everyday {
+        background-color: #f3f3f3;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 52%;
+            height: 5px;
+            max-width: 480px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #38B2B8;
+            border-radius: 999px;
+        }
+
+        &::before {
+            top: 0;
+            margin-top: -2px;
+        }
+    }
+
+    &_additional {
+        margin-top: 5px;
+    }
+
     &__container {
         padding: 10px 0 30px;
     }
@@ -51,6 +77,25 @@
     &__wrap {
         max-width: 440px;
         margin: 0 auto;
+    }
+
+    &__preheader {
+        font-size: 17px;
+        line-height: 1.2;
+        font-weight: 800;
+
+        text-align: center;
+        color: #c95192;
+        margin-top: 15px;
+        margin-bottom: 20px;
+
+        span {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            margin-top: 1px;
+        }
     }
 
     &__header {
@@ -72,6 +117,8 @@
 
             svg {
                 max-width: 100%;
+                width: 74px;
+                height: auto;
             }
 
             span {
@@ -99,6 +146,19 @@
                 &.large-offset {
                     transform: translateX(-20px);
                 }
+            }
+
+            span span {
+                font-size: 14px;
+                color: $color-accent-primary;
+                font-weight: normal;
+                margin-bottom: -20px;
+            }
+
+            svg {
+                width: auto;
+                height: 66px;
+                flex: 1 0 auto;
             }
         }
     }
@@ -134,7 +194,7 @@
             }
         }
 
-        div {
+        &-body {
             display: flex;
             font-size: 12px;
             line-height: 14px;
@@ -154,6 +214,70 @@
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                }
+            }
+        }
+
+        &-content {
+            display: flex;
+            font-size: 12px;
+            line-height: 14px;
+            position: relative;
+
+            span {
+                flex: 1 0 auto;
+                display: inline-block;
+                float: right;
+                width: 87px;
+                height: 105px;
+                border-radius: 10px;
+                margin-left: 10px;
+                background-color: #eaeaea;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &-hidden {
+            p {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                height: auto;
+                max-height: 70px;
+                overflow: hidden;
+                transition: max-height .5s linear;
+
+                &.visible {
+                    max-height: 300px;
+                }
+            }
+
+            button {
+                display: inline-block;
+                position: relative;
+                //color: $color-font-light;
+                color: $color-font-primary;
+                left: 0;
+                bottom: -5px;
+                padding: 0;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: $color-font-primary;
+                    //background-color: $color-font-light;
+                    opacity: 0.7;
                 }
             }
         }
@@ -196,6 +320,10 @@
     &::after  {
         bottom: 0;
         margin-bottom: -2px;
+    }
+    
+    &.before-everyday::after {
+        display: none;
     }
 
     &__container {
@@ -247,6 +375,8 @@
 
             svg {
                 max-width: 100%;
+                width: 74px;
+                height: auto;
             }
 
             span {
@@ -281,6 +411,12 @@
                     transform: translateX(-20px);
                 }
             }
+
+            svg {
+                width: auto;
+                height: 66px;
+                flex: 1 0 auto;
+            }
         }
     }
 
@@ -290,7 +426,6 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
-        text-align: center;
         margin-top: 15px;
         margin-bottom: 35px;
         padding-left: 14px;
@@ -298,6 +433,19 @@
         svg {
             margin-right: 10px;
         }
+    }
+
+    &__divide-txt {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+        font-size: 17px;
+        line-height: 17px;
+        margin-bottom: 30px;
+        justify-content: center;
+        text-transform: uppercase;
+        color: $color-accent-secondary;
     }
 
     &__slider {
@@ -441,7 +589,7 @@
     width: 100%;
     height: auto;
     background-color: $color-back-primary;
-    border: 0.5px solid #e6e6e6;
+    border: 1px solid #e6e6e6;
     box-shadow: 0 10px 10px -10px rgba(48, 48, 48, 0.5);
     border-radius: 10px;
     overflow: hidden;
@@ -494,34 +642,20 @@
             }
         }
     }
-
-    p {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        width: 95px;
-        height: 42px;
-        top: 0;
-        right: 0;
-        background: $color-accent-secondary;
-        border-radius: 20px 10px 0 5px;
-
-        span {
-            text-align: right;
-            font-size: 9px;
-            line-height: 9px;
-            color: $color-font-light;
-            padding-right: 5px;
-
-            b {
-                display: block;
-                font-size: 10px;
-                line-height: 1.2;
-            }
-        }
-    }
 }
 
 .swiper-slide-active .card {
     opacity: 1;
+}
+
+.card-morning_additional + ._whereBuyBtn {
+    margin-top: -25px;
+}
+
+.card-morning_additional .divide {
+    display: none;
+}
+
+.card-morning_additional + .card-morning_additional .divide {
+    display: block;
 }
