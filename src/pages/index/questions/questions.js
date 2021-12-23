@@ -70,15 +70,66 @@ $(document).ready(function () {
                 hideQuestionsCaption();
 
                 nextStep = getResultCard();
+                const resSectionId = $(nextStep).attr('id');
 
                 // Проверяем нужны ли препараты для спины и постакне
                 // Если не нужен ни один из препаратов поправляем
                 // отсут у кнопки Где купить набор со скидкой
                 // Обе функции и checkBack и checkPostAcne
                 // возвращают true если препарат нужен иначе false
-                if (!checkBack() && !checkPostAcne()) {
+                let back = checkBack();
+                let postAcne = checkPostAcne();
+
+                if (IS_DEBUGGING) postAcne
+                    ? console.log('Нужен ли препарат от Постакне:', 'Да')
+                    : console.log('Нужен ли препарат от Постакне:', 'Нет');
+
+                if (IS_DEBUGGING) back
+                    ? console.log('Нужен ли препарат для Сины:', 'Да')
+                    : console.log('Нужен ли препарат для Сины:', 'Нет');
+
+                if (!back && !postAcne) {
                     $('._whereBuyBtn').css('paddingTop', '30px');
                 }
+
+                // Проверяем результат (постакне и спина)
+                // и добавляем ссылку на подобраный набор
+                // препаратов на сайте заказчика
+                let vendorLink = templateURL;
+
+                if (!back && !postAcne) {
+
+                    if (IS_DEBUGGING)
+                        console.log('Ссылка на набор без доп. препаратов: ', '!!! НУЖНА ССЫЛКА ДЛЯ НАБОРА БЕЗ АКНЕ И СПЫНЫ');
+
+                } else if (!back && postAcne) {
+                    vendorLink += resultLinks[resSectionId]['acne'];
+                    setVendorLink(vendorLink);
+
+                    if (IS_DEBUGGING)
+                        console.log('Ссылка на набор с ПостАкне: ', vendorLink);
+
+                } else if (back && !postAcne) {
+                    vendorLink += resultLinks[resSectionId]['back'];
+                    setVendorLink(vendorLink);
+
+                    if (IS_DEBUGGING)
+                        console.log('Ссылка на набор с препоратом для спины: ', vendorLink);
+
+                }  else if (back && postAcne) {
+                    vendorLink += resultLinks[resSectionId]['acne_back'];
+                    setVendorLink(vendorLink);
+
+                    if (IS_DEBUGGING)
+                        console.log('Ссылка на набор с препоратом для спины и с ПостАкне: ', vendorLink);
+
+                }
+            }
+
+            // Для блока до 18 дел, меняем ссылка на набор
+            // на сайте заказчика
+            if (nextStepId === '#resultBefore18') {
+                $('._vendorLink').attr('href', templateURL + '21');
             }
 
             invisibleEl(thisStep);
@@ -255,5 +306,9 @@ $(document).ready(function () {
     // Скрываем кнопку Далле и Показать результаты
     const hideNextButtonWrapper = () => {
         $('.btn-next-step__wrap').removeClass('show');
+    }
+
+    const setVendorLink = link => {
+        $('._vendorLink').attr('href', link);
     }
 });
