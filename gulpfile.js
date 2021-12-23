@@ -20,7 +20,7 @@ function clean() {
 }
 
 function buildStyles() {
-    return src('src/**/main.scss', { sourcemaps: true })
+    return src('src/**/main.scss', { sourcemaps: false })
         .pipe(plumber({
             errorHandler: notify.onError( function(err){
                 return {
@@ -82,12 +82,12 @@ function buildJs() {
         'src/templates/default/modals/modals.js',
         'src/pages/**/*.js'
     ])
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(rename({
             dirname: '',
         }))
         .pipe(concat('script.js'))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(dest('build/js'))
         .pipe(browserSync.stream())
 }
