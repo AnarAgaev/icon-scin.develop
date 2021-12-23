@@ -46,14 +46,9 @@
         border-radius: 50%;
     }
 
-    &__bar {
+    &__circle {
         transform: rotate(90deg);
-        transform-origin: 50% 50%;
-        stroke-dasharray: 0, 999;
-        transition: none;
-
-        &.progressed {
-            transition: stroke-dasharray 1s ease-out;
-        }
+        transform-origin: center;
+        transition: all .5s ease-out;
     }
 }

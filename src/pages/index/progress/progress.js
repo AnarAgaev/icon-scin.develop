@@ -1,17 +1,28 @@
 $(document).ready(() => {
-    window.initialProgressBar = (timeout = 1500) => {
+
+    // Инициализируем все круговые прогрессы
+    (function initProgressCircles () {
+        const circle = document.querySelector('.progress__circle'),
+            radius = circle.r.baseVal.value,
+            circumference = 2 * Math.PI * radius;
+
+        $('.progress__circle').css({
+            "strokeDasharray": `${circumference} ${circumference}`,
+            "strokeDashoffset": circumference
+        });
+    })();
+
+
+    window.initialProgressBar = (timeout = 1000) => {
 
         if ($('.visible .progress').length > 0
             && !$('body').hasClass('progress-counter-finished')) {
 
             let scroll = $(window).height() + $(window).scrollTop(),
                 progress = $('.visible .progress'),
-                bar = $(progress).find('.progress__bar'),
                 top = $(progress).offset().top - 50; // + $(progress).height();
 
-            if (scroll > top && !bar.hasClass('progressed')) {
-                $('.progress__bar').addClass('progressed');
-
+            if (scroll > top) {
                 setTimeout(() => {
                     setProgressBar();
                     setProgressValue();
@@ -20,30 +31,19 @@ $(document).ready(() => {
         }
     };
 
-    initialProgressBar();
-
-    $(window).scroll(() => initialProgressBar(700));
+    $(window).scroll(() => initialProgressBar(300));
 
     const setProgressBar = () => {
-        const PI = 3.14,
-            progress = $('.progress'),
-            bar = progress.find('.progress__bar'),
-            borderWidth = bar.attr('stroke-width'),
-            circleRadius = (progress.width() - borderWidth) / 2,
-            circleWidth = 2 * PI * circleRadius,
-            from = $(progress).data('progressValueFrom'),
-            too = $(progress).data('progressValueTo');
-
-        bar.css('stroke-dasharray',
-                `${circleWidth / 100 * from}, ${circleWidth}`)
-           .css('stroke-dasharray',
-               `${circleWidth / 100 * too}, ${circleWidth}`);
-
         setTimeout(() => {
-            if ($('.visible .progress').length === 0) {
-                $('.progress__bar').css('stroke-dasharray', '0, 999');
-            }
-        }, 500);
+            const progress = $('.visible .progress'),
+                percent = $(progress).data('progressValueTo'),
+                circle = progress.find('.progress__circle')[0],
+                radius = circle.r.baseVal.value,
+                circumference = 2 * Math.PI * radius,
+                offset = circumference - percent / 100 * circumference;
+
+            $('.progress__circle').css('strokeDashoffset', offset);
+        }, 400);
     };
 
     window.removeProgressBar = () => {
