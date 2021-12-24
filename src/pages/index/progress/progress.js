@@ -46,7 +46,7 @@ $(document).ready(() => {
                 offset = circumference - percent / 100 * circumference;
 
             $('.progress__circle').css('strokeDashoffset', offset);
-        }, 400);
+        }, 500);
     };
 
     window.removeProgressBar = () => {
