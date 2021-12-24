@@ -2,9 +2,19 @@
 
 .footer {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 1.2;
     background-color: $color-accent-secondary;
     padding: 16px 0;
+
+    @media (min-width: $md) {
+        font-size: 14px;
+        padding: 18px 0;
+    }
+
+    @media (min-width: $xl) {
+        font-size: 18px;
+        padding: 20px 0;
+    }
 
     a {
         color: $color-font-in-accent;
@@ -13,5 +23,13 @@
 
     &__policy {
         margin-bottom: 12px;
+
+        @media (min-width: $md) {
+            font-size: 16px;
+        }
+
+        @media (min-width: $xl) {
+            font-size: 20px;
+        }
     }
 }
