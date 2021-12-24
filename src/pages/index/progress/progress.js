@@ -1,3 +1,5 @@
+let progressValueInterval;
+
 $(document).ready(() => {
 
     // // Инициализируем все круговые прогрессы
@@ -70,22 +72,29 @@ $(document).ready(() => {
         }
     }
 
+
     const countProgressValue = (val, stop) => {
+        // Чистим интервал, на тот случай если
+        // пользователь перешёл на следующий/предыдущий
+        // вопрос, не доздавшись завершения пересчёта
+        // прогресс бара
+        if (progressValueInterval) clearInterval(progressValueInterval)
+
         if (val < stop) {
-            let interval = setInterval(countProgressUp, 30);
+            progressValueInterval = setInterval(countProgressUp, 33);
             function countProgressUp () {
                 if (val > stop - 1) {
-                    window.clearInterval(interval);
+                    clearInterval(progressValueInterval);
                     setProgressValueCounted();
                 } else {
                     $('.progress__value .val').text(++val);
                 }
             }
         } else {
-            let interval = setInterval(countProgressDown, 30);
+            progressValueInterval = setInterval(countProgressDown, 33);
             function countProgressDown () {
                 if (val < stop + 1) {
-                    window.clearInterval(interval);
+                    clearInterval(progressValueInterval);
                     setProgressValueCounted();
                 } else {
                     $('.progress__value .val').text(--val);
