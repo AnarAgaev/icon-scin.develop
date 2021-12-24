@@ -27,7 +27,7 @@
         opacity: 1;
         max-height: 100px;
         transition: all .3s linear;
-        overflow: hidden;
+        z-index: -1;
     }
 
     &__wrap_invisible {
