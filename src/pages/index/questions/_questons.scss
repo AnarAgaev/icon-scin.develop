@@ -18,6 +18,11 @@
             height: auto;
             margin: 0 7px 20px;
             cursor: pointer;
+
+            @media (min-width: $md) {
+                width: 220px;
+                margin: 0 10px 45px;
+            }
         }
 
         &__pic {
@@ -32,6 +37,11 @@
             background-size: cover;
             overflow: hidden;
             transition: box-shadow .2s linear;
+
+            @media (min-width: $md) {
+                width: 210px;
+                height: 220px;
+            }
 
             &::before {
                 content: '';
@@ -59,6 +69,12 @@
             color: #9d9d9d;
             padding-top: 10px;
             transition: color .3s linear;
+
+            @media (min-width: $md) {
+                font-size: 18px;
+                line-height: 22px;
+                padding-top: 25px;
+            }
         }
 
         input:checked {
@@ -79,10 +95,19 @@
     max-width: 300px;
     margin: 0 auto;
 
+    @media (min-width: $md) {
+        padding-top: 60px;
+        max-width: 420px;
+    }
+
     &__sidebar {
         width: 90px;
         float: left;
         margin-bottom: 20px;
+
+        @media (min-width: $md) {
+            margin-bottom: 90px;
+        }
     }
 
     &__progress {
@@ -98,6 +123,14 @@
         line-height: 17px;
         color: $color-font-secondary;
         padding-bottom: 25px;
+
+        @media (min-width: $md) {
+            width: 50vw;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            padding-bottom: 30px;
+        }
     }
 
     &__title {
@@ -108,6 +141,18 @@
         line-height: 122.6%;
         color: $color-accent-primary;
         margin-left: 25px;
+
+        @media (min-width: $md) {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 22px;
+            line-height: 122%;
+        }
     }
 
     &__protocol {
@@ -116,6 +161,10 @@
         width: calc(100% - 90px - 40px);
         margin-left: 40px;
 
+        @media (min-width: $md) {
+            width: 50%;
+        }
+
         img {
             display: block;
             position: absolute;
@@ -123,6 +172,12 @@
             top: 0;
             left: 0;
             width: 200px;
+
+            @media (min-width: $md) {
+                width: 376px;
+                height: auto;
+                top: -30px;
+            }
         }
     }
 }
@@ -177,6 +232,12 @@
         padding: 20px 0;
         margin: 0;
 
+        @media (min-width: $md) {
+            font-size: 24px;
+            line-height: 29px;
+            padding: 50px 0 40px;
+        }
+
         span {
             display: block;
             margin-top: 10px;
@@ -185,6 +246,11 @@
             line-height: 15px;
             text-align: center;
             color: #9D9D9D;
+
+            @media (min-width: $md) {
+                font-size: 18px;
+                margin-top: 20px;
+            }
         }
     }
 
@@ -197,6 +263,12 @@
         letter-spacing: 0.3px;
         margin: 0;
         color: $color-accent-secondary;
+
+        @media (min-width: $md) {
+            font-size: 26px;
+            line-height: 32px;
+            padding-top: 50px;
+        }
     }
 }
 // Переход к следующему шагу -- FINISH

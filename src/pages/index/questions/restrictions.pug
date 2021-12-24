@@ -6,7 +6,7 @@ section.step#questionRestrictions.hidden
                 .col-12
                     h3.step__title
                         | Есть ли у вас ограничения
-                        br
+                        br.d-md-none
                         | по использованию
                         br
                         | косметических средств?
@@ -35,12 +35,12 @@ section.step#questionRestrictions.hidden
                                 data-next-step-id="#resultTherapy")
                             span.form-question__pic(style="background-image: url('img/questions/restrictions/2.jpg')")
                             span.form-question__val
-                                | Гнойные
-                                br
+                                | Гнойные &nbsp;
+                                br.d-md-none
                                 | воспаления
                                 br
-                                | на лице,
-                                br
+                                | на лице, &nbsp;
+                                br.d-md-none
                                 | более 15 шт.
 
                         .clearfix
@@ -53,7 +53,12 @@ section.step#questionRestrictions.hidden
                                 data-answer="У меня склонность к аллергическим реакциям."
                                 data-next-step-id="#resultTherapy")
                             span.form-question__pic(style="background-image: url('img/questions/restrictions/3.jpg')")
-                            span.form-question__val У меня склонность к аллергическим реакциям
+                            span.form-question__val
+                                | У меня склонность
+                                br.d-none.d-md-block
+                                | к аллергическим &nbsp;
+                                br.d-none.d-md-block
+                                | реакциям
 
                         label.form-question__label
                             input.controller.btn_next-step.invisible(
@@ -64,8 +69,10 @@ section.step#questionRestrictions.hidden
                                 data-next-step-id="#questionFirst")
                             span.form-question__pic(style="background-image: url('img/questions/restrictions/4.jpg')")
                             span.form-question__val
-                                | Ничего
-                                br
-                                | такого у меня
-                                br
+                                | Ничего &nbsp;
+                                br.d-md-none
+                                | такого
+                                br.d-none.d-md-block
+                                | у меня
+                                br.d-md-none
                                 | нет

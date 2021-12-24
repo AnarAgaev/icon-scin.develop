@@ -9,8 +9,8 @@ section.step#questionFirst.hidden
             .row
                 .col-12
                     h2.step__caption
-                        | Отлично! Теперь мы можем
-                        br
+                        | Отлично! Теперь мы можем &nbsp;
+                        br.d-lg-none
                         | приступить к диагностике
 
         .container.animation-element
@@ -41,7 +41,10 @@ section.step#questionFirst.hidden
                                 data-answer="Нет, у меня такого не бывает или бывает очень редко."
                                 data-next-step-id="#questionSecond")
                             span.form-question__pic(style="background-image: url('img/questions/first/2.jpg')")
-                            span.form-question__val Нет, у меня такого не бывает или бывает очень редко
+                            span.form-question__val
+                                | Нет, у меня такого не бывает или бывает
+                                br
+                                | очень редко
 
                         .clearfix
 

@@ -8,8 +8,8 @@ section.step#questionThird.hidden
             .row
                 .col-12
                     h3.step__title
-                        | Характерны ли для вашей кожи
-                        br
+                        | Характерны ли для вашей кожи&nbsp;
+                        br.d-lg-none
                         | такие проблемы?
                         span Можно выбрать несколько вариантов
 
@@ -25,7 +25,10 @@ section.step#questionThird.hidden
                                 data-question="Характерны ли для вашей кожи такие проблемы?"
                                 data-answer="Расширенные поры и/или черные точки.")
                             span.form-question__pic(style="background-image: url('img/questions/third/1.jpg')")
-                            span.form-question__val Расширенные поры и/или черные точки
+                            span.form-question__val
+                                | Расширенные поры
+                                br.d-none.d-md-block
+                                | и/или черные точки
 
                         label.form-question__label
                             input.controller.controller_btn-next.invisible(
@@ -45,7 +48,10 @@ section.step#questionThird.hidden
                                 data-question="Характерны ли для вашей кожи такие проблемы?"
                                 data-answer="Тусклый цвет лица.")
                             span.form-question__pic(style="background-image: url('img/questions/third/3.jpg')")
-                            span.form-question__val Тусклый цвет лица
+                            span.form-question__val
+                                | Тусклый цвет
+                                br
+                                | лица
 
                         label.form-question__label
                             input.controller.btn_next-step.invisible(
@@ -55,7 +61,10 @@ section.step#questionThird.hidden
                                 data-answer="Ничего такого у меня нет."
                                 data-next-step-id="#questionFourth")
                             span.form-question__pic(style="background-image: url('img/questions/third/4.jpg')")
-                            span.form-question__val Ничего такого у меня нет
+                            span.form-question__val
+                                | Ничего такого
+                                br
+                                | у меня нет
 
         .container.animation-element
             .row
