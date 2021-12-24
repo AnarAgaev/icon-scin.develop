@@ -14,6 +14,8 @@
         position: relative;
         padding-top: 30px;
         padding-bottom: 30px;
+        background-color: transparent;
+        backdrop-filter: none;
     }
 
     @media (min-width: $xl) {

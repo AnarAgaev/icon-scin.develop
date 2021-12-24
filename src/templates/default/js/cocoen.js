@@ -41,6 +41,14 @@ var Cocoen=(()=>{var g=Object.defineProperty;var b=(n,e)=>{for(var t in e)g(n,t,
     top: 0;
     width: 2px;
   }
+  
+  @media (min-width: 768px) {
+    #drag { width: 3px; }
+  }
+  
+  @media (min-width: 1140px) {
+    #drag { width: 4px; }
+  }
 
   #drag:before {
     /*border: 3px solid var(--color, #fff);*/

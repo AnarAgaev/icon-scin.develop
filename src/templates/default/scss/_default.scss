@@ -38,8 +38,13 @@ body {
     font-weight: normal;
     font-style: normal;
     color: $color-font-primary;
-    background: #fff url('../img/background.jpg') 0 300px no-repeat;
+    background: #fff url('../img/background.jpg') center 70px no-repeat;
     background-size: 100%;
+
+    @media (min-width: $md) {
+        background-position: center -250px;
+        background-size: contain;
+    }
 
     &.modal-open {
         overflow: hidden;

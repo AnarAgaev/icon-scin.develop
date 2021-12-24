@@ -2,7 +2,7 @@
 section#firstScreen.first-screen
     .container
         .row
-            .col-12
+            .col-12.order-xl-1
                 .first-screen__caption
                     h1
                         span хотите избавиться
@@ -19,17 +19,17 @@ section#firstScreen.first-screen
                             | !{" "}
                             span.accent 7 вопросов
                             br
-                            | и получите индивидуальный
-                            br.d-md-none
+                            | и получите индивидуальный &nbsp;
+                            br.d-xl-none
                             | протокол ухода за кожей
                     span.first-screen__comparison
                         span.first-screen__comparison-wrap
                             #comparison
                                 img.first-screen__comparison-pic(src="img/comparison-before.jpg" alt="")
                                 img.first-screen__comparison-pic(src="img/comparison-after.jpg" alt="")
-                button.btn.first-screen__btn.animation-line.go-to-quiz(type="button") пройти тест
+                button.btn.first-screen__btn.animation-line.go-to-quiz.first-screen__comparison-btn.d-xl-none(type="button") пройти тест
 
-            .col-12
+            .col-12.col-xl-6.order-xl-3
                 .first-screen__presentation
                     .first-screen__brend
                         .first-screen__pic(style="background-image: url('img/products.png')")
@@ -71,8 +71,8 @@ section#firstScreen.first-screen
                                     span начать чат в
                                     img(src="img/i-whatsapp.svg" alt="Начать чат в WhatsApp")
 
-            .col-12
-                .first-screen__action.d-flex.flex-column.align-items-center
+            .col-12.col-xl-6.order-xl-2
+                .first-screen__action.d-flex.flex-column.align-items-center.align-items-xl-start
                     .first-screen__action-title
                         | Узнайте секрет
                         br
