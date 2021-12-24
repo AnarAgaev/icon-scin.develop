@@ -1,16 +1,16 @@
 $(document).ready(() => {
 
-    // Инициализируем все круговые прогрессы
-    (function initProgressCircles () {
-        const circle = document.querySelector('.progress__circle'),
-            radius = circle.r.baseVal.value,
-            circumference = 2 * Math.PI * radius;
-
-        $('.progress__circle').css({
-            "strokeDasharray": `${circumference} ${circumference}`,
-            "strokeDashoffset": circumference
-        });
-    })();
+    // // Инициализируем все круговые прогрессы
+    // (function initProgressCircles () {
+    //     const circle = document.querySelector('.progress__circle'),
+    //         radius = circle.r.baseVal.value,
+    //         circumference = 2 * Math.PI * radius;
+    //
+    //     $('.progress__circle').css({
+    //         "strokeDasharray": `${circumference} ${circumference}`,
+    //         "strokeDashoffset": circumference
+    //     });
+    // })();
 
 
     window.initialProgressBar = (timeout = 1000) => {
@@ -20,7 +20,7 @@ $(document).ready(() => {
 
             let scroll = $(window).height() + $(window).scrollTop(),
                 progress = $('.visible .progress'),
-                top = $(progress).offset().top - 50; // + $(progress).height();
+                top = $(progress).offset().top - 30; // + $(progress).height();
 
             if (scroll > top) {
                 setTimeout(() => {
@@ -37,8 +37,9 @@ $(document).ready(() => {
         setTimeout(() => {
             const progress = $('.visible .progress'),
                 percent = $(progress).data('progressValueTo'),
-                circle = progress.find('.progress__circle')[0],
-                radius = circle.r.baseVal.value,
+                // circle = progress.find('.progress__circle')[0],
+                // radius = circle.r.baseVal.value,
+                radius = 40,
                 circumference = 2 * Math.PI * radius,
                 offset = circumference - percent / 100 * circumference;
 

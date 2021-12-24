@@ -7,6 +7,7 @@
                     p Получайте больше полезной информации в нашей АНТИАКНЕ-рассылке: советы по уходу, способы профилактики, инновации в отрасли от профессионального косметолога
 
                 form(action="")
+                    input(type="hidden" value="subscribe" name="form")
                     p.form__group
                         label
                             input.form__control(
@@ -15,7 +16,7 @@
                                 placeholder='Ваш email')
 
                     p
-                        button.btn(type='submit' disabled)
+                        button.btn(type='submit' disabled data-target="#subscribeModal")
                             | Перейти в магазин
                             br
                             | за своим набором

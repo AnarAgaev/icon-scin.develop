@@ -31,6 +31,12 @@
         letter-spacing: -1px;
         border-radius: 50%;
         color: $color-accent-primary;
+
+        .val {
+            //width: 37px;
+            //text-align: right;
+            //margin-left: -5px;
+        }
     }
 
     &__pic {
@@ -47,8 +53,16 @@
     }
 
     &__circle {
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
         transform: rotate(90deg);
+        -webkit-transform-origin: center;
+        -ms-transform-origin: center;
         transform-origin: center;
+        stroke-dasharray: 251.327, 251.327;
+        stroke-dashoffset: 251.327px;
+        -webkit-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
         transition: all .5s ease-out;
     }
 }

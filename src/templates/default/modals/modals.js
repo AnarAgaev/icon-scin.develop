@@ -3,7 +3,8 @@ $(document).ready(() => {
         showModal(e.target);
     });
 
-    const showModal = function (el) {
+    window.showModal = function (el) {
+
         let modal = $(el).data('target'),
             video = $(modal).find('video')[0];
 

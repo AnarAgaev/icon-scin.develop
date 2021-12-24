@@ -331,7 +331,52 @@ $(document).ready(() => {
 
     // Блокируем отправку всех форм.
     // Данные всегда отправляются асинхронно.
-    $('form').submit(e => {
+    $('form').submit(function (e) {
         e.preventDefault();
+
+        const form = e.target,
+            submit = $(this).find('[type="submit"]'),
+            formType = $(this).find('[name="form"]').val();
+
+        if (!submit.attr('disabled'))  {
+
+            const request = $.ajax({
+                method: 'post',
+                url: 'https://quiz24.ru/portfolio/icon-scin/forms-handler.php',
+                data: $(form).serialize(),
+                dataType: 'json'
+            });
+
+            request.done(response => {
+                if (IS_DEBUGGING) console.log(response);
+
+                if (response.error) {
+                    if (formType === 'callback') {
+                        const dialogs = $(form)
+                            .closest('.modal')
+                            .find('.modal__dialog');
+
+                        $(dialogs[0]).addClass('modal__dialog_hide');
+
+                        setTimeout(() => {
+                            $(dialogs[0]).addClass('hidden');
+                            $(dialogs[1]).removeClass('hidden');
+                        }, 300);
+
+                        setTimeout(() => {
+                            $(dialogs[1]).removeClass('modal__dialog_hide');
+                        }, 400);
+                    } else if (formType === 'subscribe') {
+                        showModal($(form).find('[type="submit"]')[0]);
+                    }
+                } else {
+                    console.log('Ошибка отправки сообщения в обработчике формы!')
+                }
+            });
+
+            request.fail(function( jqXHR, textStatus ) {
+                console.log("Request failed: " + jqXHR + " --- " + textStatus);
+            });
+        }
     });
 });

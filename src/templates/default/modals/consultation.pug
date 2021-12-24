@@ -15,13 +15,18 @@
 
             .modal__footer
                 form.form(action="" method="POST")
+                    input(type="hidden" value="callback" name="form")
                     .form__group
                         label
-                            input.form__control(type='tel'
+                            input.form__control(
+                                type='tel'
+                                name="phone"
                                 placeholder='Введите номер телефона')
                     .form__group
                         label
-                            input.form__control.controller(type='text'
+                            input.form__control.controller(
+                                type='text'
+                                name="time"
                                 placeholder='Укажите удобное время для звонка')
                     button.btn(type='submit' disabled) Получить консультацию
 
@@ -33,4 +38,4 @@
                 h5.modal__title СПАСИБО!
 
             .modal__body
-                p.modal__subtitle В течении 30 минут наш дизайнер вам перезвонит
+                p.modal__subtitle В течении 30 минут наш дизайнер вам перезвонит.

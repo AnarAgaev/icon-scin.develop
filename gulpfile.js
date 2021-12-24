@@ -11,7 +11,7 @@ const rename                                = require('gulp-rename');
 const imagemin                              = require('gulp-imagemin');
 const browserSync                           = require('browser-sync').create();
 const concat                                = require('gulp-concat');
-const sourcemaps                            = require('gulp-sourcemaps');
+//const sourcemaps                            = require('gulp-sourcemaps');
 const log                                   = require('fancy-log');
 
 // Tasks
@@ -20,7 +20,8 @@ function clean() {
 }
 
 function buildStyles() {
-    return src('src/**/main.scss', { sourcemaps: false })
+    //return src('src/**/main.scss', { sourcemaps: false })
+    return src('src/**/main.scss')
         .pipe(plumber({
             errorHandler: notify.onError( function(err){
                 return {
@@ -42,7 +43,8 @@ function buildStyles() {
         .pipe(rename({
             dirname: '',
         }))
-        .pipe(dest('build/css', { sourcemaps: '../maps' }))
+        // .pipe(dest('build/css', { sourcemaps: '../maps' }))
+        .pipe(dest('build/css'))
         .pipe(plumber.stop())
         .pipe(browserSync.stream())
 }
