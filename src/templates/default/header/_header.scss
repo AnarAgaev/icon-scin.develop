@@ -10,6 +10,10 @@
     background-color: rgba(255, 255, 255, 0.5);
     transition: transform .3s;
 
+    &_invisible {
+        display: none !important;
+    }
+
     @media (min-width: $md) {
         position: relative;
         padding-top: 30px;

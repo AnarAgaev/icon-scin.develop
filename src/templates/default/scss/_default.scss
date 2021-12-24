@@ -39,12 +39,19 @@ body {
     font-style: normal;
     color: $color-font-primary;
     background: #fff url('../img/background.jpg') center 70px no-repeat;
-    background-size: 100%;
+    background-size: 120%;
 
     @media (min-width: $md) {
-        background-position: center -250px;
-        background-size: contain;
+        background-position: center -300px;
+        background-size: $md;
     }
+
+    @media (min-width: $xl) {
+        background-position: center -400px;
+        background-size: $xl;
+    }
+
+
 
     &.modal-open {
         overflow: hidden;

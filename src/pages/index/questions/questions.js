@@ -136,12 +136,14 @@ $(document).ready(function () {
 
             if (direction) {
                 toggleFirstScreen(nextStep);
+                togglePageHeader(nextStep);
                 showEl(nextStep);
                 visibleEl(nextStep);
                 replaceEl(nextStep);
                 pushStepToStepsMap(nextStep);
             } else {
                 toggleFirstScreen(prevStep);
+                togglePageHeader(prevStep);
                 showEl(prevStep);
                 visibleEl(prevStep);
                 replaceEl(prevStep);
@@ -187,6 +189,28 @@ $(document).ready(function () {
 
         if(isQuestionRestrictions && !isFirstScreenVisible) {
             firstScreen.removeClass('first-screen_invisible');
+        }
+    }
+
+    const togglePageHeader = (el) => {
+        let header = $('#header'),
+            isFirstQuestion = $(el).attr('id') === 'questionFirst',
+            isQuestionRestrictions = $(el).attr('id') === 'questionRestrictions',
+            isHeaderVisible = !header
+                .hasClass('header_invisible');
+
+        if (isFirstQuestion && isHeaderVisible) {
+            header.addClass('header_invisible');
+            return;
+        }
+
+        if(isQuestionRestrictions && !isHeaderVisible) {
+            header.removeClass('blocked header_invisible');
+
+            setTimeout(
+                () => header.removeClass('hidden'),
+                10
+            );
         }
     }
 
@@ -268,23 +292,27 @@ $(document).ready(function () {
     }
 
     const blockHeaderToggle = () => {
-        $('#header').addClass('hide');
+        if ($(window).width() < 768) {
+            $('#header').addClass('hide');
 
-        setTimeout(
-            () => $('#header').addClass('hidden'),
-            300
-        );
+            setTimeout(
+                () => $('#header').addClass('hidden'),
+                300
+            );
+        }
     }
 
     const unblockHeaderToggle = () => {
-        setTimeout(
-            () => {
-                $('#header')
-                    .addClass('hide')
-                    .removeClass('hidden');
-            },
-            3000
-        );
+        if ($(window).width() < 768) {
+            setTimeout(
+                () => {
+                    $('#header')
+                        .addClass('hide')
+                        .removeClass('hidden');
+                },
+                3000
+            );
+        }
     }
 
     // Показываем кнопку Далле и Показать результаты

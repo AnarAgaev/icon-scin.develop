@@ -315,6 +315,17 @@ $(document).ready(() => {
             firstScreen.removeClass('first-screen_invisible');
         }
 
+        // Показываем хедер, если
+        // был не виден (полсе прохождения
+        // всего квиза)
+        let pageHeader = $('#header'),
+            isHeaderInvisible = pageHeader
+                .hasClass('header_invisible');
+
+        if (isHeaderInvisible) {
+            pageHeader.removeClass('blocked hide header_invisible hidden');
+        }
+
         // Если блок-заголовк вопросов скрыт,
         // показываем его
         let questionsCaption = $('#questionsCaption'),

@@ -133,8 +133,8 @@
     overflow: hidden;
     opacity: 0;
     transition: all .5s linear;
-    background: #fff url('../img/background.jpg') center top no-repeat;
-    background-size: 100%;
+    //background: #fff url('../img/background.jpg') center top no-repeat;
+    //background-size: 100%;
 
     &.collapsed {
         opacity: 0 !important;
