@@ -4,42 +4,42 @@ if (IS_DEBUGGING) console.log('Шаблон ссылки на страницу �
 
 window.resultLinks = {
     'result-1': {
-        without: '',
+        without: '34',
         acne: '14',
         back: '15',
         acne_back: '16'
     },
 
     'result-2': {
-        without: '',
+        without: '35',
         acne: '17',
         back: '18',
         acne_back: '22'
     },
 
     'result-3': {
-        without: '',
+        without: '36',
         acne: '23',
         back: '24',
         acne_back: '25'
     },
 
     'result-4': {
-        without: '',
+        without: '37',
         acne: '20',
         back: '26',
         acne_back: '27'
     },
 
     'result-5': {
-        without: '',
+        without: '38',
         acne: '28',
         back: '29',
         acne_back: '30'
     },
 
     'result-6': {
-        without: '',
+        without: '39',
         acne: '31',
         back: '32',
         acne_back: '33'

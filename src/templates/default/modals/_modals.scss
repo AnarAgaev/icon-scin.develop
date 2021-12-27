@@ -42,6 +42,10 @@
         transform: translateY(-20px);
         transition: all .3s ease-out;
 
+        @media (min-width: $md) {
+            width: 480px;
+        }
+
         &_hide {
             opacity: 0 !important;
             transform: translateY(-20px) !important;
@@ -55,6 +59,10 @@
         box-shadow: 0 10px 10px -10px rgba(48, 48, 48, 0.5);
         border-radius: 10px;
         padding: 20px 20px 30px;
+
+        @media (min-width: $md) {
+            padding: 35px 30px 45px;
+        }
     }
 
     &_video {
@@ -96,6 +104,11 @@
         text-align: center;
         color: $color-font-secondary;
 
+        @media (min-width: $md) {
+            font-size: 22px;
+            line-height: 1.2;
+        }
+
         &.modal__title_shared {
             font-weight: 500;
         }
@@ -108,6 +121,11 @@
         line-height: 17px;
         text-align: center;
         color: $color-font-secondary;
+
+        @media (min-width: $md) {
+            font-size: 18px;
+            line-height: 1.2;
+        }
     }
 
     &__body {
@@ -207,6 +225,11 @@
         font-size: 16px;
         line-height: 20px;
         text-align: center;
+
+        @media (min-width: $md) {
+            font-size: 16px;
+            line-height: 1.2;
+        }
     }
 
     &__percent {
@@ -216,6 +239,11 @@
         margin-top: 15px;
         margin-bottom: 15px;
 
+        @media (min-width: $md) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
         span {
             display: block;
             width: 50%;
@@ -224,6 +252,10 @@
             font-weight: 700;
             font-size: 49px;
             color: $color-accent-primary;
+
+            @media (min-width: $md) {
+                font-size: 70px;
+            }
         }
 
         p {
@@ -232,6 +264,12 @@
             font-size: 14px;
             line-height: 17px;
             padding-left: 5px;
+
+            @media (min-width: $md) {
+                font-size: 16px;
+                line-height: 19px;
+                padding-left: 9px;
+            }
         }
     }
 
@@ -240,6 +278,11 @@
         font-size: 14px;
         line-height: 17px;
         text-align: center;
+
+        @media (min-width: $md) {
+            font-size: 16px;
+            line-height: 19px;
+        }
     }
 
     &__link {
@@ -249,10 +292,22 @@
         margin-top: 15px;
         margin-bottom: 15px;
 
+        @media (min-width: $md) {
+            margin-top: 25px;
+        }
+
         .btn {
             width: 245px;
             height: 48px;
             text-decoration: none;
+
+            @media (min-width: $md) {
+                width: 275px;
+                height: 55px;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 20px;
+            }
         }
     }
 
@@ -270,6 +325,13 @@
         font-size: 14px;
         line-height: 17px;
         text-align: center;
+
+        @media (min-width: $md) {
+            margin-top: 35px;
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 19px;
+        }
     }
 
     &__share-link {
@@ -294,6 +356,11 @@
             line-height: 17px;
             color: $color-accent-primary;
             cursor: pointer;
+
+            @media (min-width: $md) {
+                font-size: 16px;
+                line-height: 19px;
+            }
 
             &::after {
                 content: '';
@@ -322,12 +389,21 @@
         line-height: 19px;
         text-align: center;
         margin-bottom: 20px;
+
+        @media (min-width: $md) {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
     }
 
     &__list {
         display: flex;
         justify-content: center;
         margin: 0 auto 25px;
+
+        @media (min-width: $md) {
+            margin-bottom: 35px;
+        }
 
         li {
             display: block;
@@ -379,6 +455,12 @@
         input {
             text-align: left;
             padding-right: 126px;
+
+            @media (min-width: $md) {
+                height: 50px;
+                padding-left: 30px;
+                font-size: 16px;
+            }
         }
     }
 
@@ -400,6 +482,11 @@
         line-height: 15px;
         color: $color-font-light;
         padding: 0;
+
+        @media (min-width: $md) {
+            width: 150px;
+            font-size: 16px;
+        }
 
         span {
             display: inline-block;

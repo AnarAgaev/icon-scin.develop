@@ -98,9 +98,11 @@ $(document).ready(function () {
                 let vendorLink = templateURL;
 
                 if (!back && !postAcne) {
+                    vendorLink += resultLinks[resSectionId]['without'];
+                    setVendorLink(vendorLink);
 
                     if (IS_DEBUGGING)
-                        console.log('Ссылка на набор без доп. препаратов: ', '!!! НУЖНА ССЫЛКА ДЛЯ НАБОРА БЕЗ АКНЕ И СПЫНЫ');
+                        console.log('Ссылка на набор без доп. препаратов: ', vendorLink);
 
                 } else if (!back && postAcne) {
                     vendorLink += resultLinks[resSectionId]['acne'];
