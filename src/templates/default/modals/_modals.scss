@@ -176,10 +176,18 @@
                 }
             }
         }
-    }
+    }Получите быструю профе
 }
 
 .modal_consultation {
+    .modal__footer {
+        @media (min-width: $md) {
+            width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
     ul {
         li {
             position: relative;
