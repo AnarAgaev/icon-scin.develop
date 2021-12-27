@@ -22,7 +22,7 @@ $(document).ready(() => {
 
             let scroll = $(window).height() + $(window).scrollTop(),
                 progress = $('.visible .progress'),
-                top = $(progress).offset().top - 30; // + $(progress).height();
+                top = $(progress).offset().top; // - 30 + $(progress).height();
 
             if (scroll > top) {
                 setTimeout(() => {
@@ -71,7 +71,6 @@ $(document).ready(() => {
             }, 500);
         }
     }
-
 
     const countProgressValue = (val, stop) => {
         // Чистим интервал, на тот случай если
