@@ -73,9 +73,9 @@ function buildHtml() {
 
 function buildJs() {
     return src([
+        'src/templates/default/js/cocoen.js',
         'src/templates/default/js/jquery-3.6.0.min.js',
         'src/templates/default/js/imask.min.js',
-        'src/templates/default/js/cocoen.js',
         'src/templates/default/js/swiper-bundle.min.js',
         'src/templates/default/js/main.js',
         'src/templates/default/js/sliders.js',

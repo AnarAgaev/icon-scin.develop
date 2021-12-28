@@ -124,26 +124,29 @@
     &__comparison {
         display: block;
         position: absolute;
-        width: 200px;
-        height: 209px;
+        width: 210px;
+        height: 210px;
         top: 32px;
         right: 0;
         z-index: 0;
         cursor: pointer;
         overflow: hidden;
+        background: url("../img/comparison-background.jpg") 33px top no-repeat;
+        background-size: cover;
 
         @media (min-width: $md) {
             width: 250px;
             height: 250px;
             top: 0;
             right: 50px;
+            background-position: center top;
         }
 
         @media (min-width: $xl) {
             width: 541px;
             height: 566px;
+            background: none;
         }
-
 
         .before, .after {
             display: block;
@@ -183,13 +186,11 @@
         }
     }
 
-    &__comparison-wrap {
-        display: block;
-        position: relative;
-        right: -38px;
+    #comparison {
+        display: none;
 
-        @media (min-width: $md) {
-            right: 0;
+        @media (min-width: $xl) {
+            display: block;
         }
     }
 
