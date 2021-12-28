@@ -459,6 +459,10 @@
     &__link {
         position: relative;
         width: 100%;
+
+        @media (min-width: $md) {
+            width: 95%;
+        }
         
         input {
             text-align: left;
