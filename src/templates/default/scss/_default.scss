@@ -495,3 +495,9 @@ input, .input {
         transform: translateX(-50%);
     }
 }
+
+@media (min-width: $xxl) {
+    .container {
+        max-width: 1366px;
+    }
+}
