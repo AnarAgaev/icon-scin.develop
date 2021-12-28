@@ -343,7 +343,8 @@
         position: relative;
         width: 143px;
         height: 156px;
-        background-color: $color-back-primary;
+        background: url('../img/cosmetologist.jpg') -120px 10px no-repeat;
+        background-size: 250%;
         border-radius: 10px;
         border: 1px solid #eaeaea;
         overflow: hidden;
@@ -355,6 +356,8 @@
             right: 0;
             width: 172px;
             height: 216px;
+            background-position: -177px 10px;
+            background-size: 280%;
         }
 
         &__container {
@@ -368,6 +371,7 @@
                 line-height: 12px;
                 text-transform: uppercase;
                 color: $color-font-secondary;
+                background-color: white;
 
                 @media (min-width: $xl) {
                     height: 22px;
