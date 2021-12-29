@@ -372,6 +372,22 @@ input, .input {
 
 .second-accent-background {
     background-color: $color-accent-secondary;
+
+    @media (min-width: $xl) {
+        background-color: transparent;
+
+         &::before {
+             content: '';
+             display: block;
+             position: absolute;
+             top: 0;
+             left: 50%;
+             transform: translateX(-50%);
+             width: 100vw;
+             height: 100%;
+             background-color: $color-accent-secondary;
+         }
+    }
 }
 
 .slider {
