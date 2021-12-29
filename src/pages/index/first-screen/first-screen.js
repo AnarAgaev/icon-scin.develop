@@ -33,7 +33,7 @@ $(document).ready(() => {
 
     function buildCocoen () {
         cocoenNode = Cocoen.create( comparison, {
-            start: '52',
+            start: '53',
             color: '#ffffff'
         });
     }
