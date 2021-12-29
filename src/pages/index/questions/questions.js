@@ -445,10 +445,19 @@ $(document).ready(function () {
             });
     }
 
-    setTimeout(() => {
-            // uploadQuestionsPics();
-        },
-        2000
-    );
+    // Загружаем видео в виджет видео-презентаии
+    const uploadPresentVideo = () => {
+        let video = $('#videoBackground'),
+            source = video.find('source'),
+            videoModal = $('#videoPresentationModal video'),
+            sourceModal = video.find('videoModal'),
+            src = video.data('src');
 
+        video.attr('src', src);
+        source.attr('src', src);
+
+        videoModal.attr('src', src);
+        sourceModal.attr('src', src);
+    }
+    setTimeout(uploadPresentVideo, 1000);
 });

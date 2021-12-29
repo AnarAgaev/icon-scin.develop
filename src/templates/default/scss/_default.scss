@@ -510,3 +510,28 @@ input, .input {
         max-width: 1366px;
     }
 }
+
+//#loader {
+//    display: block;
+//    position: fixed;
+//    z-index: 99999;
+//    top: -999px;
+//    left: 50%;
+//    transform: translate(-50%, -50%);
+//    border-radius: 10px;
+//    overflow: hidden;
+//    margin-top: -25px;
+//    opacity: 0;
+//    transition: top 0s linear .5s,
+//        opacity .3s linear 0s,
+//        margin-top .3s linear 0s;
+//
+//    &.active {
+//        top: 50%;
+//        opacity: 1;
+//        margin-top: 0;
+//        transition: top 0s linear 0s,
+//            opacity .3s linear .1s,
+//            margin-top .3s linear .1s;
+//    }
+//}
