@@ -62,6 +62,26 @@ $(document).ready(function () {
                 prevStepId = STORE.stepsMap[STORE.stepsMap.length - 2],
                 prevStep = $(prevStepId);
 
+            console.log(nextStepId)
+
+            // Загружаем картинки для следуещего вопроса
+            if (nextStepId === '#questionRestrictions'
+                    || nextStepId === '#questionFirst'
+                    || nextStepId === '#questionSecond'
+                    || nextStepId === '#questionThird'
+                    || nextStepId === '#questionFourth'
+                    || nextStepId === '#questionFifthOne'
+                    || nextStepId === '#questionFifthTwo'
+                    || nextStepId === '#questionSixth'
+                    || nextStepId === '#questionSeventh') {
+
+                // Загружаем картинки для вопроса
+                uploadQuestionsPics(nextStepId);
+
+                // Загружаем картинки протоколов
+                uploadQuestionsProtocolsPics();
+            }
+
             // Для пооследнего вопроса перезаписываем следующий шаг,
             // т.к. до прохождения квиза результат не известен.
             // В последний шаг записываем карточку, рссчитанную
@@ -151,7 +171,6 @@ $(document).ready(function () {
             }
 
             // Загружаем картинки для блока Терапии
-
             if (nextStepId === '#resultTherapy') {
                 // Загружаем картинки протоколов
                 uploadQuestionsProtocolsPics();
@@ -369,8 +388,8 @@ $(document).ready(function () {
     }
 
     // Загружаем картинки для вопросов
-    const uploadQuestionsPics = () => {
-        $('.form-question__pic[data-src]')
+    const uploadQuestionsPics = (id) => {
+        $(id + ' .form-question__pic[data-src]')
             .each((idx, el) => {
                 let source = $(el).data('src');
                 $(el).css('background-image', `url(${source})`);
@@ -417,7 +436,6 @@ $(document).ready(function () {
 
     setTimeout(() => {
             // uploadQuestionsPics();
-            // uploadQuestionsProtocolsPics();
         },
         2000
     );
