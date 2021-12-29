@@ -13,9 +13,14 @@
             padding-top: 50px;
         }
 
-        img {
+        .pic {
+            display: block;
             width: 140px;
             height: auto;
+
+            svg {
+                max-width: 100%;
+            }
 
             @media (min-width: $md) {
                 width: 180px;
