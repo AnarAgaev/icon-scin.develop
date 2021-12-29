@@ -4,9 +4,12 @@ $(document).ready(function () {
     $(window).scroll(() => {
 
         if ($(window).width() < 768) {
-            let scrollTop = $(window).scrollTop();
+            let scrollTop = $(window).scrollTop(),
+                firstScreenHeight = $('#firstScreen').height();
 
-            (scrollTop > 100)
+            console.log();
+
+            (scrollTop > 100 & scrollTop < firstScreenHeight)
                 ? $('#header').removeClass('blocked')
                 : $('#header').addClass('blocked');
 

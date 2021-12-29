@@ -44,6 +44,7 @@
     }
 
     .logo {
+        display: block;
         width: 127px;
 
         @media (min-width: $md) {
@@ -52,6 +53,10 @@
 
         @media (min-width: $xl) {
             width: 210px;
+        }
+
+        svg {
+            max-width: 100%;
         }
     }
 
