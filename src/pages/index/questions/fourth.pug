@@ -14,7 +14,7 @@ section.step#questionFourth.hidden
 
         .container.animation-element
             .row
-                .col-12
+                .col-12.col-xl-5.offset-xl-2
                     form.form-question(action="")
 
                         label.form-question__label
@@ -52,9 +52,12 @@ section.step#questionFourth.hidden
                                 br
                                 | у меня нет
 
-        .container.animation-element
-            .row
-                .col-12
+                        .state__btn-wrap.d-none.d-xl-flex.justify-content-center
+                            button.btn.btn_back.btn_prev-step(type="button")
+                                include ../../../img/i-btn-back.svg
+                                span Назад
+
+                .col-12.col-xl-3.ml-xl-n4
                     .state
                         .state__sidebar
                             .state__progress
@@ -68,7 +71,7 @@ section.step#questionFourth.hidden
                                 | !{" "}
                                 span из 7
 
-                            .state__btn-wrap
+                            .state__btn-wrap.d-xl-none
                                 button.btn.btn_back.btn_prev-step(type="button")
                                     include ../../../img/i-btn-back.svg
                                     span Назад

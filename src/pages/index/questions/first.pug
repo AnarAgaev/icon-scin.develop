@@ -20,7 +20,7 @@ section.step#questionFirst.hidden
 
         .container.animation-element
             .row
-                .col-12
+                .col-12.col-xl-5.offset-xl-2
                     form.form-question(action="")
 
                         label.form-question__label
@@ -68,9 +68,12 @@ section.step#questionFirst.hidden
                             span.form-question__pic(style="background-image: url('img/questions/first/4.jpg')")
                             span.form-question__val Кожа кажется недостаточно очищенной, липкой
 
-        .container.animation-element
-            .row
-                .col-12
+                        .state__btn-wrap.d-none.d-xl-block
+                            button.btn.btn_back.btn_prev-step(type="button")
+                                include ../../../img/i-btn-back.svg
+                                span Назад
+
+                .col-12.col-xl-3.ml-xl-n4
                     .state
                         .state__sidebar
                             .state__progress
@@ -84,7 +87,7 @@ section.step#questionFirst.hidden
                                 | !{" "}
                                 span из 7
 
-                            .state__btn-wrap
+                            .state__btn-wrap.d-xl-none
                                 button.btn.btn_back.btn_prev-step(type="button")
                                     include ../../../img/i-btn-back.svg
                                     span Назад
