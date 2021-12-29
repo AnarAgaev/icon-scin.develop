@@ -75,6 +75,9 @@ $(document).ready(function () {
                 // Загружаем картинки в результатх
                 uploadResPics(resSectionId);
 
+                // Загружаем картинки в отзывыж
+                uploadReviewsPics();
+
                 // Проверяем нужны ли препараты для спины и постакне
                 // Если не нужен ни один из препаратов поправляем
                 // отсут у кнопки Где купить набор со скидкой
@@ -139,6 +142,22 @@ $(document).ready(function () {
                 $('._vendorLink').attr('href', templateURL + '21');
                 // Загружаем картинки в результатх
                 uploadResPics('resultBefore18');
+
+                // Загружаем картинки протоколов
+                uploadQuestionsProtocolsPics();
+
+                // Загружаем картинки в отзывыж
+                uploadReviewsPics();
+            }
+
+            // Загружаем картинки для блока Терапии
+
+            if (nextStepId === '#resultTherapy') {
+                // Загружаем картинки протоколов
+                uploadQuestionsProtocolsPics();
+
+                // Загружаем картинки в отзывыж
+                uploadReviewsPics();
             }
 
             invisibleEl(thisStep);
@@ -369,8 +388,6 @@ $(document).ready(function () {
 
     // Загружаем картинки в результатах
     const uploadResPics = (id) => {
-        console.log(id)
-
         $('#'+id+' .res-picture[data-src]')
             .each((idx, el) => {
                 let source = $(el).data('src');
@@ -378,8 +395,23 @@ $(document).ready(function () {
             });
     }
 
+    // Загружаем картинки для отзывов
+    const uploadReviewsPics = () => {
 
+        // Картинки внутри отзыва
+        $('.reviews[data-src]')
+            .each((idx, el) => {
+                let source = $(el).data('src');
+                $(el).attr('src', source);
+            });
 
+        // Иконка отозвавшегося
+        $('.pic_reviews[data-src]')
+            .each((idx, el) => {
+                let source = $(el).data('src');
+                $(el).css('background-image', `url(${source})`);
+            });
+    }
 
 
 

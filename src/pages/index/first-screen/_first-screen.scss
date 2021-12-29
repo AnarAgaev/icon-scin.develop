@@ -473,20 +473,17 @@
             }
         }
 
+        .hand {
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            width: 27px;
+            height: 29px;
+            animation: wobble-hor-bottom 3s infinite;
+        }
+
         &-btn-wrap {
             position: relative;
-
-            &::before {
-                content: '';
-                display: block;
-                position: absolute;
-                right: -20px;
-                bottom: -20px;
-                width: 27px;
-                height: 29px;
-                background: url("../img/i-click-hand.svg") center no-repeat;
-                animation: wobble-hor-bottom 3s infinite;
-            }
         }
     }
 
