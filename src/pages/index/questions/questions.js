@@ -72,6 +72,9 @@ $(document).ready(function () {
                 nextStep = getResultCard();
                 const resSectionId = $(nextStep).attr('id');
 
+                // Загружаем картинки в результатх
+                uploadResPics(resSectionId);
+
                 // Проверяем нужны ли препараты для спины и постакне
                 // Если не нужен ни один из препаратов поправляем
                 // отсут у кнопки Где купить набор со скидкой
@@ -128,10 +131,14 @@ $(document).ready(function () {
                 }
             }
 
-            // Для блока до 18 дел, меняем ссылка на набор
+            // Для блока до 18 лет, меняем ссылка на набор
             // на сайте заказчика
+            //
+            // Также загружаем картинки для блока до 18 лет
             if (nextStepId === '#resultBefore18') {
                 $('._vendorLink').attr('href', templateURL + '21');
+                // Загружаем картинки в результатх
+                uploadResPics('resultBefore18');
             }
 
             invisibleEl(thisStep);
@@ -341,4 +348,46 @@ $(document).ready(function () {
     const setVendorLink = link => {
         $('._vendorLink').attr('href', link);
     }
+
+    // Загружаем картинки для вопросов
+    const uploadQuestionsPics = () => {
+        $('.form-question__pic[data-src]')
+            .each((idx, el) => {
+                let source = $(el).data('src');
+                $(el).css('background-image', `url(${source})`);
+            });
+    }
+
+    // Загружаем картинки с протоколами для вопросов
+    const uploadQuestionsProtocolsPics = () => {
+        $('.protocols[data-src]')
+            .each((idx, el) => {
+                let source = $(el).data('src');
+                $(el).attr('src', source);
+            });
+    }
+
+    // Загружаем картинки в результатах
+    const uploadResPics = (id) => {
+        console.log(id)
+
+        $('#'+id+' .res-picture[data-src]')
+            .each((idx, el) => {
+                let source = $(el).data('src');
+                $(el).attr('src', source);
+            });
+    }
+
+
+
+
+
+
+    setTimeout(() => {
+            // uploadQuestionsPics();
+            // uploadQuestionsProtocolsPics();
+        },
+        2000
+    );
+
 });

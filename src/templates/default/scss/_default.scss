@@ -66,6 +66,8 @@ body {
 
 #main {
     flex: 1 0 auto;
+    overflow: hidden;
+    height: auto;
 }
 
 .hidden {
@@ -368,17 +370,8 @@ input, .input {
     }
 }
 
-.second-accent-background::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 100%;
+.second-accent-background {
     background-color: $color-accent-secondary;
-    z-index: -1;
 }
 
 .slider {

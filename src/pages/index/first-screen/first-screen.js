@@ -9,7 +9,7 @@ $(document).ready(() => {
             createComparison();
         }
 
-        setTimeout(buildCocoen, 100);
+        setTimeout(buildCocoen, 300);
     }
 
     function createComparison () {

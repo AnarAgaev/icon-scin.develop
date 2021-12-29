@@ -30,7 +30,7 @@ section.step#questionFirst.hidden
                                 data-question="Бывает ли, что ваша кожа выглядит жирной и блестит?"
                                 data-answer="Жирный блеск у меня бывает только в Т-зоне."
                                 data-next-step-id="#questionSecond")
-                            span.form-question__pic(style="background-image: url('img/questions/first/1.jpg')")
+                            span.form-question__pic(data-src="img/questions/first/1.jpg")
                             span.form-question__val Жирный блеск у меня бывает только в Т-зоне
 
                         label.form-question__label
@@ -40,7 +40,7 @@ section.step#questionFirst.hidden
                                 data-question="Бывает ли, что ваша кожа выглядит жирной и блестит?"
                                 data-answer="Нет, у меня такого не бывает или бывает очень редко."
                                 data-next-step-id="#questionSecond")
-                            span.form-question__pic(style="background-image: url('img/questions/first/2.jpg')")
+                            span.form-question__pic(data-src="img/questions/first/2.jpg")
                             span.form-question__val
                                 | Нет, у меня такого не бывает или бывает
                                 br
@@ -55,7 +55,7 @@ section.step#questionFirst.hidden
                                 data-question="Бывает ли, что ваша кожа выглядит жирной и блестит?"
                                 data-answer="Кожа блестит и лоснится уже через 2 часа после умывания."
                                 data-next-step-id="#questionSecond")
-                            span.form-question__pic(style="background-image: url('img/questions/first/3.jpg')")
+                            span.form-question__pic(data-src="img/questions/first/3.jpg")
                             span.form-question__val Кожа блестит и лоснится уже через 2 часа после умывания
 
                         label.form-question__label
@@ -65,7 +65,7 @@ section.step#questionFirst.hidden
                                 data-question="Бывает ли, что ваша кожа выглядит жирной и блестит?"
                                 data-answer="Кожа кажется недостаточно очищенной, липкой."
                                 data-next-step-id="#questionSecond")
-                            span.form-question__pic(style="background-image: url('img/questions/first/4.jpg')")
+                            span.form-question__pic(data-src="img/questions/first/4.jpg")
                             span.form-question__val Кожа кажется недостаточно очищенной, липкой
 
                         .state__btn-wrap.d-none.d-xl-block
@@ -95,4 +95,4 @@ section.step#questionFirst.hidden
                         .state__title Система формирует ваш протокол ухода
 
                         .state__protocol
-                            img(src="img/protocols/first.png" alt="")
+                            img.protocols(data-src="img/protocols/first.png" src="" alt="")

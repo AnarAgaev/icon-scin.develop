@@ -24,7 +24,7 @@ section.step#questionThird.hidden
                                 name="questionThird"
                                 data-question="Характерны ли для вашей кожи такие проблемы?"
                                 data-answer="Расширенные поры и/или черные точки.")
-                            span.form-question__pic(style="background-image: url('img/questions/third/1.jpg')")
+                            span.form-question__pic(data-src="img/questions/third/1.jpg")
                             span.form-question__val
                                 | Расширенные поры
                                 br.d-none.d-md-block
@@ -36,7 +36,7 @@ section.step#questionThird.hidden
                                 name="questionThird"
                                 data-question="Характерны ли для вашей кожи такие проблемы?"
                                 data-answer="Шелушение и/или неровности кожи.")
-                            span.form-question__pic(style="background-image: url('img/questions/third/2.jpg')")
+                            span.form-question__pic(data-src="img/questions/third/2.jpg")
                             span.form-question__val Шелушение и/или неровности кожи
 
                         .clearfix
@@ -47,7 +47,7 @@ section.step#questionThird.hidden
                                 name="questionThird"
                                 data-question="Характерны ли для вашей кожи такие проблемы?"
                                 data-answer="Тусклый цвет лица.")
-                            span.form-question__pic(style="background-image: url('img/questions/third/3.jpg')")
+                            span.form-question__pic(data-src="img/questions/third/3.jpg")
                             span.form-question__val
                                 | Тусклый цвет
                                 br
@@ -60,7 +60,7 @@ section.step#questionThird.hidden
                                 data-question="Характерны ли для вашей кожи такие проблемы?"
                                 data-answer="Ничего такого у меня нет."
                                 data-next-step-id="#questionFourth")
-                            span.form-question__pic(style="background-image: url('img/questions/third/4.jpg')")
+                            span.form-question__pic(data-src="img/questions/third/4.jpg")
                             span.form-question__val
                                 | Ничего такого
                                 br
@@ -103,4 +103,4 @@ section.step#questionThird.hidden
                         .state__title Система формирует ваш протокол ухода
 
                         .state__protocol
-                            img(src="img/protocols/third.png" alt="")
+                            img.protocols(data-src="img/protocols/third.png" src="" alt="")

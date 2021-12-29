@@ -24,7 +24,7 @@ section.step#questionFourth.hidden
                                 data-question="Бывают ли у вас воспаления и подкожные прыщи?"
                                 data-answer="Да, часто."
                                 data-next-step-id="#questionFifthOne")
-                            span.form-question__pic(style="background-image: url('img/questions/fourth/1.jpg')")
+                            span.form-question__pic(data-src="img/questions/fourth/1.jpg")
                             span.form-question__val Да, часто
 
                         label.form-question__label
@@ -34,7 +34,7 @@ section.step#questionFourth.hidden
                                 data-question="Бывают ли у вас воспаления и подкожные прыщи?"
                                 data-answer="Очень редко."
                                 data-next-step-id="#questionFifthTwo")
-                            span.form-question__pic(style="background-image: url('img/questions/fourth/2.jpg')")
+                            span.form-question__pic(data-src="img/questions/fourth/2.jpg")
                             span.form-question__val Очень редко
 
                         .clearfix
@@ -46,7 +46,7 @@ section.step#questionFourth.hidden
                                 data-question="Бывают ли у вас воспаления и подкожные прыщи?"
                                 data-answer="Ничего такого у меня нет."
                                 data-next-step-id="#questionFifthTwo")
-                            span.form-question__pic(style="background-image: url('img/questions/fourth/3.jpg')")
+                            span.form-question__pic(data-src="img/questions/fourth/3.jpg")
                             span.form-question__val
                                 | Ничего такого
                                 br
@@ -79,4 +79,4 @@ section.step#questionFourth.hidden
                         .state__title Система формирует ваш протокол ухода
 
                         .state__protocol
-                            img(src="img/protocols/third.png" alt="")
+                            img.protocols(data-src="img/protocols/third.png" src="" alt="")
