@@ -69,7 +69,8 @@ section#firstScreen.first-screen
                                 a.btn-whatsapp.d-flex.justify-content-center.align-items-center(target="_blank"
                                     href="https://api.whatsapp.com/send?phone=79300000000&amp;text=Сообщение в WhatsApp")
                                     span начать чат в
-                                    img(src="img/i-whatsapp.svg" alt="Начать чат в WhatsApp")
+                                    span.pic
+                                        include ../../../img/i-whatsapp.svg
 
             .col-12.col-xl-6.order-xl-2
                 .first-screen__action.d-flex.flex-column.align-items-center.align-items-xl-start
@@ -84,13 +85,13 @@ section#firstScreen.first-screen
                     ul.first-screen__action-list.d-flex.justify-content-center
                         li.d-flex.flex-column.align-items-center
                             span.pic.d-flex.justify-content-center.align-items-center
-                                img(src="img/icon-time.svg" alt="")
+                                include ../../../img/icon-time.svg
                             span.txt всего за 1 минуту
                         li.d-flex.flex-column.align-items-center
                             span.pic.d-flex.justify-content-center.align-items-center
-                                img(src="img/icon-present.svg" alt="")
+                                include ../../../img/icon-present.svg
                             span.txt бесплатно
                         li.d-flex.flex-column.align-items-center
                             span.pic.d-flex.justify-content-center.align-items-center
-                                img(src="img/icon-reg.svg" alt="")
+                                include ../../../img/icon-reg.svg
                             span.txt не требует регистрации

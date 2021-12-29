@@ -440,6 +440,16 @@
                     margin-right: 6px;
                 }
             }
+
+            .pic {
+                width: 12px;
+                height: 12px;
+                margin-right: 0;
+
+                svg {
+                    max-width: 100%;
+                }
+            }
         }
     }
 
@@ -524,7 +534,7 @@
                 height: 95px;
             }
 
-            img {
+            svg {
                 width: 35px;
 
                 @media (min-width: $md) {
