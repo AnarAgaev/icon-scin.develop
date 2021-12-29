@@ -1,6 +1,6 @@
 $(document).ready(() => {
     // Слайдер с результатами
-    const resultsSlider = new Swiper('.swiper', {
+    window.resultsSlider = new Swiper('.swiper', {
         slidesPerView: 1,
         speed: 300,
         preloadImages: true,
@@ -13,13 +13,6 @@ $(document).ready(() => {
             el: '.swiper-pagination',
             clickable: true,
             dynamicBullets: true,
-        },
-
-        // breakpoints: {
-        //     768: {
-        //         centeredSlides: true,
-        //         initialSlide: 1,
-        //     }
-        // }
+        }
     });
 });

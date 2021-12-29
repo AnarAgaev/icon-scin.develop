@@ -416,6 +416,8 @@ $(document).ready(function () {
                 let source = $(el).data('src');
                 $(el).attr('src', source);
             });
+
+        setTimeout(() => resultsSlider.update(), 5000);
     }
 
     // Загружаем картинки для отзывов
@@ -434,6 +436,8 @@ $(document).ready(function () {
                 let source = $(el).data('src');
                 $(el).css('background-image', `url(${source})`);
             });
+
+        setTimeout(() => resultsSlider.update(), 5000);
     }
 
     // Загружаем гифки с примером применения
