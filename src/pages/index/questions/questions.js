@@ -62,8 +62,6 @@ $(document).ready(function () {
                 prevStepId = STORE.stepsMap[STORE.stepsMap.length - 2],
                 prevStep = $(prevStepId);
 
-            console.log(nextStepId)
-
             // Загружаем картинки для следуещего вопроса
             if (nextStepId === '#questionRestrictions'
                     || nextStepId === '#questionFirst'
@@ -97,6 +95,9 @@ $(document).ready(function () {
 
                 // Загружаем картинки в отзывыж
                 uploadReviewsPics();
+
+                // Загружаем гифки с примером применения
+                uploadGiphys(resSectionId);
 
                 // Проверяем нужны ли препараты для спины и постакне
                 // Если не нужен ни один из препаратов поправляем
@@ -162,6 +163,9 @@ $(document).ready(function () {
                 $('._vendorLink').attr('href', templateURL + '21');
                 // Загружаем картинки в результатх
                 uploadResPics('resultBefore18');
+
+                // Загружаем гифки с примером применения
+                uploadGiphys('resultBefore18');
 
                 // Загружаем картинки протоколов
                 uploadQuestionsProtocolsPics();
@@ -432,7 +436,14 @@ $(document).ready(function () {
             });
     }
 
-
+    // Загружаем гифки с примером применения
+    const uploadGiphys = (id) => {
+        $('#' + id + ' .giphy[data-src]')
+            .each((idx, el) => {
+                let source = $(el).data('src');
+                $(el).attr('src', source);
+            });
+    }
 
     setTimeout(() => {
             // uploadQuestionsPics();
