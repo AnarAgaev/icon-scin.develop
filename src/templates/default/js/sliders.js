@@ -7,7 +7,7 @@ $(document).ready(() => {
         observer: true,
         observeParents: true,
         observeSlideChildren: true,
-        autoHeight: true,
+        autoHeight: false,
         spaceBetween: 15,
         pagination: {
             el: '.swiper-pagination',
