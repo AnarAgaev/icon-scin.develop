@@ -261,8 +261,8 @@ $(document).ready(() => {
 
         STORE[prop] = [question, answer];
 
-        removeProgressBar();
-        setTimeout(initialProgressBar, 300);
+        // removeProgressBar();
+        // setTimeout(initialProgressBar, 300);
         resetAllCheckboxControllers(_this);
     });
 

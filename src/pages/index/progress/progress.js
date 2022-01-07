@@ -2,19 +2,6 @@ let progressValueInterval;
 
 $(document).ready(() => {
 
-    // // Инициализируем все круговые прогрессы
-    // (function initProgressCircles () {
-    //     const circle = document.querySelector('.progress__circle'),
-    //         radius = circle.r.baseVal.value,
-    //         circumference = 2 * Math.PI * radius;
-    //
-    //     $('.progress__circle').css({
-    //         "strokeDasharray": `${circumference} ${circumference}`,
-    //         "strokeDashoffset": circumference
-    //     });
-    // })();
-
-
     window.initialProgressBar = (timeout = 1000) => {
 
         if ($('.visible .progress').length > 0
