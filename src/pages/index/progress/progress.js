@@ -38,7 +38,7 @@ $(document).ready(() => {
 
     window.removeProgressBar = () => {
         $('.progress__bar').removeClass('progressed');
-    }
+    };
 
     const setProgressValue = () => {
         let progress = $('.visible .progress'),
@@ -57,7 +57,7 @@ $(document).ready(() => {
                 }
             }, 500);
         }
-    }
+    };
 
     const countProgressValue = (val, stop) => {
         // Чистим интервал, на тот случай если
@@ -87,13 +87,13 @@ $(document).ready(() => {
                 }
             }
         }
-    }
+    };
 
     const setProgressValueCounted = () => {
         $('body').addClass('progress-counter-finished');
-    }
+    };
 
     window.removeProgressValueCounted = () => {
         $('body').removeClass('progress-counter-finished');
-    }
+    };
 });

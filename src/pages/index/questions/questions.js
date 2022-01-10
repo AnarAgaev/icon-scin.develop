@@ -12,7 +12,7 @@ $(document).ready(function () {
         $(step).removeClass('hidden');
         $(step).css('maxHeight', $(step).height() + 100);
         if (isInvisible) $(step).addClass('hidden');
-    }
+    };
 
     // Инициализируем максимальную высоту
     // во всех шагах для плавной анимации
@@ -218,12 +218,12 @@ $(document).ready(function () {
             unblockToggleSteps();
             unblockHeaderToggle();
         }
-    }
+    };
 
     const hideQuestionsCaption = () => {
         $('#questionsCaption')
             .addClass('questions-caption__wrap_invisible');
-    }
+    };
 
     const toggleFirstScreen = (el) => {
 
@@ -241,7 +241,7 @@ $(document).ready(function () {
         if(isQuestionRestrictions && !isFirstScreenVisible) {
             firstScreen.removeClass('first-screen_invisible');
         }
-    }
+    };
 
     const togglePageHeader = (el) => {
         let header = $('#header'),
@@ -263,22 +263,22 @@ $(document).ready(function () {
                 10
             );
         }
-    }
+    };
 
     const invisibleEl = el => {
         el.addClass('collapsed');
-    }
+    };
 
     const showEl = el => {
         el.removeClass('hidden');
-    }
+    };
 
     const visibleEl = el => {
         setTimeout(
             () => el.addClass('visible'),
             200
         );
-    }
+    };
 
     const hideEl = el => {
         setTimeout(
@@ -287,8 +287,8 @@ $(document).ready(function () {
                     .addClass('hidden');
             },
             blockedTimeout
-        )
-    }
+        );
+    };
 
     const replaceEl = el => {
         setTimeout(
@@ -297,12 +297,12 @@ $(document).ready(function () {
                 activeQuestionPlace.after(el[0]);
             },
             blockedTimeout
-        )
-    }
+        );
+    };
 
     const blockToggleSteps = () => {
         isUnlockedToggleStep = false;
-    }
+    };
 
     const unblockToggleSteps = () => {
         setTimeout(
@@ -310,8 +310,8 @@ $(document).ready(function () {
                 isUnlockedToggleStep = true;
             },
             blockedTimeout
-        )
-    }
+        );
+    };
 
     const scrollToActiveQuestion = () => {
         setTimeout(e => {
@@ -322,25 +322,25 @@ $(document).ready(function () {
                 1000
             );
         }, 700);
-    }
+    };
 
     const pushStepToStepsMap = (el) => {
         let id = $(el).attr('id');
         STORE.stepsMap.push(`#${id}`);
-    }
+    };
 
     const removeLastStepFromStepsMap = () => {
         STORE.stepsMap.splice(-1, 1);
-    }
+    };
 
     const resetAllControllers = () => {
         $('input.controller').prop('checked', false);
-    }
+    };
 
     const resetAnswer = (el) => {
         let prop = $(el).find('.controller').attr('name');
         delete STORE[prop];
-    }
+    };
 
     const blockHeaderToggle = () => {
         if ($(window).width() < 768) {
@@ -351,7 +351,7 @@ $(document).ready(function () {
                 300
             );
         }
-    }
+    };
 
     const unblockHeaderToggle = () => {
         if ($(window).width() < 768) {
@@ -364,7 +364,7 @@ $(document).ready(function () {
                 3000
             );
         }
-    }
+    };
 
     // Показываем кнопку Далле и Показать результаты
     $('.controller_btn-next').on('input', e => showNextButton(e));
@@ -380,16 +380,16 @@ $(document).ready(function () {
         btnWrap.addClass('show');
 
         unblockHeaderToggle();
-    }
+    };
 
     // Скрываем кнопку Далле и Показать результаты
     const hideNextButtonWrapper = () => {
         $('.btn-next-step__wrap').removeClass('show');
-    }
+    };
 
     const setVendorLink = link => {
         $('._vendorLink').attr('href', link);
-    }
+    };
 
     // Загружаем картинки для вопросов
     const uploadQuestionsPics = (id) => {
@@ -398,7 +398,7 @@ $(document).ready(function () {
                 let source = $(el).data('src');
                 $(el).css('background-image', `url(${source})`);
             });
-    }
+    };
 
     // Загружаем картинки с протоколами для вопросов
     const uploadQuestionsProtocolsPics = () => {
@@ -407,7 +407,7 @@ $(document).ready(function () {
                 let source = $(el).data('src');
                 $(el).attr('src', source);
             });
-    }
+    };
 
     // Загружаем картинки в результатах
     const uploadResPics = (id) => {
@@ -416,9 +416,7 @@ $(document).ready(function () {
                 let source = $(el).data('src');
                 $(el).attr('src', source);
             });
-
-        setTimeout(() => resultsSlider.update(), 5000);
-    }
+    };
 
     // Загружаем картинки для отзывов
     const uploadReviewsPics = () => {
@@ -436,9 +434,7 @@ $(document).ready(function () {
                 let source = $(el).data('src');
                 $(el).css('background-image', `url(${source})`);
             });
-
-        setTimeout(() => resultsSlider.update(), 5000);
-    }
+    };
 
     // Загружаем гифки с примером применения
     const uploadGiphys = (id) => {
@@ -447,7 +443,7 @@ $(document).ready(function () {
                 let source = $(el).data('src');
                 $(el).attr('src', source);
             });
-    }
+    };
 
     // Загружаем видео в виджет видео-презентаии
     const uploadPresentVideo = () => {
@@ -462,6 +458,6 @@ $(document).ready(function () {
 
         videoModal.attr('src', src);
         sourceModal.attr('src', src);
-    }
+    };
     setTimeout(uploadPresentVideo, 1000);
 });
