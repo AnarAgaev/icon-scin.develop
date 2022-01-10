@@ -30,7 +30,7 @@ window.copyURL = () => {
     $("#copyURL").val(window.location.href).select();
     document.execCommand("copy");
     $("#copyURL").remove();
-}
+};
 
 // В суперглобальной переменной храним
 // все дынные, введенные пользователем
@@ -38,7 +38,6 @@ window.STORE = {
     connect: "WhatsApp",
     stepsMap: [
         '#questionAge',
-
     ]
 };
 
@@ -60,7 +59,7 @@ STORE = new Proxy(STORE, {
                     300
                 );
             }
-        }
+        };
 
         const addAnswerToStore = ([question, answer]) => {
             let prop = getPropFromController(question, answer);
@@ -68,7 +67,7 @@ STORE = new Proxy(STORE, {
             target[prop]
                 ? target[prop][1].push(answer)
                 : target[prop] = [question, [answer]];
-        }
+        };
 
         if (isPluralController(val)) {
             // Если в STORE уже есть целевой ответ,
@@ -117,7 +116,7 @@ STORE = new Proxy(STORE, {
 const isPluralController = ([question, answer]) => {
     return $(`[data-question="${question}"][data-answer="${answer}"]`)
         .attr('type') === 'checkbox';
-}
+};
 
 const isAnswerInStore = ([question, answer]) => {
     let prop = getPropFromController(question, answer);
@@ -125,12 +124,12 @@ const isAnswerInStore = ([question, answer]) => {
     if (STORE[prop]) {
         return STORE[prop][1].includes(answer);
     }
-}
+};
 
 const getPropFromController = (question, answer) => {
     return $(`[data-question="${question}"][data-answer="${answer}"]`)
         .attr('name');
-}
+};
 
 // Маски для всех телефонов сохраняем
 // в отдельный суперглобальный массив
@@ -149,12 +148,12 @@ const updatePhones = (phone) => {
     $(PHONE_MASKS).each(
         idx => PHONE_MASKS[idx].unmaskedValue = phone
     );
-}
+};
 
 // Котроллеры для телефонов - взаимозависимые поля
 const updateEmails = (email) => {
     $('[type="email"]').val(email);
-}
+};
 
 // Если телефон валидный,
 // разлокируем кнопки отправки формы
@@ -165,7 +164,7 @@ const checkPhones = () => {
         .prop({
             disabled: !validatePhone(STORE.phone)
         });
-}
+};
 
 // Если email валидный, разблокируем
 // кнопки отправки формы
@@ -176,7 +175,7 @@ const checkEmail = () => {
         .prop({
             disabled: !validateEmail(STORE.email)
         });
-}
+};
 
 $(document).ready(() => {
 
@@ -192,7 +191,7 @@ $(document).ready(() => {
     const initialPhoneMasks = (idx, el) => {
         PHONE_MASKS.push(IMask(el, phoneMaskOptions));
         el.dataset.maskIdx = idx.toString();
-    }
+    };
 
     const handlerPhoneFocus = e => {
         const _this = e.target,
@@ -201,7 +200,7 @@ $(document).ready(() => {
         PHONE_MASKS[idx].updateOptions({
             lazy: false,
         });
-    }
+    };
 
     const handlerPhoneBlur = e => {
         const _this = e.target,
@@ -215,7 +214,7 @@ $(document).ready(() => {
             STORE.phone = ''; // Нужно для организации взаимозависимых полей
             delete STORE.phone;
         }
-    }
+    };
 
     const handlerPhoneInput = e => {
         const _this = e.target,
@@ -223,7 +222,7 @@ $(document).ready(() => {
 
         STORE['phone'] = PHONE_MASKS[idx].unmaskedValue;
         checkPhones();
-    }
+    };
 
     $('[type="tel"]')
         .each(initialPhoneMasks)
@@ -234,14 +233,14 @@ $(document).ready(() => {
     const handlerEmailInput = e => {
         STORE['email'] = $(e.target).val();
         checkEmail();
-    }
+    };
 
     const handlerEmailBlur = e => {
         if (!validateEmail()) {
             STORE.email = ''; // Нужно для организации взаимозависимых полей
             delete STORE.email;
         }
-    }
+    };
 
     $('[type="email"]')
         .on('blur', handlerEmailBlur)
@@ -261,8 +260,6 @@ $(document).ready(() => {
 
         STORE[prop] = [question, answer];
 
-        // removeProgressBar();
-        // setTimeout(initialProgressBar, 300);
         resetAllCheckboxControllers(_this);
     });
 
@@ -270,7 +267,7 @@ $(document).ready(() => {
         if ($(el).attr('type') === 'radio') {
             $('input:checkbox').prop('checked', false);
         }
-    }
+    };
 
     // Скролл к первому вопросу
     $('.go-to-quiz').click(() => {
@@ -336,7 +333,7 @@ $(document).ready(() => {
             questionsCaption
                 .removeClass('questions-caption__wrap_invisible');
         }
-    }
+    };
 
     $('._fullReset').click(fullReset);
 

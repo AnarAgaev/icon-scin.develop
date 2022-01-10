@@ -1,11 +1,8 @@
-mixin progress(from, too, next)
-    .progress(data-progress-value-from=`${from}`
-        data-progress-value-to=`${too}`
-        data-progress-value-next=`${next}`)
+mixin progress
+    .progress
         .progress__loader
             .progress__value
-                //- span.val= `${from}`
-                span.val
+                span.val 0
                 span %
 
             .progress__pic

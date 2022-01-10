@@ -52,8 +52,11 @@ $(document).ready(function () {
 
             blockToggleSteps();
             blockHeaderToggle();
-            removeProgressBar();
-            removeProgressValueCounted();
+            
+            // Для больших экранов, где после переключения
+            // вопроса, сразу виден скроллбар, инициализируем
+            // прогресс бар
+            removeProgressValueCalculater();
             setTimeout(initialProgressBar, 300);
 
             let thisStep = $(btn).closest('.step'),

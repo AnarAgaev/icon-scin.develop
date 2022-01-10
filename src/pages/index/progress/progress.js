@@ -1,15 +1,27 @@
-let progressValueInterval;
+let progressValueInterval,
+    progressCurrentValue = 0;
+
+const PERCENTS = {
+    '#questionRestrictions': 0,
+    '#questionFirst': 15,
+    '#questionSecond': 30,
+    '#questionThird': 45,
+    '#questionFourth': 60,
+    '#questionFifthOne': 75,
+    '#questionFifthTwo': 75,
+    '#questionSixth': 90,
+    '#questionSeventh': 100,
+};
 
 $(document).ready(() => {
 
     window.initialProgressBar = (timeout = 1000) => {
 
-        if ($('.visible .progress').length > 0
-            && !$('body').hasClass('progress-counter-finished')) {
+        if ($('.visible .progress').length > 0) {
 
             let scroll = $(window).height() + $(window).scrollTop(),
                 progress = $('.visible .progress'),
-                top = $(progress).offset().top; // - 30 + $(progress).height();
+                top = $(progress).offset().top;
 
             if (scroll > top) {
                 setTimeout(() => {
@@ -24,76 +36,80 @@ $(document).ready(() => {
 
     const setProgressBar = () => {
         setTimeout(() => {
-            const progress = $('.visible .progress'),
-                percent = $(progress).data('progressValueTo'),
-                // circle = progress.find('.progress__circle')[0],
-                // radius = circle.r.baseVal.value,
-                radius = 40,
-                circumference = 2 * Math.PI * radius,
-                offset = circumference - percent / 100 * circumference;
 
-            $('.progress__circle').css('strokeDashoffset', offset);
-        }, 500);
+            // const progress = $('.visible .progress'),
+            //     percent = $(progress).data('progressValueTo'),
+            //     // circle = progress.find('.progress__circle')[0],
+            //     // radius = circle.r.baseVal.value,
+            //     radius = 40,
+            //     circumference = 2 * Math.PI * radius,
+            //     offset = circumference - percent / 100 * circumference;
+
+            // $('.progress__circle').css('strokeDashoffset', offset);
+
+            setCurrentStepInBody();
+        }, 300);
     };
 
-    window.removeProgressBar = () => {
-        $('.progress__bar').removeClass('progressed');
+    const setCurrentStepInBody = () => {
+        
+        const body = document.querySelector('body'),
+            currentStep = STORE.stepsMap[STORE.stepsMap.length - 1];
+        
+            body.dataset.currentStep = currentStep;
     };
 
     const setProgressValue = () => {
-        let progress = $('.visible .progress'),
-            stop = $(progress).data('progressValueTo');
-
-        if (stop) {
-            let val = window.toggleQuestionDirection
-                ? progress.data('progressValueFrom')
-                : progress.data('progressValueNext');
-
-            countProgressValue(val, stop);
-        } else {
-            setTimeout(() => {
-                if ($('.visible .progress').length === 0) {
-                    $('.progress .val').text(0);
-                }
-            }, 500);
-        }
-    };
-
-    const countProgressValue = (val, stop) => {
-        // Чистим интервал, на тот случай если
-        // пользователь перешёл на следующий/предыдущий
-        // вопрос, не доздавшись завершения пересчёта
-        // прогресс бара
-        if (progressValueInterval) clearInterval(progressValueInterval)
-
-        if (val < stop) {
-            progressValueInterval = setInterval(countProgressUp, 33);
-            function countProgressUp () {
-                if (val > stop - 1) {
-                    clearInterval(progressValueInterval);
-                    setProgressValueCounted();
-                } else {
-                    $('.progress__value .val').text(++val);
-                }
+        setTimeout(() => {      
+            if (!isProgressValProcessing()) {
+                
+                let step = STORE.stepsMap[STORE.stepsMap.length - 1],
+                    percent = PERCENTS[step];
+                    
+                setProgressValProcessing();          
+                    
+                countProgressValue(percent);         
             }
-        } else {
-            progressValueInterval = setInterval(countProgressDown, 33);
-            function countProgressDown () {
-                if (val < stop + 1) {
-                    clearInterval(progressValueInterval);
-                    setProgressValueCounted();
-                } else {
-                    $('.progress__value .val').text(--val);
-                }
-            }
+        }, 300);
+    };
+
+    const countProgressValue = (stop) => {
+
+        /* Чистим интервал, на тот случай если
+         * пользователь перешёл на следующий/предыдущий
+         * вопрос, не дождавшись завершения пересчёта
+         * прогресс бара
+         */
+        if (progressValueInterval) clearInterval(progressValueInterval);
+        
+
+        function countProgressUp () {
+            progressCurrentValue > stop - 1
+                ? clearInterval(progressValueInterval)
+                : $('.progress__value .val').text(++progressCurrentValue);
         }
+
+        function countProgressDown () {
+            progressCurrentValue < stop + 1
+                ? clearInterval(progressValueInterval)
+                : $('.progress__value .val').text(--progressCurrentValue);
+        }
+
+        progressValueInterval = progressCurrentValue < stop
+            ? setInterval(countProgressUp, 33)
+            : setInterval(countProgressDown, 33);      
     };
 
-    const setProgressValueCounted = () => {
-        $('body').addClass('progress-counter-finished');
+    const isProgressValProcessing = () => {
+        return $('body').hasClass('progress-value-is-processing');
     };
 
-    window.removeProgressValueCounted = () => {
-        $('body').removeClass('progress-counter-finished');
+    const setProgressValProcessing = () => {
+        $('body').addClass('progress-value-is-processing');
+    };
+
+    window.removeProgressValueCalculater = () => {
+        $('body')
+            .removeClass('progress-value-is-processing');
     };
 });

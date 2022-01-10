@@ -66,3 +66,33 @@
         transition: all .4s ease-out;
     }
 }
+
+[data-current-step="#questionFirst"] .progress__circle {
+    stroke-dashoffset: 213.628px;
+}
+
+[data-current-step="#questionSecond"] .progress__circle {
+    stroke-dashoffset: 175.929px;
+}
+
+[data-current-step="#questionThird"] .progress__circle {
+    stroke-dashoffset: 138.23px;
+}
+
+[data-current-step="#questionFourth"] .progress__circle {
+    stroke-dashoffset: 100.531px;
+}
+
+[data-current-step="#questionFifthOne"] .progress__circle,
+[data-current-step="#questionFifthTwo"] .progress__circle {
+    stroke-dashoffset: 62.8319px;
+}
+
+[data-current-step="#questionSixth"] .progress__circle {
+    stroke-dashoffset: 25.1327px;
+}
+
+[data-current-step="#questionSeventh"] .progress__circle,
+[data-current-step="#result-*"] .progress__circle {
+    stroke-dashoffset: 0px;
+}
