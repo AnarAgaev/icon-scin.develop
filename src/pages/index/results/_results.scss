@@ -1191,6 +1191,35 @@
     }
 }
 
+.scrollerHand {
+    display: none;    
+    position: absolute;    
+    width: 50px;
+    height: 60px;
+    left: 50%;
+    bottom: 150px;
+    margin-left: 300px;    
+    animation: scrollerHand-animation 1.5s linear infinite;
+
+    @media (min-width: $md) {        
+        display: block;
+        background: url('../img/scroller-hand.svg') center no-repeat;
+    }
+
+    @media (min-width: $xxl) {
+        margin-left: 600px;
+        background: url('../img/scroller-mouse.svg') center no-repeat;
+    }
+}
+
+@keyframes scrollerHand-animation {
+    0%   { transform: translateY(0); }
+    25%  { transform: translateY(-10px); }
+    50%  { transform: translateY(0); }
+    75%  { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+
 #resultTherapy {
     .results__brand {
         margin-bottom: 30px;
